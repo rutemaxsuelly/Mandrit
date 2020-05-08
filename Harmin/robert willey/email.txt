@@ -1,0 +1,86 @@
+Estou incluindo aqui data por v. 2 (1959-1965), primeiro em WORD, e  
+depois TXT. O arquivo TXT foi feito por salvar como texto so, e  
+trocar espacos por novo linhas (return). Fez isso para simplificar a  
+programmacao en BASIC. Como falei, no so muito sofisticado em  
+programacao, foi mais facil ler o archivo com um data por linha.
+"." quer dizer nada
+"X" quer dizer sem chifra
+"r" eh silencio
+"/" um novo tempo com mesmo chifre. Eh coisa differente do que "C/F",  
+sabe que e um acorde C encima de uma nota F no baixo. Qual e sua  
+formacao musical? Voce disse que fez transcricoes, etc.
+"+" quer dizer que o tempo continua. Por examplo quando C e Eb sao  
+um metade de um "beat"/tempo (colcheia? esqeceu as palavras, em  
+ingles um tempo eh normalmente um "quarter note", um metade um  
+"eighth note" -- quero dizer que C e Eb sao eighth notes:
+?
+No data daria:
+C
++
+Eb
+F
+/
+/
+
+
+Meus alunos ajudarem com isso. Suponho que fizeram algums erros.  
+Estou terminando eu mesmo com um, e tenho mais um para fazer. Acho  
+que tenho mais dois volumes feitos pelos alunos.
+Eu escreviu:
+"comment NOSPACES
+comment AS_MANY_AS_NEEDED"
+para dizer para eles que nao podem colocar espacos dentro dos  
+"comments". Achei algums chifres errados, trocei alguns para, e notei  
+os razoes. Quem sabe, um dia Paulo Jobim poderia querer fazer um  
+segundo edicao.
+
+Key Dbmaj
+Transpo 11
+r Cb7
+
+"Transpo" e o numero de semitones que a programma tem de elevar (?)  
+os acordes para "transpose" para Do maior. O rapaz que estudou os  
+Beatles "transposed" todos as musicas para Do maior antes to contar a  
+frequencia dos acordes.  Dentro das musicas existe algums modulacoes.  
+Acho bom que voce analise as progressoes depois de "transpose" todos  
+para Do (C), para comparar uma musica com uma outra. Por example, Dm  
+quer dizer uma coisa differente numa musica em Do maior do que uma  
+outra em Re menor. Acho que os modulacoes dentro de uma musica pode  
+deixar fora, o? Eu analisei as musicas para ver onde modularam para  
+ter opcao de considerar as modulacoes o nao quando contei as  
+frequencias.
+
+Outra opcao que tenho e para considerar as repeticoes de acorde ou  
+nao. Por exemplo, numa compaso como C7 / / /  eu poderia contar C7  
+uma vez ou quatro vezes. Como tu tratas a duracao dos acordes?
+
+Eu posso processar a data em TXT para ti se queres sem comments ou  
+como quieser.
+
+??
+>
+>  Entretanto, para a visualizacao, depende muito do que voce queira,  
+> seria
+> necessario discutirmos para ver de que modo exibir a informacao. No  
+> meu
+> sistema, eu tenho uma grade que mostra a cada instante a  
+> probabilidade de
+> transicao para cada acorde atraves de cores (mais claro, mais  
+> provavel,
+> mais escuro, menos provavel).
+>
+>  Um ultimo aspecto, quando voce insere a melodia, o tratamento fica  
+> mais
+> complexo. Para tratar os dois ao mesmo tempo, eu utilizo HMM (Hidden
+> Markov Models), mas depende do que exatamente voce esteja procurando.
+Um outro estudo. Parece que a ritmo harmonico (quanto rapido a  
+harmonia muda) e frequentemente o intervso do ritmo melodica. Quer  
+dizer quando a melodia e mais "static" a harmonia muda mais, como no  
+"Se Todos Fossem Iguais A Voce". O magico do Tom era a combinacao da  
+melodia interssante, com notas alteradas (i.e. #11) com harmonia  
+rica, e depois tem as palavras bonitos...
+
+Abs[ ]
++Robert
+
+

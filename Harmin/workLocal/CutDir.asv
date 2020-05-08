@@ -1,0 +1,13 @@
+function CutDir(directory)
+
+cd(directory);
+files = dir;
+
+segs = [];
+for i=3:length(files)
+    if(~isempty(findstr(lower(files(i).name),'.wav')))
+        segs = [segs cutFirstAndLast(files(i).name)];
+    end
+end
+
+f = fopen(

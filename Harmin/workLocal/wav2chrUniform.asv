@@ -1,0 +1,54 @@
+function chrUniform = wav2chrUniform(FileName)
+global gw;
+chrUniform = zeros(12,1);
+
+nci = zeros(12,1); %number of chroma instances
+
+[buf, fs, b] = wavread(FileName);
+sp = abs(fft(buf));
+sSpect = size(sp,1);
+firstBin = ceil(100*sSpect*2/fs);
+lastBin = floor(10000*sSpect*2/fs);
+for bin=firstBin:lastBin    
+    hertz = ((bin)*fs)/(sSpect*2);
+    exactMidi = 69+12 * log(abs(hertz)/440)/log(2);    
+    midi=round(exactMidi);
+    %distMax = (440 * exp ((ceil(exactMidi)-69) * log(2)/12))*factor;
+
+    % Compute distance between frequency of bin and frequency of closest
+    % note
+    distanc = abs(exactMidi - midi)*2;
+    
+    % Compute weights
+    linearW = (1 - distanc);                    % linear weight
+    antiqW = (1 - distanc^2);                   % antiquadratic weight
+    if (distanc > 0.2)                          % discrete weight
+        discreteW = 0;
+    else
+        discreteW = 1;
+    end
+    expW = (100.^(1 - distanc))/100;            % exponential weight
+    gaussInd = round((1 - distanc)*1000)+1;  
+    gaussianW = gw(gaussInd);                   % gaussian weight
+    
+    chrBin = mod(midi-1, 12)+1;
+    chrUniform(chrBin) = chrUniform(chrBin) + sp(bin);    
+    
+    nci(chrBin) = nci(chrBin) + 1;
+end
+
+chrUniform = normalizeChroma(chrUniform, nci);
+
+function chrNorm = normalizeChroma(chrMat, sm)
+cMax = 0;
+for i=1:12
+    if(sm(i)~=0)
+        chrNorm(i) = chrMat(i)/sm(i);
+        if (chrNorm(i) > cMax)
+            cMax = chrNorm(i);
+        end
+    end
+end
+for i=1:12
+    chrNorm(i) = chrNorm(i)/cMax;
+end

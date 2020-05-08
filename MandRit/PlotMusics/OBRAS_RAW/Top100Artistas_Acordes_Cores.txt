@@ -1,0 +1,301 @@
+
+#69babf
+A#5, A#m, B5, B9, B9(11+), D#m7, E9, F#5
+
+#7569bf
+A, A#º, Bm, E/G#, F#m
+
+#6990bf
+A, A/C#, A9, Bm7, D, D/F#, E, Em7
+
+#bfbb69
+A, A/E, A5, A7M/E, Ab5, Am7, Am7M, C/E, C7, C7M, D, D7, D7(9), E5, Eb, F#m, F#m/E, F5, G/B, G/D, G5, Gb5
+
+#bf696e
+A, A/E, A7/E, Am7, Bm7, D/F#, Db/F, E, E/G#, E7, E7(4), Em7, F#7, F#m, G/B
+
+#7069bf
+A, A4, A4/E, A7M(9), Bm7(11), Bm7(5-), C#m7(11), C7M, D/E, D5(6/9), D5(7M/9), E, E/D, E4, Em/F, Em/G, F#m7, F#m7(11), F/G, F7M, G6, G7(9), G7M,
+
+#bf6992
+A, A4, A7, A7(4), Bb(9), Cm, Dm, Dm/C, E, E4, Em, G/B, Gm/Bb
+
+#6972bf
+A, A5(9), Ab/C, B/D#, B11, B5(9), C#, C#m, E, E/G#, F#7(11)
+
+#b869bf
+A, A5(9), B, B4, Bb5, D5(9), E, E/G#, F#m7(11)
+
+#a8bf69
+A, A5, B5, C#5, C#m, C#m/G#, D, D5, E, E5, F#5, F#m
+
+#7f69bf
+A, A6(9), A7M(9), A9, Bm11, Bm11/A, Bm7(11), Bm7(11)/A, C#7, D, E, F#m7(11)
+
+#9e69bf
+A, A7, A7/4, Bm, Bm/A, Bm7/A, D, D9/F#, Em7
+
+#99bf69
+A, A7, Bb, Dm
+
+#69a0bf
+A, A7, Bm, D, D#º, D9/F#, E, Em, F#, F#m, G6, G6(9), Gm
+
+#f4e80e
+A, A7/4, A9, Bm, D, D4, D9, Em7, G/F#
+
+#6bbf69
+A, A9, Am9, B, C#m, D, E, E7, E7M, F#, F#m, F7M, F7M(11+), G#m, G6, G7M
+
+#bf6978
+A, Ab, B, Bb, F/A
+
+#9969bf
+A, Am7, D, Em
+
+#bf69b6
+A, B5(9), B7(4/9), C#m, Cm, D, D7(4/9), E, Em, F#m
+
+#bf8369
+A, B7(4/9), Bm, D, E, E7, Em, F#7
+
+#bfb669
+A, B7, B7/F#, D, D7, Em, Em/D, F#m, G/F#
+
+#697cbf
+A, B7, C#m7, D, E, F#7, F#m, G#7
+
+#bf699c
+A, Bb, Bb5(9), D, E
+
+#bdbf69
+A, Bb, Bbm, C7, Dm, G#, G#m, Gm
+
+#698bbf
+A, Bb5(9), C5(9), D5(9), Eb5(9), Em9, F5(9), G9
+
+#a369bf
+A, Bm, D, E, E7, G7
+
+#69bf90
+A, Bm, D, E, Em, F#, F#m
+
+#69bfa5
+A, Bm, D, G5
+
+#8abf69
+A, C/G, D, D/F#, D4, D4(9), Em, G/B
+
+#69bf81
+A, D, E, E4, F#m
+
+#7abf69
+A, D, E, G/A
+
+#9ebf69
+A, Em
+
+#6977bf
+A/C#, A5, B5, B5/D, Bb5, D5, G5
+
+#69bf77
+A11, A9, Bm, Bm11, D, Em, Em7(9),
+
+#bf6e69
+A4(7), Bm7(11), Bm7(9/11), D, D5(7M/9), D5(9), D9, E/D, Em7(13), Em7(9), G/B, G6/B, G7M
+
+#bf8d69
+A4, A5(9), Am7/G, Am9, C7M, C9, D9/F#, Dm7, F7M(11+), G/B, G6/A
+
+#bf69a7
+A5(9), Am7, B7, C#m, C9, D, D11/F#, Em7, F#m
+
+#69bf9b
+A5, A7M, A9, B5, D5, D7M, Dm7, E5, F#5, F#m, F#m9, F5, F5/E
+
+#69bfb4
+A5, Ab5, Bb5, C/E, C5, D5, Dm, Dm7, E5, Eb5, F5, F7M, G/B, G5
+
+#699bbf
+A5, Am/G, Am7, C/G, C9, D, D/F#, D4, D5(9), Em, F5, F7M, G/B, G5
+
+#7fbf69
+A5, Am7, C5, Dm, E5, F5, G/B, G4, G4/B, G5
+
+#bf69b1
+A5, B5, C5, D, D#5, D5, E5, F#, F#5, G5
+
+#bf9269
+A5, B5, D, D5, E5, G5
+
+#bf69bb
+A5, Bb, Bb5, D5, Eb, Eb5, F5, G5, Gm
+
+#bf697e
+A5, Bm, D5, D7M, Dm, E5, F#m F7M
+
+#aebf69
+A7(4), Ab5, Am7, Bb5, C5, C9, D, D/F#, Em, F5, G/B, G/F#, G4(9), G5
+
+#b3bf69
+A7(4), Am/E, D/F#, Em7
+
+#bf9c69
+A7(4), C9, D, D11/F#, D4, Em7
+
+#bfa769
+A7, A7(4), C9, D, D4/F#, D9, Em, Em7, G/B
+
+#bf6983
+A7, Am7, Cm, D/F#, D7, E7, Em, G5, G7
+
+#69a5bf
+A7, B7, C/E, C/G, Dm, Em, G/D
+
+#bfb169
+A7, Bm, D, D7, F#m, G5/F#
+
+#6996bf
+A7, Bm, D7, D7M, E, Gm6
+
+#ae69bf
+A7M/E, Am7, D9(11), E, E7M, Em7, G4/B, G5, G5/F#
+
+#b8bf69
+Ab, Ab/Eb, Bb, Bbm, C/G, Cm, D, Db/Ab, Dm, Dº, Eb, F7, Fm7, G#m, Gm, Gm7, Gm7/C, Gm7/F
+
+#f4e80e
+Ab, Bbm, Bbm7, Bm7, Cm7, Db9, Eb4, Eb6, Eb7, Em7, Fm7
+
+#bf6997
+Am/G, Bb, C/E, Em/F, F6
+
+#6986bf
+Am/G, G4/B
+
+#69bfaa
+Am7
+
+#7a69bf
+Am7, Am7(9), Am7(9)/G, Am7/G, C/Bb, C/G, C7/G, C9(11+), Em7, F#m7(5-), F5(9), F7M/A, F9, Fm, Fm(7M), Fm/Ab, Fm9
+
+#8fbf69
+Am7, Am7/G, D, D9(11), D9(11)/A, D9/F#, E, Em, Em7, F#7(b5), F#m7(b5), F7M(#11), G/B, G4/B, G6/B
+
+#69bfaf
+Am7, B7, D, D9/F#, Em, G/B, G/F
+
+#69bfba
+Am7, Bm, Bm7, C7M, D5, E5, Em,
+
+#bf6969
+Am7, Bm, Bm7, D, Em, F9
+
+#bf7369
+Am7, Bm, Bm7, Dm, D/F#, D11, D7, Em, Em7, F11+, G7M/B
+
+#70bf69
+Am7, Bm, C9, Cm, D, D/F#, D4, D7, D7(b9), D9/F#, Em, Em7, G/B, G7
+
+#a3bf69
+Am7, Bm7(11), D9(11), Em, G5, G5(9)
+
+#69bf96
+Am7, C9, D, D9/F#, Em7, G/B
+
+#bf6973
+Am7, C9, D4/F#, Em7, G/B
+
+#a869bf
+Am7, D
+
+#696cbf
+Am7, D, D#º, Em, Em7
+
+#bf698d
+Am7, Dm
+
+#69bf8b
+Am7/G, C/G, D9(11)/A, D9/F#, F7M/C, G6/D
+
+#8a69bf
+Am9, C7M, Em
+
+#69aabf
+B5(9), Bm, C#m, C9, D5(9), E5, G#m
+
+#8469bf
+B7, Bm, C/G, D, D/G, Em, F#m7(5-), F7M
+
+#8db3cb
+Bb, Bb7, Bb7/4, D, D7, Dm, F7, Gm, Gm7
+
+#f4e80e
+Bb, Bb9, Dm, Dm/A, Gm
+
+#9469bf
+Bb, C/E, C7, Eb, F/A, F7, Gm
+
+#75bf69
+Bb, Dm, Gm
+
+#bf9769
+Bb5(9), C4, Dm, F/C
+
+#bfa269
+Bb5(9), Dm, Gm, Gm7
+
+#69b4bf
+Bb5, C4+(9), C5, C9, D11, D9, G/B, G5, Gm/Bb
+
+#bf6988
+Bbm, Ebm, Fm, Gb
+
+#69bf86
+Bm, Bm7, D, D7, D7(11), Em
+
+#69bf6c
+Bm, C/D, D/F#, Em
+
+#6981bf
+Bm, D, Em, G/A, G/B
+
+#84bf69
+C#, C#º, C7, Cm, Cm/G, Cm/Ab, Cm/A, Cm/Bb, Cm/B, Cm7, D, D/A, D7, Db, Eb, E7, Ebº, F7, Fm, Fm/D, Fm/Eb, Fm/E, G7, Gm, Ab, A, Aº, Abm, Bb, B, Bm, Bb/D, Bb6, Bb7, Bbm/C#
+
+#f4e80e
+C/E, C/G, C7M, Dm7, E, E7, F/C, G7
+
+#69bf72
+ACORDES TOP100 - coreS
+
+C5, D/F#, E5, Em, F#5, G5
+
+#8f69bf
+C6, C9, Eb, Em, Em7M, G4, G5+, G9
+
+#6b69bf
+C9, D4, E9, Em, Em7, G/B, G5, G7M
+
+#bf7869
+D, E
+
+#69afbf
+D, Em
+
+#69bf7c
+Dm, E7, G/B, G7
+
+#94bf69
+Dm, Em, F7M
+
+#69bfa0
+Dm, Em, G/B, Gm/Bb
+
+#bfac69
+E7, Fm, G#º, G/B, G7
+
+#bf69a2
+G/B
+
+#bf69ac
