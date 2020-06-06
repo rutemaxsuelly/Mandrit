@@ -47,9 +47,9 @@ function draw() {
   for (let i = 0; i < 10; i ++) {
     //ellipse(0, 100,100, 400);
     noStroke();
-    fill(120, 120, 120);
+    fill(140, 169, 247);
      ellipse(0, 100,100, 300);
-     rotate(PI/1.5);
+     rotate(PI/5);
   }
   //verdinho
    beginShape();
