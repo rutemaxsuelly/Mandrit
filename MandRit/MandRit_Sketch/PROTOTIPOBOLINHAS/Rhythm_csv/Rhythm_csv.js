@@ -1,7 +1,8 @@
 //MANDRIT -  Quantidade de notas em função do tempo cíclico
+//BUBBLE CHART//
 
 let airData;
-let raioFundo = 300;
+let raioFundo = 340;
 let tempo;
 let divisaoCirculo = 60;
 let raioMenor = 50;
@@ -23,17 +24,31 @@ function preload(){
   airData = loadTable("csv_musics/aquareladobrasil.csv",
     "csv",
     "header");
+  
+    font = loadFont('assets/CaviarDreams.ttf');
 }
 
 function setup() {
-  createCanvas(1350, 800);
+  createCanvas(1780, 840);
   center = createVector(width/2, height/2);
   maxRadius = min(center.x, center.y) * 0.9;
   noLoop();
   noStroke();
   //frameRate(30);
-
-  ///RANGE DE CORES///
+  background(255); 
+  ellipseMode(CENTER);
+  textFont(font);
+   strokeWeight(1);
+        stroke(0);
+        textSize(50);
+        text('M A N D R I T', 1200, 800, width);
+        
+  translate(width / 2, height / 2);
+   textos();
+  drawCirclefundo();
+   rotate(PI/-2);
+   
+ ///RANGE DE CORES///
  //Faixa 1//Condução
  amarelo = color(254,250,104);
  cores.push(amarelo);
@@ -51,7 +66,7 @@ function setup() {
  cores.push(verde);
  verde.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 5//floreios
- laranja = color(242,107,67,100);
+ laranja = color(255,133,0,100);
  cores.push(laranja);
  laranja.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 6//
@@ -71,9 +86,9 @@ function setup() {
  cores.push(rosa);
  rosa.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 10//
- esverdeado = color(55,166,148);
- cores.push(esverdeado);
- esverdeado.setAlpha(128 + 128 * sin(millis() / 5000));
+violetaPastel = color(221,170,255);
+ cores.push(violetaPastel);
+ violetaPastel.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 11//
  azulClaro = color(50,173,240);
  cores.push(azulClaro);
@@ -86,8 +101,19 @@ function setup() {
  cinza= color(199, 200, 203);
  cores.push(cinza);
  cinza.setAlpha(128 + 128 * sin(millis() / 5000));
- 
- //drawCirclefundo();
+ //Faixa 14//
+ verdeEscuro= color(51, 163, 105);
+ cores.push(verdeEscuro);
+ verdeEscuro.setAlpha(128 + 128 * sin(millis() / 5000));
+  //Faixa 15//
+ laranjaPastel= color(246, 185, 78);
+ cores.push(laranjaPastel);
+ laranjaPastel.setAlpha(128 + 128 * sin(millis() / 5000));
+  //Faixa 16//
+ verdeClaro= color(200, 221, 90);
+ cores.push(verdeClaro);
+ verdeClaro.setAlpha(128 + 128 * sin(millis() / 5000));
+
  
  tempo = airData.getColumn("Y");
  tempomin = min(tempo);
@@ -99,15 +125,13 @@ function setup() {
  tamanhomin = min(tamanho);
  tamanhomax = max(tamanho);
  
- 
+ drawRectLegenda(faixa);
+
 }
 
 function draw() {
-  background(255); 
-  ellipseMode(CENTER);
-  //stroke(255,50,0);
   translate(width / 2, height / 2);
-  rotate(PI/-2);
+  noStroke();
   indiceCor = 0;
   for(let i = 0; i< airData.getRowCount(); i++){
     let tempoAtual = airData.getNum(i,"Y");
@@ -122,7 +146,8 @@ function draw() {
     fill(faixa.cor);
     
     drawCircles(divisaoCirculo,raio, posicao, tamanho);
-    //drawEdges(divisaoCirculo, raio, points);
+    
+
   }
 }
 
@@ -142,19 +167,35 @@ function criarOuAtualizarFaixa(faixaAtual){
   faixas.push(new Faixa(faixaAtual, cores[indiceCor]));
   return faixas.length-1;
   
-  
 }
-  
+////////CIRCLES SEQUÊNCIA ÂNGULAR (EM FUNÇÃO DO TEMPO)/////////
+function drawCircle(angle, i, radius,circleRadius){
+  xCircle = cos(angle*i) * radius;
+        yCircle = sin(angle*i) * radius;
+
+        ellipse(xCircle, yCircle, circleRadius*2, circleRadius*2);
+}
+
+////////CIRCLES EM FUNÇÃO DA QUANTIDADE/////////
+function drawCircles(circles, radius, i, tamanho){
+    angle = Math.PI*2 / circles;
+    circleRadius = sin(angle/2) * radius *tamanho;
+    ellipseMode(CENTER);
+    
+    //Reitera o draw também em função do tempo//
+    drawCircle(angle, i, radius,circleRadius);
+}
+
  //Maracação do compasso fixo ao fundo div = 16 tempos rítmicos
 function drawCirclefundo(){
-    
-    stroke(33);
+     ellipseMode(CENTER);
+    stroke(146);
     noFill();
     //strokeWeight();
   
     circles = 16;
     angleFundo = Math.PI*2 / circles;
-    //rotate(PI/-2); //para começar no ponteiro
+    //rotate(2*PI); //para começar no ponteiro
 
     circleRaiofundo = sin(angleFundo/16) * raioFundo;
     
@@ -162,28 +203,110 @@ function drawCirclefundo(){
         xCircle = cos(angleFundo*i) * raioFundo;
         yCircle = sin(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
-        strokeWeight(20);
+        strokeWeight(10);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
-        strokeWeight(2);
-        line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
-
+        strokeWeight(1);
+        line(xCircle, yCircle, circleRaiofundo, circleRaiofundo)+10;
     }
 }
 
+function drawRectLegenda(faixa){ 
+noStroke();
 
-////////CIRCLES/////////
 
-
-function drawCircles(circles, radius, i, tamanho){
-    angle = Math.PI*2 / circles;
-    circleRadius = sin(angle/2) * radius *tamanho;
-    ellipseMode(CENTER);
-    drawCircle(angle, i, radius,circleRadius);
+         //fill(faixa.cor)
+         fill( amarelo);
+         circle(300, 560, 20, 60);
+         rect(300, 560, 20, 60);
+         fill(vermelho);         
+         circle(280, 560, 20, 60);
+         rect(280, 560, 20, 60);
+         fill(azul);
+         circle(260, 560, 20, 60);
+         rect(260, 560, 20, 60);
+         fill(verde);
+         circle(240, 560, 20, 60);
+         rect(240, 560, 20, 60);
+       
+         fill(laranja);
+         circle(220, 560, 20, 60);
+         rect(220, 560, 20, 60);
+         fill(marron);         
+         circle(200, 560, 20, 60);
+         rect(200, 560, 20, 60);
+         fill(magenta);
+         circle(180, 560, 20, 60);
+         rect(180, 560, 20, 60);
+         fill(roxo);
+         circle(160, 560, 20, 60);
+         rect(160, 560, 20, 60);
+       
+         fill(rosa);         
+         circle(140, 560, 20, 60);
+         rect(140, 560, 20, 60);
+         fill(violetaPastel);
+         circle(120, 560, 20, 60);
+         rect(120, 560, 20, 60);
+         fill(azulClaro);
+         circle(100, 560, 20, 60);
+         rect(100, 560, 20, 60);
+         fill(pastelAlaranjado);
+         circle(80, 560, 20,60);
+         rect(80, 560, 20,60);
+       
+         fill(cinza);
+         circle(60, 560, 20, 60);
+         rect(60, 560, 20, 60);
+         fill(verdeEscuro);
+         circle(40, 560, 20, 60);
+         rect(40, 560, 20, 60);
+         /*fill(laranjaPastel);
+         circle(20, 560, 20, 60);
+         rect(20, 560, 20, 60);
+         fill(verdeClaro);
+         circle(0, 560, 20, 60);
+         rect(-20, 560, 40, 60);*/
+         
 }
 
-function drawCircle(angle, i, radius,circleRadius){
-  xCircle = cos(angle*i) * radius;
-        yCircle = sin(angle*i) * radius;
-         
-        ellipse(xCircle, yCircle, circleRadius*2, circleRadius*2);
+function textos(){
+    textSize(20);
+        stroke(0);
+        text('16 = 0',-20, -350, width);
+        text('2',250, -240, width);
+        text('1',125, -325, width);
+        text('3',325, -130, width);
+        text('4',350, 5, width);
+        text('5',320, 140, width);
+        text('6',250, 250, width);
+        text('7',120, 335, width);
+        text('8',-5, 365, width);
+        text('9',-150, 330, width);
+        text('10',-260, 265, width);
+        text('11',-350, 130, width);
+        text('12',-370, 0, width);        
+        text('13',-340, -130, width);
+        text('14',-270, -240, width);
+        text('15',-160, -320, width);  
+        
+        strokeWeight(1);
+        stroke(0);
+        textSize(15);
+        text('-- Track 1', 620, -300, width);
+        text('-- Track 2', 620, -280, width);
+        text('-- Track 3', 620,-260 , width);
+        text('-- Track 4', 620, -240, width);
+        text('-- Track 5', 620, -220, width);
+        text('-- Track 6', 620, -200, width);
+        
+        text('-- Track 7', 620, -180, width);
+        text('-- Track 8', 620,-160 , width);
+        text('-- Track 9', 620, -140, width);
+        text('-- Track 10', 620, -120, width);
+        text('-- Track 11', 620,-100 , width);
+        text('-- Track 12', 620, -80, width);
+        text('-- Track 13', 620, -60, width);
+        text('-- Track 14', 620, -40, width);
+        /*text('-- Track 15', 620, -20, width);
+        text('-- Track 16', 620, 0, width);*/
 }

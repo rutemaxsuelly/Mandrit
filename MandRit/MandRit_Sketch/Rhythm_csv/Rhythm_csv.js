@@ -1,5 +1,8 @@
+//MANDRIT - Análise musical por tracks pela ocorrência temporal cíclica e por rastros de quantidade de notas ;
+///RADAR CHART///
+
 let airData;
-let raioFundo = 300;
+let raioFundo = 340;
 let tempo;
 let divisaoCirculo = 60;
 let raioMenor = 50;
@@ -20,10 +23,9 @@ let tamanhomax;
 let indiceCor = 0;
 let TC = new TempConversion();
 
-//MANDRIT - Análise musical por tracks da ocorrência da sequência temporal e quantidade de notas;
 
 function preload(){
-  airData = loadTable("csv_plot/bateria04.csv",
+  airData = loadTable("csv_plot/aquareladobrasil.csv",
     "csv",
     "header");
     
@@ -35,7 +37,7 @@ function setup() {
   center = createVector(width/2, height/2);
   maxRadius = min(center.x, center.y) * 0.9;
   noLoop();
-  stroke(255,255,255);
+  stroke(255);
   background(255); 
   ellipseMode(CENTER);
   textFont(font);
@@ -48,7 +50,8 @@ function setup() {
 
 /////LEGENDAS E REFERÊNCIAS GRAPHO////////
   //Referência COmpasso
-        strokeWeight(20);
+  stroke(146);
+        strokeWeight(10);
         point(200, 40, 100, 100);
         strokeWeight(1);
         line(200, 40, 100,100);
@@ -60,16 +63,23 @@ function setup() {
         
  // Colunas organizadoras
         stroke(0);
+        //Legenda Infos//
+        line(450, 500, 450, 15); 
         line(1350, 500, 1350, 15); 
-        line(450, 500, 450, 15); 
         
-        line(1770, 15, 0, 15); 
-        line(450, 500, 450, 15); 
+        //Legenda Track//
+        line(450, 500, 450, 15);
+        line(1350, 500,1770,500); 
         
         line(0, 500, 450, 500); 
         line(1, 500, 450, 500); 
-
-        line(1770, 15, 1770, 1770); 
+        
+        //verticais
+        line(1770, 830, 0, 830); 
+        line(1770, 15, 0, 15);
+        //Horizontais
+        line(1770, 15, 1770, 830); 
+        line(2,15, 2, 830); 
         
             
         strokeWeight(1);
@@ -86,8 +96,8 @@ function setup() {
   drawCirclefundo();
  
  ///RANGE DE CORES///
- //Faixa 1//Condução
- amarelo = color(254,250,104);
+ //Faixa 01//
+  amarelo = color(254,250,104);
  cores.push(amarelo);
   //Faixa 2//condução
  vermelho = color(140,23,23);
@@ -99,7 +109,7 @@ function setup() {
  verde = color(0, 255, 90);
  cores.push(verde);
   //Faixa 5//floreios
- laranja = color(242,107,67,100);
+ laranja = color(255,133,0,100);
  cores.push(laranja);
   //Faixa 6//
  marron = color(184,115,51);
@@ -114,8 +124,8 @@ function setup() {
  rosa = color(255,192,203);
  cores.push(rosa);
   //Faixa 10//
- esverdeado = color(55,166,148);
- cores.push(esverdeado);
+ violetaPastel = color(221,170,255);
+ cores.push(violetaPastel);
   //Faixa 11//
  azulClaro = color(50,173,240);
  cores.push(azulClaro);
@@ -222,19 +232,6 @@ function posicaoByQuantidadeNotas(faixa){
   faixa.x = xCircle;
   faixa.y = yCircle;
 }
-//Tentativa de plotar os compassos
-/*function posicaoByQuantidadeTotalTempo (tempomax){
-  let posicaoTempo = map(faixa.tempo, tempomin, tempomax, 0, divisaoCirculo-1);
-  let tamanhoTempo = map(faixa.quantidadeTempo, tempomin, tempomax, tamanhoMaior, tamanhoMenor);
-  let raioTamanho = map(faixa.quantidadeTempo, tempomin, tempomax, raioMenor, raioMaior);
-  angle = Math.PI*2 / divisaoCirculo;
-  circleRadius = sin(angle/2) * raioTamanho * tamanhoTempo;
-  xCircle = cos(angle*posicaoTempo) * raioTamanho;
-  yCircle = sin(angle*posicaoTempo) * raioTamanho;
-  faixa.x = xCircle;
-  faixa.y = yCircle;
-}*/
-
 
 function compare(faixa0, faixa1) {
   if (faixa0.numero >= faixa1.numero && faixa0.tempo > faixa1.tempo) {
@@ -304,18 +301,21 @@ function drawCircle(raio,posicao, tamanho, faixa){
         faixa.y = yCircle;
         //Desenha ocorrencia de tracks no tempo
         strokeWeight(10);
-        //quad(xCircle, yCircle, circleRadius, circleRadius); //TIPO 1: MOSTRAR 
+        
+        //TIPO 1: TEMPO RETAS - Ativar
+        //strokeWeight(1);
+        //quad(xCircle, yCircle, circleRadius, circleRadius); 
         
         for (let i = 0; i < 16; i++) {
         let divTempName = TC.dictRootTemp[i];
         let label = divTempName;
         noStroke();
-        text(label, xCircle, yCircle);
-        
+        //TIPO 1: TEMPO RETAS ocultar text
+        text(label, xCircle, yCircle);        
      
         noFill();
         stroke(135);
-        strokeWeight(0.01); //TIPO 1: 0.1
+        strokeWeight(0.01); //TIPO 1: 0.01
         line(xCircle, yCircle, circleRadius, circleRadius);
         //Legenda ocorrência de tempo por assinatura rítmica///
         //rotate(100);  EXPERIMENTOS DIVERTIDOS 
@@ -355,8 +355,9 @@ function drawCirclefundo(){
 function drawRectLegenda(faixa){ 
 noStroke();
 
+
          //fill(faixa.cor)
-         fill(amarelo);
+         fill( amarelo);
          circle(300, 560, 20, 60);
          rect(300, 560, 20, 60);
          fill(vermelho);         
@@ -368,8 +369,7 @@ noStroke();
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-         circle(240, 560, 20, 60);
-         rect(240, 560, 20, 60);
+       
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
@@ -386,7 +386,7 @@ noStroke();
          fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
-         fill(esverdeado);
+         fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
          fill(azulClaro);
@@ -402,35 +402,35 @@ noStroke();
          fill(verdeEscuro);
          circle(40, 560, 20, 60);
          rect(40, 560, 20, 60);
-         fill(laranjaPastel);
+         /*fill(laranjaPastel);
          circle(20, 560, 20, 60);
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
-        rect(-20, 560, 40, 60);
-         
+        rect(-20, 560, 40, 60);*/
+       
          
 }
 
 function textos(){
     textSize(20);
         stroke(0);
-        text('16 = 0',-20, -330, width);
+        text('16 = 0',-20, -350, width);
         text('2',250, -240, width);
-        text('1',120, -300, width);
-        text('3',320, -120, width);
-        text('4',340, 0, width);
-        text('5',320, 120, width);
-        text('6',230, 250, width);
-        text('7',120, 320, width);
-        text('8',0, 350, width);
-        text('9',-120, 320, width);
-        text('10',-250, 240, width);
-        text('11',-320, 140, width);
-        text('12',-350, 0, width);        
-        text('13',-320, -120, width);
-        text('14',-250, -220, width);
-        text('15',-150, -300, width);  
+        text('1',125, -325, width);
+        text('3',325, -130, width);
+        text('4',350, 5, width);
+        text('5',320, 140, width);
+        text('6',250, 250, width);
+        text('7',120, 335, width);
+        text('8',-5, 365, width);
+        text('9',-150, 330, width);
+        text('10',-260, 265, width);
+        text('11',-350, 130, width);
+        text('12',-370, 0, width);        
+        text('13',-340, -130, width);
+        text('14',-270, -240, width);
+        text('15',-160, -320, width);  
         
         strokeWeight(1);
         stroke(0);
@@ -450,8 +450,8 @@ function textos(){
         text('-- Track 12', 620, -80, width);
         text('-- Track 13', 620, -60, width);
         text('-- Track 14', 620, -40, width);
-        text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);
+        /*text('-- Track 15', 620, -20, width);
+        text('-- Track 16', 620, 0, width);*/
         
 
             
