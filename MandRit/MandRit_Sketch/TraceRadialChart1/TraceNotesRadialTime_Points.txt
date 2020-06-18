@@ -1,0 +1,10 @@
+MandRit - 
+Visualizador musical
+
+(com pontos polares para o tempo)
+
+Trace Radial Chart 1 -  baseado no Radar Chart - 
+Representa a quantidade de notas pela formação 
+de polígonos, e os tempos outra informação rítmica
+é representado por points pela ocorrência angular,
+em uma metáfora a um ponteiro de um relógio.

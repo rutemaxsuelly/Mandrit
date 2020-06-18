@@ -1,0 +1,9 @@
+MandRit - 
+Visualizador musical
+
+Bubbles Chart- Agrupa em uma mesma forma 
+geométrica (círculos/bolas) os dados rítmicos em 
+relação ao tempo, quantidade de notas e as tracks 
+diferenciadas pelas cores e com posições espaciais
+concêntricas e pela ocorrência ângular.
+
