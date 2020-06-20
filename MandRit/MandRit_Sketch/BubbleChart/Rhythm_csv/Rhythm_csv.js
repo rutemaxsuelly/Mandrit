@@ -4,7 +4,7 @@
 let airData;
 let raioFundo = 340;
 let tempo;
-let divisaoCirculo = 50;
+let divisaoCirculo = 60;
 let raioMenor = 50;
 let raioMaior = 300;
 let tamanhoMenor = 0.5;//1//1//0.5
@@ -21,7 +21,7 @@ let tamanhomax;
 let indiceCor = 0;
 
 function preload(){
-  airData = loadTable("csv_musics/bateria04.csv",
+  airData = loadTable("csv_musics/JazzTake5Tipo1.csv",
     "csv",
     "header");
   
@@ -56,7 +56,7 @@ function setup() {
   //Faixa 2//condução
  vermelho = color(140,23,23);
  cores.push(vermelho);
- vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
+vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 3//Graves
  azul = color(0,0,255);
  cores.push(azul);
@@ -216,9 +216,9 @@ noStroke();
 
 
          //fill(faixa.cor)
-         //fill( amarelo);
-         //circle(300, 560, 20, 60);
-         //rect(300, 560, 20, 60);
+         fill( amarelo);
+         circle(300, 560, 20, 60);
+         rect(300, 560, 20, 60);
          fill(vermelho);         
          circle(280, 560, 20, 60);
          rect(280, 560, 20, 60);
@@ -238,7 +238,7 @@ noStroke();
          fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
-         /*fill(roxo);
+         fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
@@ -266,7 +266,7 @@ noStroke();
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
-         rect(-20, 560, 40, 60);*/
+         rect(-20, 560, 40, 60);
          
 }
 
@@ -293,7 +293,7 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(15);
-        //text('-- Track 1', 620, -300, width);
+        text('-- Track 1', 620, -300, width);
         text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
@@ -301,7 +301,7 @@ function textos(){
         text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
-        /*text('-- Track 8', 620,-160 , width);
+        text('-- Track 8', 620,-160 , width);
         text('-- Track 9', 620, -140, width);
         text('-- Track 10', 620, -120, width);
         text('-- Track 11', 620,-100 , width);
@@ -309,5 +309,5 @@ function textos(){
         text('-- Track 13', 620, -60, width);
         text('-- Track 14', 620, -40, width);
         text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);*/
+        text('-- Track 16', 620, 0, width);
 }

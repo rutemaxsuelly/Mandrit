@@ -9,7 +9,7 @@ let raioMenor = 50;
 let raioMaior = 300;
 let tamanhoMenor = .1;
 let tamanhoMaior = .1;
-let apenasEssasFaixas = [];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
+let apenasEssasFaixas = [4];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
 let cores = [];
 let faixas = [];
 let edges = [];
@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/aquareladobrasil.csv",
+  airData = loadTable("csv_plot/MachineGunTipo1.csv",
     "csv",
     "header");
     
@@ -49,11 +49,11 @@ function setup() {
  
 ///RANGE DE CORES///
  //Faixa 01//
-  amarelo = color(254,250,104);
-  cores.push(amarelo);
+ //amarelo = color(254,250,104);
+//cores.push(amarelo);
   //Faixa 2//condução
- vermelho = color(140,23,23);
- cores.push(vermelho);
+ //vermelho = color(140,23,23);
+ //cores.push(vermelho);
   //Faixa 3//Graves
  azul = color(0,0,255);
  cores.push(azul);
@@ -351,12 +351,12 @@ noStroke();
 
 
          //fill(faixa.cor)
-         fill( amarelo);
-         circle(300, 560, 20, 60);
-         rect(300, 560, 20, 60);
-         fill(vermelho);         
-         circle(280, 560, 20, 60);
-         rect(280, 560, 20, 60);
+         //fill( amarelo);
+         //circle(300, 560, 20, 60);
+         //rect(300, 560, 20, 60);
+         //fill(vermelho);         
+         //circle(280, 560, 20, 60);
+         //rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
@@ -364,7 +364,7 @@ noStroke();
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
        
-         
+         /*
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
@@ -397,7 +397,7 @@ noStroke();
          fill(verdeEscuro);
          circle(40, 560, 20, 60);
          rect(40, 560, 20, 60);
-         /*
+         
          fill(laranjaPastel);
          circle(20, 560, 20, 60);
          rect(20, 560, 20, 60);
@@ -434,11 +434,11 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(15);
-        text('-- Track 1', 620, -300, width);
-        text('-- Track 2', 620, -280, width);
+        //text('-- Track 1', 620, -300, width);
+        //text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
-        text('-- Track 5', 620, -220, width);
+        /*text('-- Track 5', 620, -220, width);
         text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
@@ -449,7 +449,7 @@ function textos(){
         text('-- Track 12', 620, -80, width);
         text('-- Track 13', 620, -60, width);
         text('-- Track 14', 620, -40, width);
-        /*text('-- Track 15', 620, -20, width);
+        text('-- Track 15', 620, -20, width);
         text('-- Track 16', 620, 0, width);*/
         
         
