@@ -21,7 +21,7 @@ let tamanhomax;
 let indiceCor = 0;
 
 function preload(){
-  airData = loadTable("csv_musics/JazzTake5Tipo1.csv",
+  airData = loadTable("csv_musics/frevobajadoCelsoMachadoTipo1.csv",
     "csv",
     "header");
   
@@ -216,9 +216,9 @@ noStroke();
 
 
          //fill(faixa.cor)
-         fill( amarelo);
-         circle(300, 560, 20, 60);
-         rect(300, 560, 20, 60);
+         //fill( amarelo);
+         //circle(300, 560, 20, 60);
+         //rect(300, 560, 20, 60);
          fill(vermelho);         
          circle(280, 560, 20, 60);
          rect(280, 560, 20, 60);
@@ -232,7 +232,7 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(marron);         
+         /*fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
          fill(magenta);
@@ -266,7 +266,7 @@ noStroke();
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
-         rect(-20, 560, 40, 60);
+         rect(-20, 560, 40, 60);*/
          
 }
 
@@ -293,14 +293,15 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(15);
-        text('-- Track 1', 620, -300, width);
+        //text('-- Track 1', 620, -300, width);
         text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
         text('-- Track 5', 620, -220, width);
-        text('-- Track 6', 620, -200, width);
+        /*text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
+        
         text('-- Track 8', 620,-160 , width);
         text('-- Track 9', 620, -140, width);
         text('-- Track 10', 620, -120, width);
@@ -310,4 +311,5 @@ function textos(){
         text('-- Track 14', 620, -40, width);
         text('-- Track 15', 620, -20, width);
         text('-- Track 16', 620, 0, width);
+        */
 }
