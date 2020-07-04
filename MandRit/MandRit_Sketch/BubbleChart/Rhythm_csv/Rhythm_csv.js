@@ -21,7 +21,7 @@ let tamanhomax;
 let indiceCor = 0;
 
 function preload(){
-  airData = loadTable("csv_musics/frevobajadoCelsoMachadoTipo1.csv",
+  airData = loadTable("csv_musics/ATerceiraLaminaZeRamalhoTipo1.csv",
     "csv",
     "header");
   
@@ -232,7 +232,7 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         /*fill(marron);         
+         fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
          fill(magenta);
@@ -242,7 +242,7 @@ noStroke();
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
-         fill(rosa);         
+         /*fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
          fill(violetaPastel);
@@ -298,18 +298,18 @@ function textos(){
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
         text('-- Track 5', 620, -220, width);
-        /*text('-- Track 6', 620, -200, width);
+        text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
         
         text('-- Track 8', 620,-160 , width);
-        text('-- Track 9', 620, -140, width);
+        /*text('-- Track 9', 620, -140, width);
         text('-- Track 10', 620, -120, width);
         text('-- Track 11', 620,-100 , width);
         text('-- Track 12', 620, -80, width);
         text('-- Track 13', 620, -60, width);
         text('-- Track 14', 620, -40, width);
         text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);
-        */
+        text('-- Track 16', 620, 0, width);*/
+        
 }

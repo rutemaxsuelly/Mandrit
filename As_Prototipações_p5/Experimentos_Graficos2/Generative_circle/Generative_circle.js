@@ -45,7 +45,7 @@ function draw() {
   }
   
   fill(activeColor)
-  ellipse(x, y, 120, 120);
+  ellipse(x, y, 100, 100);
   timer = timer + .5;
   t = t + 0.01;
 }
