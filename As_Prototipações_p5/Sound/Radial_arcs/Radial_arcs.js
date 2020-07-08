@@ -6,7 +6,7 @@ var canvas,
     soundSpectrum;
 
 function setup() {
-  colorMode(HSB,360,100,100); // set colour mode of sketch to HSB (360 degress, 100%, 100%)
+  colorMode(HSB,200, 100,50); // set colour mode of sketch to HSB (360 degress, 100%, 100%)
   frameRate(60); // set framerate
   canvas = createCanvas(windowWidth,windowHeight); // create canvas
   canvas.drop(gotFile); // listen for file drop onto canvas
@@ -147,7 +147,7 @@ class RadialArc { // -------------------------   RadialArc Class ---------------
 
 // -------------------------  Sound Stuff -------------------------------
 function getNewSoundDataValue(freqType) {
-  return map(fft.getEnergy(freqType),0,255,0,1); // get energy from frequency, scaled from 0 to 1
+  return map(fft.getEnergy(freqType),0,255,0,10); // get energy from frequency, scaled from 0 to 1
 }
 
 function initSound() {

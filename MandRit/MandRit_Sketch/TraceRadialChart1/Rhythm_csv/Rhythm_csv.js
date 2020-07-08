@@ -9,7 +9,7 @@ let raioMenor = 50;
 let raioMaior = 300;
 let tamanhoMenor = .1;
 let tamanhoMaior = .1;
-let apenasEssasFaixas = [4];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
+let apenasEssasFaixas = [];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
 let cores = [];
 let faixas = [];
 let edges = [];
@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/MachineGunTipo1.csv",
+  airData = loadTable("csv_plot/maracatuAtomico(tipo1).csv",
     "csv",
     "header");
     
@@ -49,11 +49,11 @@ function setup() {
  
 ///RANGE DE CORES///
  //Faixa 01//
- //amarelo = color(254,250,104);
+// amarelo = color(254,250,104);
 //cores.push(amarelo);
   //Faixa 2//condução
- //vermelho = color(140,23,23);
- //cores.push(vermelho);
+ vermelho = color(140,23,23);
+ cores.push(vermelho);
   //Faixa 3//Graves
  azul = color(0,0,255);
  cores.push(azul);
@@ -354,9 +354,9 @@ noStroke();
          //fill( amarelo);
          //circle(300, 560, 20, 60);
          //rect(300, 560, 20, 60);
-         //fill(vermelho);         
-         //circle(280, 560, 20, 60);
-         //rect(280, 560, 20, 60);
+         fill(vermelho);         
+         circle(280, 560, 20, 60);
+         rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
@@ -365,6 +365,7 @@ noStroke();
          rect(240, 560, 20, 60);
        
          /*
+         
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
@@ -404,6 +405,7 @@ noStroke();
          fill(verdeClaro);
          circle(0, 560, 20, 60);
         rect(-20, 560, 40, 60);
+        
         */
        
          
@@ -435,7 +437,7 @@ function textos(){
         stroke(0);
         textSize(15);
         //text('-- Track 1', 620, -300, width);
-        //text('-- Track 2', 620, -280, width);
+        text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
         /*text('-- Track 5', 620, -220, width);

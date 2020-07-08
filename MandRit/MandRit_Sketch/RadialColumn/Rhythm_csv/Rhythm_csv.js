@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/aquareladobrasil.csv",
+  airData = loadTable("csv_plot/anunciacaoTipo1.csv",
     "csv",
     "header");
     
@@ -97,8 +97,8 @@ function setup() {
  
  ///RANGE DE CORES///
  //Faixa 01//
- amarelo = color(254,250,104);
- cores.push(amarelo);
+// amarelo = color(254,250,104);
+// cores.push(amarelo);
   //Faixa 2//condução
  vermelho = color(140,23,23);
 cores.push(vermelho);
@@ -353,9 +353,9 @@ noStroke();
 
 
          //fill(faixa.cor)
-         fill( amarelo);
-         circle(300, 560, 20, 60);
-         rect(300, 560, 20, 60);
+         //fill( amarelo);
+         //circle(300, 560, 20, 60);
+         //rect(300, 560, 20, 60);
          fill(vermelho);         
          circle(280, 560, 20, 60);
          rect(280, 560, 20, 60);
@@ -382,7 +382,7 @@ noStroke();
          fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
-         fill(violetaPastel);
+         /*fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
          
@@ -399,7 +399,7 @@ noStroke();
          fill(verdeEscuro);
          circle(40, 560, 20, 60);
          rect(40, 560, 20, 60);
-         /*fill(laranjaPastel);
+         fill(laranjaPastel);
          circle(20, 560, 20, 60);
          rect(20, 560, 20, 60);
          fill(verdeClaro);
@@ -431,22 +431,23 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(15);
-        text('-- Track 1', 620, -300, width);
+        //text('-- Track 1', 620, -300, width);
         text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
         text('-- Track 5', 620, -220, width);
         text('-- Track 6', 620, -200, width);
         
-        text('-- Track 7', 620, -180, width);
+       text('-- Track 7', 620, -180, width);
         text('-- Track 8', 620,-160 , width);
         text('-- Track 9', 620, -140, width);
+        /*
         text('-- Track 10', 620, -120, width);
         text('-- Track 11', 620,-100 , width);
         text('-- Track 12', 620, -80, width);
         text('-- Track 13', 620, -60, width);
         text('-- Track 14', 620, -40, width);
-        /*text('-- Track 15', 620, -20, width);
+        text('-- Track 15', 620, -20, width);
         text('-- Track 16', 620, 0, width);
         
         */

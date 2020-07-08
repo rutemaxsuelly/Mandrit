@@ -4,11 +4,11 @@
 let airData;
 let raioFundo = 340;
 let tempo;
-let divisaoCirculo = 60;
+let divisaoCirculo = 50;
 let raioMenor = 50;
 let raioMaior = 300;
-let tamanhoMenor = 0.5;//1//1//0.5
-let tamanhoMaior = 2;//5//3//5
+let tamanhoMenor =0.5;//1//1//0.5
+let tamanhoMaior = 3;//5//3//5
 let cores = [];
 let faixas = [];
 let tempomin;
@@ -21,9 +21,12 @@ let tamanhomax;
 let indiceCor = 0;
 
 function preload(){
-  airData = loadTable("csv_musics/ATerceiraLaminaZeRamalhoTipo1.csv",
+  airData = loadTable("csv_musics/maracatuAtomico(tipo1).csv",
     "csv",
     "header");
+    
+    
+
   
     font = loadFont('assets/CaviarDreams.ttf');
 }
@@ -57,7 +60,7 @@ function setup() {
  vermelho = color(140,23,23);
  cores.push(vermelho);
 vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
-  //Faixa 3//Graves
+ //Faixa 3//Graves
  azul = color(0,0,255);
  cores.push(azul);
  azul.setAlpha(128 + 128 * sin(millis() / 5000));
@@ -113,7 +116,6 @@ violetaPastel = color(221,170,255);
  verdeClaro= color(200, 221, 90);
  cores.push(verdeClaro);
  verdeClaro.setAlpha(128 + 128 * sin(millis() / 5000));
-
  
  tempo = airData.getColumn("Y");
  tempomin = min(tempo);
@@ -142,7 +144,7 @@ function draw() {
     let faixa = faixas[indice];
     let raio = map(faixaAtual, faixamin, faixamax, raioMaior, raioMenor);
     let tamanhoAtual = airData.getNum(i,"Total_de_notas");
-    let tamanho = map(tamanhoAtual, tamanhomin, tamanhomax, tamanhoMaior, tamanhoMenor);
+    let tamanho = map(tamanhoAtual, tamanhomax, tamanhomin, tamanhoMaior, tamanhoMenor);
     
     fill(faixa.cor);
     
@@ -229,7 +231,7 @@ noStroke();
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
        
-         fill(laranja);
+         /*fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
          fill(marron);         
@@ -242,9 +244,11 @@ noStroke();
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
-         /*fill(rosa);         
+         
+         fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
+         
          fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
@@ -255,6 +259,7 @@ noStroke();
          circle(80, 560, 20,60);
          rect(80, 560, 20,60);
        
+        
          fill(cinza);
          circle(60, 560, 20, 60);
          rect(60, 560, 20, 60);
@@ -266,7 +271,10 @@ noStroke();
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
-         rect(-20, 560, 40, 60);*/
+         rect(-20, 560, 40, 60);
+         */
+         
+         
          
 }
 
@@ -297,19 +305,21 @@ function textos(){
         text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
-        text('-- Track 5', 620, -220, width);
+        /*text('-- Track 5', 620, -220, width);
         text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
         
         text('-- Track 8', 620,-160 , width);
-        /*text('-- Track 9', 620, -140, width);
+        text('-- Track 9', 620, -140, width);
         text('-- Track 10', 620, -120, width);
         text('-- Track 11', 620,-100 , width);
         text('-- Track 12', 620, -80, width);
         text('-- Track 13', 620, -60, width);
         text('-- Track 14', 620, -40, width);
         text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);*/
+        text('-- Track 16', 620, 0, width);
+        */
+        
         
 }
