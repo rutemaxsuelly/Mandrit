@@ -20,19 +20,25 @@ let tamanhomin;
 let tamanhomax;
 let indiceCor = 0;
 
+let button;
+let sound;
+
+
 function preload(){
-  airData = loadTable("csv_musics/maracatuAtomico(tipo1).csv",
+  airData = loadTable("csv_musics/Maracatu_Atmico22.csv",
     "csv",
     "header");
     
+    sound = loadSound('ArquivoMusicas/Maracatu_Atmico.mp3');
     
-
   
     font = loadFont('assets/CaviarDreams.ttf');
 }
 
 function setup() {
   createCanvas(1780, 840);
+  //Função Buttons - inclui botão de play em musica para facilitar análise e seu download da visualização. 
+  buttons();
   center = createVector(width/2, height/2);
   maxRadius = min(center.x, center.y) * 0.9;
   noLoop();
@@ -45,12 +51,19 @@ function setup() {
         stroke(0);
         textSize(50);
         text('M A N D R I T', 1200, 800, width);
-        
+            
+        //Legenda Track//
+        stroke(0);
+        rect(10, 375, 420, 100);
+        line(1350, 500, 1350, 15);
+        line(1350, 500,1770,500); 
+
   translate(width / 2, height / 2);
    textos();
   drawCirclefundo();
    rotate(PI/-2);
-   
+       
+        
  ///RANGE DE CORES///
  //Faixa 1//Condução
  amarelo = color(254,250,104);
@@ -231,7 +244,7 @@ noStroke();
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
        
-         /*fill(laranja);
+         fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
          fill(marron);         
@@ -271,10 +284,7 @@ noStroke();
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
-         rect(-20, 560, 40, 60);
-         */
-         
-         
+         rect(-20, 560, 40, 60);    
          
 }
 
@@ -305,7 +315,7 @@ function textos(){
         text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
-        /*text('-- Track 5', 620, -220, width);
+        text('-- Track 5', 620, -220, width);
         text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
@@ -319,7 +329,48 @@ function textos(){
         text('-- Track 14', 620, -40, width);
         text('-- Track 15', 620, -20, width);
         text('-- Track 16', 620, 0, width);
-        */
         
         
+        
+}
+
+function mouseClicked() {
+  if (sound.isPlaying()) {
+    // .isPlaying() returns a boolean
+    sound.stop();
+    //background(255, 0, 0);
+  } else {
+    sound.play();
+    //background(0, 255, 0); 
+  }
+}
+
+function mouseClickedSave(){
+  save('analisemusical.jpg');  
+}
+
+function buttons (){
+  
+ ///INCLUIR SOM PARA FACILITAR ANÁLISE///
+  background(0);
+    sound.loop();
+  createP('');
+  button = createButton('PLAY / STOP MUSIC');
+  button.size(180,50);
+  button.position(20, 400);
+  button.mousePressed(mouseClicked);
+  button.style("font-family","CaviarDreams");
+  button.style("background-color","#E3E3E3");
+  button.style("font-size", "16px");
+  
+     
+  createP('');
+  button = createButton('SAVE VISUAL MUSIC');
+  button.size(180, 50);
+  button.position(230, 400);
+  button.mousePressed(mouseClickedSave);
+  button.style("font-family","CaviarDreams");
+  button.style("background-color","#E3E3E3");
+  button.style("font-size", "16px");
+  
 }

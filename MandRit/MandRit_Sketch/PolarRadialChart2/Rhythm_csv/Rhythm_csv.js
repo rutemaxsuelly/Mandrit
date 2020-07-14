@@ -1,5 +1,5 @@
 //MANDRIT - Análise musical por tracks pela ocorrência temporal cíclica e por rastros de quantidade de notas ;
-///RADAR CHART - TEMPO REPRESENTADO POINT///
+///RADIAL COLUMN CHART///priorizando Quantidade de notas - com espessura de linha (0.1);
 
 let airData;
 let raioFundo = 340;
@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/maracatuAtomico(tipo1).csv",
+  airData = loadTable("csv_plot/DUALIPAdontStartTipo1.csv",
     "csv",
     "header");
     
@@ -47,56 +47,7 @@ function setup() {
         text('M A N D R I T', 1200, 800, width);
  
  
-///RANGE DE CORES///
- //Faixa 01//
-// amarelo = color(254,250,104);
-//cores.push(amarelo);
-  //Faixa 2//condução
- vermelho = color(140,23,23);
- cores.push(vermelho);
-  //Faixa 3//Graves
- azul = color(0,0,255);
- cores.push(azul);
-  //Faixa 4//agudos
- verde = color(0, 255, 90);
- cores.push(verde);
-  //Faixa 5//floreios
- laranja = color(255,133,0,100);
- cores.push(laranja);
-  //Faixa 6//
- marron = color(184,115,51);
- cores.push(marron);
-  //Faixa 7//
- magenta = color(239,98,166);
- cores.push(magenta);
-  //Faixa 8//
- roxo = color(117,92,160);
- cores.push(roxo);
-  //Faixa 9//
- rosa = color(255,192,203);
- cores.push(rosa);
-  //Faixa 10//
- violetaPastel = color(221,170,255);
- cores.push(violetaPastel);
-  //Faixa 11//
- azulClaro = color(50,173,240);
- cores.push(azulClaro);
-  //Faixa 12//
- pastelAlaranjado= color(233,108,102);
- cores.push(pastelAlaranjado);
-  //Faixa 13//
- cinza= color(199, 200, 203);
- cores.push(cinza);
- //Faixa 14//
- verdeEscuro= color(51, 163, 105);
- cores.push(verdeEscuro);
-  //Faixa 15//
- laranjaPastel= color(246, 185, 78);
- cores.push(laranjaPastel);
-  //Faixa 16//
- verdeClaro= color(200, 221, 90);
- cores.push(verdeClaro);
- 
+
 /////LEGENDAS E REFERÊNCIAS GRAPHO////////
   //Referência COmpasso
   stroke(146);
@@ -104,11 +55,15 @@ function setup() {
         point(200, 40, 100, 100);
         strokeWeight(1);
         line(200, 40, 100,100);
+ 
+ //Sequência Temporal
+        noStroke();
+        textSize(15);
+        //text('0',182, 222, width);
         
  // Colunas organizadoras
         stroke(0);
         //Legenda Infos//
-        line(450, 500, 450, 15); 
         line(1350, 500, 1350, 15); 
         
         //Legenda Track//
@@ -133,17 +88,63 @@ function setup() {
         text('Quantidade de Notas', 200, 350, width);
         text('Sequência Temporal', 200, 240, width);
        
-        //Sequência Temporal
-        //textSize(15);
-        stroke(verde); // Change the color
-        strokeWeight(8);
-        point(180, 220, width);
       
   translate(width / 2, height / 2);
   textos();
-  rotate(PI/-2);
+  rotate(PI/-2);  //para começar no ponteiro
   drawCirclefundo();
  
+ ///RANGE DE CORES///
+ //Faixa 01//
+ //amarelo = color(254,250,104);
+ //cores.push(amarelo);
+  //Faixa 2//condução
+ vermelho = color(140,23,23);
+cores.push(vermelho);
+  //Faixa 3//Graves
+ azul = color(0,0,255);
+ cores.push(azul);
+  //Faixa 4//agudos
+ verde = color(0, 255, 90);
+ cores.push(verde);
+  //Faixa 5//floreios
+
+laranja = color(255,133,0,100);
+ cores.push(laranja);
+  //Faixa 6//
+ marron = color(184,115,51);
+ cores.push(marron);
+  //Faixa 7//
+ magenta = color(239,98,166);
+ cores.push(magenta);
+ //Faixa 8//
+ roxo = color(117,92,160);
+ cores.push(roxo);
+  //Faixa 9//
+ rosa = color(255,192,203);
+ cores.push(rosa);
+ //Faixa 10//
+ violetaPastel = color(221,170,255);
+ cores.push(violetaPastel);
+  //Faixa 11//
+ azulClaro = color(50,173,240);
+ cores.push(azulClaro);
+  //Faixa 12//
+ pastelAlaranjado= color(233,108,102);
+ cores.push(pastelAlaranjado);
+  //Faixa 13//
+ cinza= color(199, 200, 203);
+ cores.push(cinza);
+ //Faixa 14//
+ verdeEscuro= color(51, 163, 105);
+ cores.push(verdeEscuro);
+ /* //Faixa 15//
+ laranjaPastel= color(246, 185, 78);
+ cores.push(laranjaPastel);
+  //Faixa 16//
+ verdeClaro= color(200, 221, 90);
+ cores.push(verdeClaro);
+ */
  
  ///// INFO DO CSV /////
  tempo = airData.getColumn("Y");
@@ -300,23 +301,23 @@ function drawCircle(raio,posicao, tamanho, faixa){
         faixa.x = xCircle;
         faixa.y = yCircle;
         //Desenha ocorrencia de tracks no tempo
-        strokeWeight(8);
-        point(xCircle, yCircle, circleRadius, circleRadius);
+        strokeWeight(0.2);
+        quad(xCircle, yCircle, circleRadius, circleRadius);
+        //Legenda ocorrência de tempo por assinatura rítmica///
+        quad(150, -810, 200, -710);
         
         for (let i = 0; i < 16; i++) {
         let divTempName = TC.dictRootTemp[i];
         let label = divTempName;
-        noStroke();    
+        noStroke();   
      
         noFill();
         stroke(135);
         strokeWeight(0.01); //TIPO 1: 0.01
-        line(xCircle, yCircle, circleRadius, circleRadius);
+        //line(xCircle, yCircle, circleRadius, circleRadius);
         //rotate(100);  EXPERIMENTOS DIVERTIDOS 
-        line(150, -810, 200, -710);
-        
-        
         //point(xCircle, yCircle, circleRadius*2, circleRadius*2);
+        
         }
 }
 
@@ -326,11 +327,10 @@ function drawCirclefundo(){
     stroke(146);
     circle();
     noFill();
-    //strokeWeight();
   
     circles = 16;
     angleFundo = Math.PI*2 / circles;
-    //rotate(PI/-2); //para começar no ponteiro
+    //rotate(PI/-2);
 
     circleRaiofundo = sin(angleFundo/16) * raioFundo;
     
@@ -347,7 +347,7 @@ function drawCirclefundo(){
     }
 }
 function drawRectLegenda(faixa){ 
-noStroke();
+  noStroke();
 
 
          //fill(faixa.cor)
@@ -363,9 +363,7 @@ noStroke();
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-       
-         /*
-         
+      
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
@@ -377,43 +375,42 @@ noStroke();
          rect(180, 560, 20, 60);
          fill(roxo);
          circle(160, 560, 20, 60);
-         rect(160, 560, 20, 60);
-       
+         rect(160, 560, 20, 60);    
+         
          fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
          fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
+          
          fill(azulClaro);
          circle(100, 560, 20, 60);
          rect(100, 560, 20, 60);
          fill(pastelAlaranjado);
          circle(80, 560, 20,60);
          rect(80, 560, 20,60);
-       
+ 
          fill(cinza);
          circle(60, 560, 20, 60);
          rect(60, 560, 20, 60);
-         fill(verdeEscuro);
+         /*fill(verdeEscuro);
          circle(40, 560, 20, 60);
          rect(40, 560, 20, 60);
-         
          fill(laranjaPastel);
          circle(20, 560, 20, 60);
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
         rect(-20, 560, 40, 60);
-        
         */
+       
        
          
 }
 
 function textos(){
-  strokeWeight(1);  
-  textSize(20);
+    textSize(20);
         stroke(0);
         text('16 = 0',-20, -350, width);
         text('2',250, -240, width);
@@ -432,7 +429,6 @@ function textos(){
         text('14',-270, -240, width);
         text('15',-160, -320, width);  
         
-        //DEPENDENDO DA MÚSICA QUE FOR PLOTAR COMENTAR QUAIS TRACKS ESTÃO OU NÃO NA LEGENDA
         strokeWeight(1);
         stroke(0);
         textSize(15);
@@ -440,7 +436,7 @@ function textos(){
         text('-- Track 2', 620, -280, width);
         text('-- Track 3', 620,-260 , width);
         text('-- Track 4', 620, -240, width);
-        /*text('-- Track 5', 620, -220, width);
+        text('-- Track 5', 620, -220, width);
         text('-- Track 6', 620, -200, width);
         
         text('-- Track 7', 620, -180, width);
@@ -450,11 +446,11 @@ function textos(){
         text('-- Track 11', 620,-100 , width);
         text('-- Track 12', 620, -80, width);
         text('-- Track 13', 620, -60, width);
-        text('-- Track 14', 620, -40, width);
+        /*text('-- Track 14', 620, -40, width);
         text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);*/
+        text('-- Track 16', 620, 0, width);
         
-        
+        */
         
 
             
