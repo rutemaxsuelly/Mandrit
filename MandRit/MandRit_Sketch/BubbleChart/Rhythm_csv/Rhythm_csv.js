@@ -4,10 +4,10 @@
 let airData;
 let raioFundo = 340;
 let tempo;
-let divisaoCirculo = 50;
-let raioMenor = 50;
+let divisaoCirculo = 50; //40 //60
+let raioMenor = 100;
 let raioMaior = 300;
-let tamanhoMenor =0.5;//1//1//0.5
+let tamanhoMenor = 0.5;//1//1//0.5
 let tamanhoMaior = 3;//5//3//5
 let cores = [];
 let faixas = [];
@@ -25,11 +25,11 @@ let sound;
 
 
 function preload(){
-  airData = loadTable("csv_musics/Maracatu_Atmico22.csv",
+  airData = loadTable("csv_musics/take_five-Dave-Brubeck_lfTIPO1.csv",
     "csv",
     "header");
     
-    sound = loadSound('ArquivoMusicas/Maracatu_Atmico.mp3');
+    sound = loadSound('ArquivoMusicas/taketakeOK.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -62,11 +62,12 @@ function setup() {
    textos();
   drawCirclefundo();
    rotate(PI/-2);
-       
+   
+  
         
  ///RANGE DE CORES///
  //Faixa 1//Condução
- amarelo = color(254,250,104);
+amarelo = color(254,250,104);
  cores.push(amarelo);
  amarelo.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 2//condução
@@ -204,12 +205,19 @@ function drawCircles(circles, radius, i, tamanho){
 
  //Maracação do compasso fixo ao fundo div = 16 tempos rítmicos
 function drawCirclefundo(){
-     ellipseMode(CENTER);
+  
+  //Opção Nogrid:
+        //stroke(0);
+    //fill(0);
+    //circle(0,0,340);
+  
+  
+    ellipseMode(CENTER);
     stroke(146);
     noFill();
     //strokeWeight();
   
-    circles = 16;
+    circles = 48;
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro
 
@@ -219,13 +227,15 @@ function drawCirclefundo(){
         xCircle = cos(angleFundo*i) * raioFundo;
         yCircle = sin(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
-        strokeWeight(10);
-        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
+        strokeWeight(5);
+        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
         strokeWeight(1);
-        line(xCircle, yCircle, circleRaiofundo, circleRaiofundo)+10;
+        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+        
     }
-}
-
+} 
+       
+       
 function drawRectLegenda(faixa){ 
 noStroke();
 
@@ -250,7 +260,7 @@ noStroke();
          fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
-         fill(magenta);
+         /*fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
          fill(roxo);
@@ -284,14 +294,33 @@ noStroke();
          rect(20, 560, 20, 60);
          fill(verdeClaro);
          circle(0, 560, 20, 60);
-         rect(-20, 560, 40, 60);    
+         rect(-20, 560, 40, 60); 
+         */   
          
 }
 
 function textos(){
     textSize(20);
         stroke(0);
-        text('16 = 0',-20, -350, width);
+        text('1',-10, -350, width);
+        text('+',125, -325, width);
+        text('2',250, -240, width);
+        text('+',325, -130, width);
+        text('3',350, 5, width);
+        text('+',320, 140, width);
+        text('4',250, 250, width);
+        text('+',120, 335, width);
+        text('1',-5, 365, width);
+        text('+',-150, 330, width);
+        text('2',-260, 265, width);
+        text('+',-340, 140, width);
+        text('3',-370, 0, width);        
+        text('+',-340, -130, width);
+        text('4',-260, -240, width);
+        text('+',-145, -320, width); 
+        
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO//
+                /*text('16 = 0',-20, -350, width);
         text('2',250, -240, width);
         text('1',125, -325, width);
         text('3',325, -130, width);
@@ -306,29 +335,30 @@ function textos(){
         text('12',-370, 0, width);        
         text('13',-340, -130, width);
         text('14',-270, -240, width);
-        text('15',-160, -320, width);  
+        text('15',-160, -320, width); */ 
         
         strokeWeight(1);
         stroke(0);
         textSize(15);
-        //text('-- Track 1', 620, -300, width);
-        text('-- Track 2', 620, -280, width);
-        text('-- Track 3', 620,-260 , width);
-        text('-- Track 4', 620, -240, width);
-        text('-- Track 5', 620, -220, width);
-        text('-- Track 6', 620, -200, width);
+        //text(' Track 1 =', 620, -300, width);
+        text(' Track 2 = Bateria ', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        text(' Track 4 = Saxofone', 620, -240, width);
+        text(' Track 5 = Baixo', 620, -220, width);
+        text(' Track 6 = Piano', 620, -200, width);
+     
+       
+        /*text(' Track 7 = Vocal', 620, -180, width);
         
-        text('-- Track 7', 620, -180, width);
-        
-        text('-- Track 8', 620,-160 , width);
-        text('-- Track 9', 620, -140, width);
-        text('-- Track 10', 620, -120, width);
-        text('-- Track 11', 620,-100 , width);
-        text('-- Track 12', 620, -80, width);
-        text('-- Track 13', 620, -60, width);
-        text('-- Track 14', 620, -40, width);
-        text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);
+        text(' Track 8 = Guitarra', 620,-160 , width);
+        text('Track 9 = Bateria', 620, -140, width);
+        text(' Track 10 =', 620, -120, width);
+        text(' Track 11 = ', 620,-100 , width);
+        text(' Track 12 =', 620, -80, width);
+        text(' Track 13 =', 620, -60, width);
+        text(' Track 14 =', 620, -40, width);
+        text(' Track 15 =', 620, -20, width);
+        text(' Track 16 =', 620, 0, width);*/
         
         
         
