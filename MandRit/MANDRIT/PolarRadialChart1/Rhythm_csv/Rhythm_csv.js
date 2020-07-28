@@ -133,9 +133,9 @@ laranja = color(255,133,0,100);
         strokeWeight(1);
         stroke(255);
         textSize(20);
-        text('Referência do compasso', 200, 110, width);
+        text('Marcação Temporal', 200, 110, width);
         text('Quantidade de Notas', 200, 350, width);
-        text('Sequência Temporal', 200, 240, width);
+        text('Ocorrência Temporal', 200, 240, width);
        
         //Sequência Temporal
         //textSize(15);
@@ -349,7 +349,7 @@ function drawCirclefundo(){
         //strokeWeight(5);
         fill(0);
         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5);
-        //stroke(2); //255
+        //stroke(0.012); //255
         //line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
        
 

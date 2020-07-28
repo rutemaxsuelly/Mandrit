@@ -1,0 +1,11 @@
+MandRit - 
+Visualizador musical
+
+Radial Column -
+
+Visualização alternativa para análise rítmica 
+que representa apenas a ocorrência temporal das
+tracks em um gráfico polar, e com suas respectivas
+posições angulares. E pela correspondências das cores
+em função das tracks.
+

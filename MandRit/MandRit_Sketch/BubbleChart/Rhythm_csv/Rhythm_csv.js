@@ -140,8 +140,7 @@ violetaPastel = color(221,170,255);
  tamanho = airData.getColumn("Total_de_notas");
  tamanhomin = min(tamanho);
  tamanhomax = max(tamanho);
- 
- drawRectLegenda(faixa);
+
 
 }
 
@@ -154,6 +153,7 @@ function draw() {
     let tempoAtual = airData.getNum(i,"Y");
     let posicao = map(tempoAtual, tempomin, tempomax, 0, divisaoCirculo-1);
     let faixaAtual = airData.getNum(i,"X");
+    let faixaAtualLegenda = airData.getNum(i,"X");
     let indice = criarOuAtualizarFaixa(faixaAtual);
     let faixa = faixas[indice];
     let raio = map(faixaAtual, faixamin, faixamax, raioMaior, raioMenor);
@@ -163,7 +163,10 @@ function draw() {
     fill(faixa.cor);
     
     drawCircles(divisaoCirculo,raio, posicao, tamanho);
-    
+        
+        //drawLegenda(faixa);
+        
+         drawRectLegenda(faixa);
 
   }
 }
@@ -235,11 +238,31 @@ function drawCirclefundo(){
     }
 } 
        
-       
-function drawRectLegenda(faixa){ 
+//TENTATIVA DE CRIAR LEGENDA AUTOMÁTICA//
+function drawLegenda(faixa){ 
 noStroke();
 
-
+  for(i = 0; i< faixas.length;i++){
+    if(faixas[i] && faixas[i].cor == faixaAtualLegenda){
+      faixas[i].cor++;
+      console.log(faixas[i]);
+      console.log(i);
+      return i;
+    }
+    indiceCor++;
+  if(indiceCor >= cores.length){
+    indiceCor = 0;
+    }
+  }
+  faixas.push(new Faixa(faixaAtualLegenda, cores[indiceCor]));
+  return faixas.length-1;
+  
+  drawRectLegenda(faixaLegenda);
+}
+  
+ 
+  function drawRectLegenda(faixaLegenda){
+  
          //fill(faixa.cor)
          //fill( amarelo);
          //circle(300, 560, 20, 60);
@@ -296,8 +319,7 @@ noStroke();
          circle(0, 560, 20, 60);
          rect(-20, 560, 40, 60); 
          */   
-         
-}
+  }
 
 function textos(){
     textSize(20);
