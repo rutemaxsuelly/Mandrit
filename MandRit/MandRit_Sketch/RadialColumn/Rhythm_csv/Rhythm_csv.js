@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/maracatuvisTipo1.csv",
+  airData = loadTable("csv_plot/File_tracksname/maracatuvisTipo1.csv",
     "csv",
     "header");
     

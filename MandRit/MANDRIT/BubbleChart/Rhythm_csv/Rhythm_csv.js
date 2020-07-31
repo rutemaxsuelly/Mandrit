@@ -25,7 +25,7 @@ let sound;
 
 
 function preload(){
-  airData = loadTable("csv_musics/bateria04.csv",
+  airData = loadTable("csv_musics/File_tracksname/bateria04.csv",
     "csv",
     "header");
     
