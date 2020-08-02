@@ -100,7 +100,7 @@ function setup() {
 // amarelo = color(254,250,104);
 // cores.push(amarelo);
   //Faixa 2//condução
- //vermelho = color(140,23,23);
+// vermelho = color(140,23,23);
 //cores.push(vermelho);
   //Faixa 3//Graves
  azul = color(0,0,255);
@@ -111,8 +111,7 @@ function setup() {
   //Faixa 5//floreios
 laranja = color(255,133,0,100);
  cores.push(laranja);
- 
-/*  //Faixa 6//
+/* //Faixa 6//
  marron = color(184,115,51);
  cores.push(marron);
   //Faixa 7//
@@ -127,8 +126,8 @@ laranja = color(255,133,0,100);
  //Faixa 10//
  violetaPastel = color(221,170,255);
  cores.push(violetaPastel);
- */ 
  
+ */
  //Faixa 11//
  azulClaro = color(50,173,240);
  cores.push(azulClaro);
@@ -139,7 +138,7 @@ laranja = color(255,133,0,100);
  cinza= color(199, 200, 203);
  cores.push(cinza);
  //Faixa 14//
- verdeEscuro= color(51, 163, 105);
+/* verdeEscuro= color(51, 163, 105);
  cores.push(verdeEscuro);
   //Faixa 15//
  laranjaPastel= color(246, 185, 78);
@@ -147,7 +146,7 @@ laranja = color(255,133,0,100);
   //Faixa 16//
  verdeClaro= color(200, 221, 90);
  cores.push(verdeClaro);
- 
+ */
  
  ///// INFO DO CSV /////
  tempo = airData.getColumn("Y");
@@ -315,7 +314,7 @@ function drawCircle(raio,posicao, tamanho, faixa){
         noStroke();   
      
         noFill();
-        stroke(135);
+        stroke(150);
         strokeWeight(0.01); //TIPO 1: 0.01
         //line(xCircle, yCircle, circleRadius, circleRadius);
         //rotate(100);  EXPERIMENTOS DIVERTIDOS 
@@ -327,15 +326,15 @@ function drawCircle(raio,posicao, tamanho, faixa){
 //Maracação do compasso fixo ao fundo div = 16 tempos rítmicos
 function drawCirclefundo(){
   
-    stroke(0);
+    //stroke(200);
     //fill(0);
-    circle(0,0,340);
+    //circle(0,0,340);
 
-    stroke(140);
+    stroke(200);
     circle();
     noFill();
   
-    circles = 16; //16 Opção 2
+    circles = 48; //16 Opção 2
     angleFundo = Math.PI*2 / circles;
     //rotate(PI/-2); //para começar no ponteiro
 
@@ -346,11 +345,12 @@ function drawCirclefundo(){
         yCircle = sin(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
         
-        stroke(255);
+        stroke(235);
         fill(0);
-        ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5); //opção2: point e strokeWeight(5);
-        //strokeWeight(2);
-        //line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
+        strokeWeight(8);
+        point(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5); //opção2: ellipse strokeWeight(5); noline; 
+        strokeWeight(1);
+        line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
        
 
     }
@@ -459,27 +459,26 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(15);
-        //text('-- Track 1', 620, -300, width);
-        //text(' Track 2 = ', 620, -280, width);
+         //text(' Track 1 =', 620, -300, width);
+         //text(' Track 1 =', 620, -300, width);
+        //text(' Track 2 = 'Agogô', 620, -280, width);
         text(' Track 3 = Agogô', 620,-260 , width);
         text(' Track 4 = Xequerê', 620, -240, width);
         text(' Track 5 = Caixa', 620, -220, width);
         text(' Track 11 = Alfaia', 620, -200, width);
-     
-       
         text(' Track 12 = Vocal', 620, -180, width);
         
-        text(' Track 13 = Guitarra', 620,-160 , width);
-
-        /*text('-- Track 9', 620, -140, width);
         
-        text('-- Track 10', 620, -120, width);
-        text('-- Track 11', 620,-100 , width);
-        text('-- Track 12', 620, -80, width);
-        text('-- Track 13', 620, -60, width);
-        text('-- Track 14', 620, -40, width);
-        text('-- Track 15', 620, -20, width);
-        text('-- Track 16', 620, 0, width);
+        text(' Track 13 = Guitarra', 620,-160 , width);
+        /*
+        text('Track 9 = Bateria', 620, -140, width);
+        text(' Track 10 =', 620, -120, width);
+        text(' Track 11 = ', 620,-100 , width);
+        text(' Track 12 =', 620, -80, width);
+        text(' Track 13 =', 620, -60, width);
+        text(' Track 14 =', 620, -40, width);
+        text(' Track 15 =', 620, -20, width);
+        text(' Track 16 =', 620, 0, width);
         
         */
             

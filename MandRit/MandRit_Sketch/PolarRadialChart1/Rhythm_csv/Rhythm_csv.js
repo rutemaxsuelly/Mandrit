@@ -207,7 +207,7 @@ function drawFaixas(){
           faixas[a-1].cor.setAlpha(123);
           stroke(faixas[a-1].cor);
           //Desenha quantidade de notas
-          strokeWeight(30); //30
+          strokeWeight(12); //30
           posicaoByQuantidadeNotas(faixaOrigem);
           posicaoByQuantidadeNotas(faixaDestino);
           line(faixaOrigem.x, faixaOrigem.y, faixaDestino.x, faixaDestino.y);
@@ -304,7 +304,7 @@ function drawCircle(raio,posicao, tamanho, faixa){
         faixa.x = xCircle;
         faixa.y = yCircle;
         //Desenha ocorrencia de tracks no tempo
-        strokeWeight(15);
+        strokeWeight(8);
         point(xCircle, yCircle, circleRadius, circleRadius);
         
         for (let i = 0; i < 16; i++) {
@@ -314,7 +314,7 @@ function drawCircle(raio,posicao, tamanho, faixa){
      
         noFill();
         stroke(135);
-        strokeWeight(0.01); //TIPO 1: 0.01
+        strokeWeight(0.02); //TIPO 1: 0.01
         line(xCircle, yCircle, circleRadius, circleRadius);
         //rotate(100);  EXPERIMENTOS DIVERTIDOS 
         line(150, -810, 200, -710);
@@ -326,16 +326,14 @@ function drawCircle(raio,posicao, tamanho, faixa){
 
 //Maracação do compasso fixo ao fundo div = 16 tempos rítmicos
 function drawCirclefundo(){
-    stroke(0);
-    //fill(0);
-    circle(0,0,340);
+   
 
     stroke(146);
     circle();
     noFill();
     
   
-    circles = 16; //48 Opção 2
+    circles = 48; //48 Opção 2
     angleFundo = Math.PI*2 / circles;
     //rotate(PI/-2); //para começar no ponteiro
 
@@ -345,14 +343,14 @@ function drawCirclefundo(){
         xCircle = cos(angleFundo*i) * raioFundo;
         yCircle = sin(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
-        stroke(0);
-        //strokeWeight(5);
-        //fill(0);
-        ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5);
-        ellipse(xCircle, yCircle, circleRaiofundo+5, circleRaiofundo+1); 
-        //stroke(2); //255
-        //line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
        
+               stroke(235);
+        fill(0);
+        strokeWeight(8);
+        point(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5); //opção2: ellipse strokeWeight(5); noline; 
+        strokeWeight(1);
+        line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
+      
 
     }
 }
@@ -425,7 +423,7 @@ noStroke();
 function textos(){
   strokeWeight(1);  
   textSize(20);
-        stroke(255);
+        stroke(0);
         text('1',-10, -350, width);
         text('+',125, -325, width);
         text('2',250, -240, width);
@@ -463,7 +461,7 @@ function textos(){
         
         //DEPENDENDO DA MÚSICA QUE FOR PLOTAR COMENTAR QUAIS TRACKS ESTÃO OU NÃO NA LEGENDA
         strokeWeight(1);
-        stroke(255);
+        stroke(0);
         textSize(15);
         //text(' Track 1 =', 620, -300, width);
         //text(' Track 2 = ', 620, -280, width);
@@ -484,9 +482,6 @@ function textos(){
         text(' Track 14 =', 620, -40, width);
         text(' Track 15 =', 620, -20, width);
         text(' Track 16 =', 620, 0, width);*/
-        
-        
-        
 
             
 }

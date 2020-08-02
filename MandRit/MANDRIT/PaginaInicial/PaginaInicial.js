@@ -19,7 +19,7 @@ function setup() {
         noStroke();
         fill(255);
         textSize(100);
-        text('M A N D R I T', 1000, 420, width);
+        text('M a n d R i t', 1000, 420, width);
         noStroke();
         fill(255);
         textSize(20);
