@@ -3,10 +3,10 @@
 Drum(condução), Drum(assinatura - Grave), Drum (assinatura - Agudo) Drum(Floreio)
 
 //Maracatu Atômico// Nação Zumbi
-tracknames = [Agogô'  Xequerê Caixa' Alfaia Vocal', Guitarra']
+tracknames = [Agogô'  Xequerê Caixa' Alfaia Vocal', Guitarra'] 
 
 //Frevo Mulher// Zé Ramalho
-tracknames = [Oboé, Clarinete, Saxophone (Alto), Saxophone (Tenor)]
+tracknames = [Oboé, Clarinete, Saxophone (Alto), Saxophone (Tenor)] 
 
 //Baião//
 tracknames = [glockenspiel, xilofone, vibrafone] - Baião só mudar nome
@@ -14,17 +14,34 @@ tracknames = [glockenspiel, xilofone, vibrafone] - Baião só mudar nome
 //Xote das meninas SAX//
 tracknames = [Flute, Saxophone (Tenor), Saxophone (Alto), Trombone];
 
-//Roda Viva// Chico Buarque
-Soprano, Alto, Tenor, Bass
-
 //Wave// 
 tracknames = [Violin (2), Viola, Bassoon]
 
-// Trenzinho do Caipira // Villas Lobos
-tracknames = [Recorder, Strings Group, Xylophone, Melodica, Guitar, Bass (2)]
-
 //Piano Mangueira // Chico Buarque
 tracknames = [Violão(Guitar, Flute, Clarinet (In B-flat), Saxophone (Alto), Saxophone (Tenor)]
+
+//Yesterday//
+tracknames = [piano,piano,piano,piano]
+
+//Dancey Monkey //
+tracknames = [Piccolos , Flute, Clarinete Bb , Trumpete Bb , Saxofone Alto, Saxofone Tenor, Trombone, Electric Bass, Tuba];
+
+//Sky Full of Stars// Coldplay
+tracknames = [Piano, piano, violin, Violoncello, Bateria]
+
+//Break My Heart // Dua Lipa
+tracknames = [Vocals, Soprano, Alto, Tenor, Bass]
+
+//Pra sempre com você//Jorge e Mateus
+tracknames = [Piano, Violin, Trumpet (In B-flat)]
+
+------------
+
+//Roda Viva// Chico Buarque
+Soprano, Alto, Tenor, Bass
+
+// Trenzinho do Caipira // Villas Lobos
+tracknames = [Recorder, Strings Group, Xylophone, Melodica, Guitar, Bass (2)]
 
 //Rosa Amarela// Villas Lobos
 tracknames = [Cello (5)]
@@ -44,20 +61,5 @@ tracknames = [Piano(A), Piano (B)]
 //Amo noite e dia//Jorge e Mateus
 tracknames = [Flute, Clarinet (In B-flat), Saxophone (Alto), Saxophone (Tenor), French Horn, Trumpet (In B-flat), Trombone, Tuba, Drum Group]
 
-//Pra sempre com você//Jorge e Mateus
-tracknames = [Piano, Violin, Trumpet (In B-flat)]
-
-//Yesterday//
-tracknames = [piano,piano,piano,piano]
-
-//Sky Full of Stars// Coldplay
-tracknames = [Piano, piano, violin, Violoncello, Bateria]
-
-//Dancey Monkey //
-tracknames = [Piccolos , Flute, Clarinete Bb , Trumpete Bb , Saxofone Alto, Saxofone Tenor, Trombone, Electric Bass, Tuba];
-
-//Break My Heart // Dua Lipa
-tracknames = [Vocals, Soprano, Alto, Tenor, Bass]
-
 //IDGEF // Dua Lipa
-tracknames = [Saxophone (Alto), Saxophone (Tenor), Piano, Guitar (2), Bass, Drum Group, Snare Drum, Synthesizer (4)]
+tracknames = [Saxophone (Alto), Saxophone (Tenor), Piano, Guitar (2), Bass, Drum Group, Snare Drum]
