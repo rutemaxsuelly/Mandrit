@@ -25,11 +25,11 @@ let sound;
 
 
 function preload(){
-  airData = loadTable("csv_musics/File_tracksname/maracatuvisTipo1.csv",
+  airData = loadTable("csv_musics/File_tracksname/danceyMonkeyTipo1_Renomeado.csv",
     "csv",
     "header");
     
-    sound = loadSound('ArquivoMusicas/Maracatu_Atmico.mp3');
+    sound = loadSound('ArquivoMusicas/Dance_Monkey.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -67,11 +67,10 @@ function setup() {
         
  ///RANGE DE CORES///
  //Faixa 1//Condução
-//amarelo = color(254,250,104);
- //cores.push(amarelo);
-//amarelo.setAlpha(128 + 128 * sin(millis() / 5000));
-  //Faixa 2//condução
-  
+amarelo = color(254,250,104);
+cores.push(amarelo);
+amarelo.setAlpha(128 + 128 * sin(millis() / 5000));
+  //Faixa 2//condução 
   vermelho = color(140,23,23);
  cores.push(vermelho);
 vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
@@ -88,7 +87,7 @@ vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
  cores.push(laranja);
  laranja.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 6//
-/* marron = color(184,115,51);
+  marron = color(184,115,51);
  cores.push(marron);
  marron.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 7//
@@ -107,7 +106,7 @@ vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
 violetaPastel = color(221,170,255);
  cores.push(violetaPastel);
  violetaPastel.setAlpha(128 + 128 * sin(millis() / 5000));
- */ //Faixa 11//
+  //Faixa 11//
  azulClaro = color(50,173,240);
  cores.push(azulClaro);
  azulClaro.setAlpha(128 + 128 * sin(millis() / 5000));
@@ -120,7 +119,7 @@ violetaPastel = color(221,170,255);
  cores.push(cinza);
  cinza.setAlpha(128 + 128 * sin(millis() / 5000));
  //Faixa 14//
-/* verdeEscuro= color(51, 163, 105);
+verdeEscuro= color(51, 163, 105);
  cores.push(verdeEscuro);
  verdeEscuro.setAlpha(128 + 128 * sin(millis() / 5000));
   //Faixa 15//
@@ -130,7 +129,7 @@ violetaPastel = color(221,170,255);
   //Faixa 16//
  verdeClaro= color(200, 221, 90);
  cores.push(verdeClaro);
- verdeClaro.setAlpha(128 + 128 * sin(millis() / 5000)); */
+ verdeClaro.setAlpha(128 + 128 * sin(millis() / 5000)); 
  
  tempo = airData.getColumn("Y");
  tempomin = min(tempo);
@@ -268,31 +267,17 @@ noStroke();
          //fill( amarelo);
          //circle(300, 560, 20, 60);
          //rect(300, 560, 20, 60);
-         //fill(vermelho);         
-         //circle(280, 560, 20, 60);
-         //rect(280, 560, 20, 60);
+         fill(vermelho);         
+         circle(280, 560, 20, 60);
+         rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-       
+           
          fill(laranja);
-         circle(220, 560, 20, 60);
-         rect(220, 560, 20, 60);
-         fill(azulClaro);         
-         circle(200, 560, 20, 60);
-         rect(200, 560, 20, 60);
-         fill(pastelAlaranjado);
-         circle(180, 560, 20, 60);
-         rect(180, 560, 20, 60);
-         fill(cinza);
-         circle(160, 560, 20, 60);
-         rect(160, 560, 20, 60);
-         
-         
-         /*fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
          fill(marron);         
@@ -313,14 +298,13 @@ noStroke();
          fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
-         fill(azulClaro);
+         /*fill(azulClaro);
          circle(100, 560, 20, 60);
          rect(100, 560, 20, 60);
          fill(pastelAlaranjado);
          circle(80, 560, 20,60);
          rect(80, 560, 20,60);
        
-        
          fill(cinza);
          circle(60, 560, 20, 60);
          rect(60, 560, 20, 60);
@@ -333,7 +317,7 @@ noStroke();
          fill(verdeClaro);
          circle(0, 560, 20, 60);
          rect(-20, 560, 40, 60); 
-         */   
+         */
   }
 
 function textos(){
@@ -376,39 +360,26 @@ function textos(){
         
         strokeWeight(1);
         stroke(0);
-        textSize(15);
-               //text(' Track 1 =', 620, -300, width);
-        //text(' Track 2 = ', 620, -280, width);
-        text(' Track 3 = Agogô', 620,-260 , width);
-        text(' Track 4 = Xequerê', 620, -240, width);
-        text(' Track 5 = Caixa', 620, -220, width);
-        text(' Track 11 = Alfaia', 620, -200, width);
-     
-       
-        text(' Track 12 = Vocal', 620, -180, width);
+        textSize(18);
+        //text(' Track 1 = Piano  ', 620, -300, width);
+        text(' Track 2 = Piccolos ', 620, -280, width);
+        text(' Track 3 = Flauta ', 620,-260 , width);
+        text(' Track 4 = Clarinete Bb ', 620, -240, width);
+        text(' Track 5 = Trumpete Bb ', 620, -220, width);
+        text(' Track 6 =  Saxofone (Alto)', 620, -200, width);
+      
+        text(' Track 7 = Saxofone (Tenor)', 620, -180, width);
         
-        text(' Track 13 = Guitarra', 620,-160 , width);
-        
-        /*text(' Track 1 =', 620, -300, width);
-        text(' Track 2 = Glockenspiel ', 620, -280, width);
-        text(' Track 3 = Xilofone', 620,-260 , width);
-        text(' Track 4 = Vibrafone', 620, -240, width);
-        text(' Track 5 = Baixo', 620, -220, width);
-        text(' Track 6 = Piano', 620, -200, width);
-     
-       
-        text(' Track 7 = Vocal', 620, -180, width);
-        
-        text(' Track 8 = Guitarra', 620,-160 , width);
-        text('Track 9 = Bateria', 620, -140, width);
-        text(' Track 10 =', 620, -120, width);
-        text(' Track 11 = ', 620,-100 , width);
-        text(' Track 12 =', 620, -80, width);
-        text(' Track 13 =', 620, -60, width);
-        text(' Track 14 =', 620, -40, width);
-        text(' Track 15 =', 620, -20, width);
-        text(' Track 16 =', 620, 0, width);*/
-        
+        text(' Track 8 = Trombone ', 620,-160 , width);
+        text(' Track 9 = Baixo ', 620, -140, width);
+        text(' Track 10 = Tuba ', 620, -120, width);
+        /*text(' Track 11  ', 620,-100 , width);
+        text(' Track 12 ', 620, -80, width);
+        text(' Track 13 ', 620, -60, width);
+        text(' Track 14 ', 620, -40, width);
+        text(' Track 15 ', 620, -20, width);
+        text(' Track 16 ', 620, 0, width);
+        */
         
         
 }

@@ -5,7 +5,7 @@ let airData;
 let raioFundo = 340;
 let tempo;
 let divisaoCirculo = 50;
-let raioMenor = 50;
+let raioMenor = 100;
 let raioMaior = 300;
 let tamanhoMenor = .1;
 let tamanhoMaior = .1;
@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/maracatuvisTipo1.csv",
+  airData = loadTable("csv_plot/File_tracksname/danceyMonkeyTipo1_Renomeado.csv",
     "csv",
     "header");
     
@@ -74,13 +74,13 @@ function setup() {
         line(0, 500, 450, 500); 
         line(1, 500, 450, 500); 
         
-        //verticais
+        /*//verticais
         line(1770, 830, 0, 830); 
         line(1770, 15, 0, 15);
         //Horizontais
         line(1770, 15, 1770, 830); 
         line(2,15, 2, 830); 
-        
+        */
             
         strokeWeight(1);
         stroke(0);
@@ -100,8 +100,8 @@ function setup() {
 // amarelo = color(254,250,104);
 // cores.push(amarelo);
   //Faixa 2//condução
-// vermelho = color(140,23,23);
-//cores.push(vermelho);
+vermelho = color(140,23,23);
+cores.push(vermelho);
   //Faixa 3//Graves
  azul = color(0,0,255);
  cores.push(azul);
@@ -109,9 +109,9 @@ function setup() {
  verde = color(0, 255, 90);
  cores.push(verde);
   //Faixa 5//floreios
-laranja = color(255,133,0,100);
+laranja = color(255,133,0,400);
  cores.push(laranja);
-/* //Faixa 6//
+ //Faixa 6//
  marron = color(184,115,51);
  cores.push(marron);
   //Faixa 7//
@@ -126,8 +126,6 @@ laranja = color(255,133,0,100);
  //Faixa 10//
  violetaPastel = color(221,170,255);
  cores.push(violetaPastel);
- 
- */
  //Faixa 11//
  azulClaro = color(50,173,240);
  cores.push(azulClaro);
@@ -138,7 +136,7 @@ laranja = color(255,133,0,100);
  cinza= color(199, 200, 203);
  cores.push(cinza);
  //Faixa 14//
-/* verdeEscuro= color(51, 163, 105);
+verdeEscuro= color(51, 163, 105);
  cores.push(verdeEscuro);
   //Faixa 15//
  laranjaPastel= color(246, 185, 78);
@@ -146,7 +144,7 @@ laranja = color(255,133,0,100);
   //Faixa 16//
  verdeClaro= color(200, 221, 90);
  cores.push(verdeClaro);
- */
+
  
  ///// INFO DO CSV /////
  tempo = airData.getColumn("Y");
@@ -358,50 +356,48 @@ function drawCirclefundo(){
 function drawRectLegenda(faixa){ 
 noStroke();
 
-
          //fill(faixa.cor)
          //fill( amarelo);
          //circle(300, 560, 20, 60);
          //rect(300, 560, 20, 60);
-         //fill(vermelho);         
-         //circle(280, 560, 20, 60);
-         //rect(280, 560, 20, 60);
+         fill(vermelho);         
+         circle(280, 560, 20, 60);
+         rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-       
+           
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(azulClaro);         
+         fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
-         fill(pastelAlaranjado);
+         fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
-         fill(cinza);
+         fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
          
-         /*fill(rosa);         
+         fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
          
          fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
-         fill(azulClaro);
+         /*fill(azulClaro);
          circle(100, 560, 20, 60);
          rect(100, 560, 20, 60);
          fill(pastelAlaranjado);
          circle(80, 560, 20,60);
          rect(80, 560, 20,60);
        
-        
          fill(cinza);
          circle(60, 560, 20, 60);
          rect(60, 560, 20, 60);
@@ -414,7 +410,7 @@ noStroke();
          fill(verdeClaro);
          circle(0, 560, 20, 60);
          rect(-20, 560, 40, 60); 
-         */   
+         */
          
 }
 
@@ -458,28 +454,26 @@ function textos(){
         
         strokeWeight(1);
         stroke(0);
-        textSize(15);
-         //text(' Track 1 =', 620, -300, width);
-         //text(' Track 1 =', 620, -300, width);
-        //text(' Track 2 = 'Agogô', 620, -280, width);
-        text(' Track 3 = Agogô', 620,-260 , width);
-        text(' Track 4 = Xequerê', 620, -240, width);
-        text(' Track 5 = Caixa', 620, -220, width);
-        text(' Track 11 = Alfaia', 620, -200, width);
-        text(' Track 12 = Vocal', 620, -180, width);
+        textSize(18);
+        //text(' Track 1 = Piano  ', 620, -300, width);
+        text(' Track 2 = Piccolos ', 620, -280, width);
+        text(' Track 3 = Flauta ', 620,-260 , width);
+        text(' Track 4 = Clarinete Bb ', 620, -240, width);
+        text(' Track 5 = Trumpete Bb ', 620, -220, width);
+        text(' Track 6 =  Saxofone (Alto)', 620, -200, width);
+      
+        text(' Track 7 = Saxofone (Tenor)', 620, -180, width);
         
-        
-        text(' Track 13 = Guitarra', 620,-160 , width);
-        /*
-        text('Track 9 = Bateria', 620, -140, width);
-        text(' Track 10 =', 620, -120, width);
-        text(' Track 11 = ', 620,-100 , width);
-        text(' Track 12 =', 620, -80, width);
-        text(' Track 13 =', 620, -60, width);
-        text(' Track 14 =', 620, -40, width);
-        text(' Track 15 =', 620, -20, width);
-        text(' Track 16 =', 620, 0, width);
-        
+        text(' Track 8 = Trombone ', 620,-160 , width);
+        text(' Track 9 = Baixo ', 620, -140, width);
+        text(' Track 10 = Tuba ', 620, -120, width);
+        /*text(' Track 11  ', 620,-100 , width);
+        text(' Track 12 ', 620, -80, width);
+        text(' Track 13 ', 620, -60, width);
+        text(' Track 14 ', 620, -40, width);
+        text(' Track 15 ', 620, -20, width);
+        text(' Track 16 ', 620, 0, width);
         */
+        
             
 }
