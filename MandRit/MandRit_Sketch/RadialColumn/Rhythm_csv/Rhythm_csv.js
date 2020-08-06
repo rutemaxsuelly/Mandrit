@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/RODA_VIVA_ChicoBuarqueTipo1Renomeado.csv",
+  airData = loadTable("csv_plot/File_tracksname/Geniais_EricWen/MozartTIPO1.csv",
     "csv",
     "header");
     
@@ -373,7 +373,7 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         /*fill(marron);         
+         fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
          fill(magenta);
@@ -401,7 +401,7 @@ noStroke();
          fill(cinza);
          circle(60, 560, 20, 60);
          rect(60, 560, 20, 60);
-         fill(verdeEscuro);
+         /*fill(verdeEscuro);
          circle(40, 560, 20, 60);
          rect(40, 560, 20, 60);
          fill(laranjaPastel);
@@ -456,22 +456,24 @@ function textos(){
         stroke(0);
         textSize(18);
        //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Soprano ', 620, -280, width);
-        text(' Track 3 = Alto ', 620,-260 , width);
-        text(' Track 4 = Tenor ', 620, -240, width);
-        text(' Track 5 = Baixo', 620, -220, width);
-        /*text(' Track 6 =  Saxofone (Alto)', 620, -200, width);
-        text(' Track 7 = Saxofone (Tenor)', 620, -180, width);
-        text(' Track 8 = Trombone ', 620,-160 , width);
-        text(' Track 9 = Baixo ', 620, -140, width);
-        text(' Track 10 = Tuba ', 620, -120, width);
-        /*text(' Track 11  ', 620,-100 , width);
-        text(' Track 12 ', 620, -80, width);
-        text(' Track 13 ', 620, -60, width);
-        text(' Track 14 ', 620, -40, width);
-        text(' Track 15 ', 620, -20, width);
-        text(' Track 16 ', 620, 0, width);
-        */
+        text(' Track 2 = Oboé', 620, -280, width);
+        text(' Track 3 = Clarinete (Bb)', 620,-260 , width);
+        text(' Track 4 = Flauta ', 620, -240, width);
+        text(' Track 5 = Oboé', 620, -220, width);
+        text(' Track 6 = Fagote', 620, -200, width);
+
+        text(' Track 7 = Trompa natural (B)', 620, -180, width);
+        
+        text(' Track 8 = Trompa natural (G)', 620,-160 , width);
+        text(' Track 9 = Violino I', 620, -140, width);
+        text(' Track 10 = Violino II ', 620, -120, width);
+        text(' Track 11 = Viola I', 620,-100 , width);
+        text(' Track 12 = Violoncelo', 620, -80, width);
+        text(' Track 13 = Contrabaixo', 620, -60, width);
+        //text(' Track 14 = ', 620, -40, width);
+        //text(' Track 15 =  ', 620, -20, width);
+        //text(' Track 16 ', 620, 0, width);     
+        
         
             
 }

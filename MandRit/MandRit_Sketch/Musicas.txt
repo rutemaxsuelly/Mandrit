@@ -80,26 +80,30 @@ tracknames = [Saxofone (Alto), Saxofone (Tenor), Piano, Guitarra (2), Baixo, Bat
 
 
 //Bach Air// No. 3
-tracknames = [Saxophone (Soprano), Cornet, Saxophone (Tenor), Bass]
+tracknames = [Flute, Violin (2), Viola da Gamba]
 
 //MENDELSSOHN Andante con moto tranquillo
 from Piano Trio No. 1 in D minor, op. 49// (op.25)//
-Flute, Oboe, Clarinet (In B-flat), Bassoon, French Horn, Trumpet (In B-flat), Timpani, Piano, Strings Group (5), Cello
+tracknames 14 = [Flauta, Oboé, Clarinete (Bb),  Fagote, Trompa,  Timbales, Piano, Piano, Violino I,  Violino II,
+ Viola I, Viola II, Violoncelo, Contrabaixo.
 
 //Schubert - Nacht und Träume//
-tracknames = [Flute, Guitar]
-
-//Symphony No.3, Op.55// Beethoven, Ludwig van
-tracknames = Flute, Oboe, Clarinet (In B-flat), Bassoon, Natural Horn (2), Trumpet (In C), Timpani, Strings Group (5)
+tracknames = [Flauta, Violão]
 
 //Molto Allegro//Mozart Symphony No 40 in G Minor
-tracknames = Oboe (2), Clarinet (In B-flat), Flute, Bassoon, Natural Horn (2), Strings Group (5)
+tracknames 13=  Oboé, Clarinete (Bb), Flauta, Oboé, Fagote, Trompa natural (B), Trompa natural (G), Violino I, Violino II,
+ Viola, Violoncelo, Contrabaixo.
 
-//Symphony No.94 in G major// Haydn, Joseph
-tracknames = [violino, violoncelo]
+//Symphony No.3, Op.55// Beethoven, Ludwig van
+tracknames 13 =Flauta,Clarinete (B), Oboé, Fagote, Trompa (C I II), Trompa(Es III), Timbales (C-G), Berimbau de Boca (C)
+Violino II, Violino I, Viola, Violoncelo, Contrabaixo.
 
-//Brahms Piano Ballade Opus 118 No. 3 Orchestrated for Classical Orchestra
-tracknames = Flute, Oboe, Clarinet (In B-flat), Bassoon, French Horn, Trumpet (In B-flat), Timpani, Strings Group (5)
+//Brahms Piano Ballade Opus 118 No. 3 Orchestrated for Classical Orchestra 
+tracknames 13= Flauta, Oboé, Clarinete (Bb),  Fagote, Trompa, Trompete (Bb), Timbales, Violino I, Violino II,
+ Viola I ,  Viola II , Violoncelo, Contrabaixo.
 
 //Haydn Symphony No. 94 "Surprise" Mov. 3// VERSÃO 2
-Flute, Oboe, Bassoon, Natural Horn, Trumpet (In C), Timpani, Violin (2), Viola, Cello
+tracknames 10= [Flauta, Oboé, Fagote, Trompa natural(G) , Trompete (C), Timbales , Violino I, Violino II, Viola, Violoncelo e Contrabaixo]
+
+
+
