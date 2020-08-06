@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/danceyMonkeyTipo1_Renomeado.csv",
+  airData = loadTable("csv_plot/File_tracksname/RODA_VIVA_ChicoBuarqueTipo1Renomeado.csv",
     "csv",
     "header");
     
@@ -373,7 +373,7 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(marron);         
+         /*fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
          fill(magenta);
@@ -391,7 +391,7 @@ noStroke();
          fill(violetaPastel);
          circle(120, 560, 20, 60);
          rect(120, 560, 20, 60);
-         /*fill(azulClaro);
+         fill(azulClaro);
          circle(100, 560, 20, 60);
          rect(100, 560, 20, 60);
          fill(pastelAlaranjado);
@@ -455,15 +455,13 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(18);
-        //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Piccolos ', 620, -280, width);
-        text(' Track 3 = Flauta ', 620,-260 , width);
-        text(' Track 4 = Clarinete Bb ', 620, -240, width);
-        text(' Track 5 = Trumpete Bb ', 620, -220, width);
-        text(' Track 6 =  Saxofone (Alto)', 620, -200, width);
-      
+       //text(' Track 1 = Piano  ', 620, -300, width);
+        text(' Track 2 = Soprano ', 620, -280, width);
+        text(' Track 3 = Alto ', 620,-260 , width);
+        text(' Track 4 = Tenor ', 620, -240, width);
+        text(' Track 5 = Baixo', 620, -220, width);
+        /*text(' Track 6 =  Saxofone (Alto)', 620, -200, width);
         text(' Track 7 = Saxofone (Tenor)', 620, -180, width);
-        
         text(' Track 8 = Trombone ', 620,-160 , width);
         text(' Track 9 = Baixo ', 620, -140, width);
         text(' Track 10 = Tuba ', 620, -120, width);

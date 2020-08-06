@@ -26,14 +26,21 @@ tracknames = [Piano, Voz,Baixo, Violoncelo,Guitarra, Bateria]
 //Dancey Monkey //
 tracknames = [Piccolos , Flauta, Clarinete Bb , Trumpete Bb , Saxofone Alto, Saxofone Tenor, Trombone, Electric Bass, Tuba];
 
+//Xote das meninas SAX//
+tracknames = [Flauta, Saxofone (Tenor), Saxofone (Alto), Trombone];
+
+//Roda Viva// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Aí já era// Jorge e Mateus
+tracknames = [Piano(A), Piano (B)]
+
 //Sky Full of Stars// Coldplay
 tracknames = [Piano, Piano, Violino, Violoncello, Bateria]
+------------
 
 //Piano Mangueira // Chico Buarque
 tracknames = [Violão,Guitarra, Flauta, Clarinete (B-flat), Saxofone (Alto), Saxofone (Tenor)]
-
-//Xote das meninas SAX//
-tracknames = [Flauta, Saxofone (Tenor), Saxofone (Alto), Trombone];
 
 //Wave// 
 tracknames = [Violino (2), Viola, Fagote]
@@ -46,10 +53,6 @@ tracknames = [Piano, Violino, Trumpet (B-flat)]
 
 //A terceira Lamina//
 tracknames = [voz (4)]
-------------
-
-//Roda Viva// Chico Buarque
-Soprano, Alto, Tenor, Baixo
 
 // Trenzinho do Caipira // Villas Lobos
 tracknames = [Flauta Vertical, Grupo de Cordas, Xilofone, Melódica, Guitarra, Baixo (2)]
@@ -66,11 +69,37 @@ tracknames = [Flauta, Clarinete (B-flat), Saxophone (Soprano), Saxofone (Alto), 
 //Isso aqui tá bom demais//
 tracknames = [Guitar, Flauta, Clarinete (In B-flat), Saxofone (Alto), Saxofone (Tenor)]
 
-//Aí já era// Jorge e Mateus
-tracknames = [Piano(A), Piano (B)]
-
 //Amo noite e dia//Jorge e Mateus
 tracknames = [Flauta, Clarinete (In B-flat), Saxofone (Alto), Saxofone (Tenor), French Horn, Trumpete (In B-flat), Trombone, Tuba, Bateria]
 
 //IDGEF // Dua Lipa
 tracknames = [Saxofone (Alto), Saxofone (Tenor), Piano, Guitarra (2), Baixo, Bateria, Tarola]
+
+
+--------- LIVRO--------
+
+
+//Bach Air// No. 3
+tracknames = [Saxophone (Soprano), Cornet, Saxophone (Tenor), Bass]
+
+//MENDELSSOHN Andante con moto tranquillo
+from Piano Trio No. 1 in D minor, op. 49// (op.25)//
+Flute, Oboe, Clarinet (In B-flat), Bassoon, French Horn, Trumpet (In B-flat), Timpani, Piano, Strings Group (5), Cello
+
+//Schubert - Nacht und Träume//
+tracknames = [Flute, Guitar]
+
+//Symphony No.3, Op.55// Beethoven, Ludwig van
+tracknames = Flute, Oboe, Clarinet (In B-flat), Bassoon, Natural Horn (2), Trumpet (In C), Timpani, Strings Group (5)
+
+//Molto Allegro//Mozart Symphony No 40 in G Minor
+tracknames = Oboe (2), Clarinet (In B-flat), Flute, Bassoon, Natural Horn (2), Strings Group (5)
+
+//Symphony No.94 in G major// Haydn, Joseph
+tracknames = [violino, violoncelo]
+
+//Brahms Piano Ballade Opus 118 No. 3 Orchestrated for Classical Orchestra
+tracknames = Flute, Oboe, Clarinet (In B-flat), Bassoon, French Horn, Trumpet (In B-flat), Timpani, Strings Group (5)
+
+//Haydn Symphony No. 94 "Surprise" Mov. 3// VERSÃO 2
+Flute, Oboe, Bassoon, Natural Horn, Trumpet (In C), Timpani, Violin (2), Viola, Cello
