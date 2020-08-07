@@ -16,7 +16,6 @@ function loaded(){
 
 function draw(){
   
-  // Função que é chamada abaixo//
    animarBola();
 }
 
@@ -35,6 +34,7 @@ function animarBola() {
     
     stroke(0);
     fill(55, 247, 107);
+    // translate(50, -10);
     ellipse(x,y,diam,diam);
     
     time += 0.01;
