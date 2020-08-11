@@ -22,23 +22,23 @@ let indiceCor = 0;
 
 let button;
 let sound;
+var amp;
+let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/File_tracksname/Geniais_EricWen/MozartTIPO1.csv",
+  airData = loadTable("csv_musics/File_tracksname/Takee_a_fiveee.csv",
     "csv",
     "header");
     
-    sound = loadSound('ArquivoMusicas/Mozart_SymphonNo40.mp3');
-    
+     sound = loadSound('ArquivoMusicas/taketakeOK.mp3');
+     amp=new p5.Amplitude();
   
     font = loadFont('assets/CaviarDreams.ttf');
 }
 
 function setup() {
   createCanvas(1780, 840);
-  //Função Buttons - inclui botão de play em musica para facilitar análise e seu download da visualização. 
-  buttons();
   center = createVector(width/2, height/2);
   maxRadius = min(center.x, center.y) * 0.9;
   noLoop();
@@ -63,7 +63,11 @@ function setup() {
   drawCirclefundo();
    rotate(PI/-2);
    
-  
+    //Função SaveAnalise - inclui botão de play em musica para facilitar análise e seu download da visualização. 
+  SaveAnalise();
+  tocarMusica();
+   
+
         
  ///RANGE DE CORES///
  //Faixa 1//Condução
@@ -148,6 +152,7 @@ function draw() {
   translate(width / 2, height / 2);
   rotate(PI/-2);
   noStroke();
+  animarcursor();
   indiceCor = 0;
   for(let i = 0; i< airData.getRowCount(); i++){
     let tempoAtual = airData.getNum(i,"Y");
@@ -167,6 +172,7 @@ function draw() {
         //drawLegenda(faixa);
         
          drawRectLegenda(faixa);
+         
 
   }
 }
@@ -220,7 +226,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 48;
+    circles = 96; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro
 
@@ -283,7 +289,7 @@ noStroke();
          fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
-         fill(magenta);
+         /*fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
          fill(roxo);
@@ -308,7 +314,7 @@ noStroke();
          fill(cinza);
          circle(60, 560, 20, 60);
          rect(60, 560, 20, 60);
-         /*fill(verdeEscuro);
+         fill(verdeEscuro);
          circle(40, 560, 20, 60);
          rect(40, 560, 20, 60);
          fill(laranjaPastel);
@@ -361,14 +367,14 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(18);
-       //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Oboé', 620, -280, width);
-        text(' Track 3 = Clarinete (Bb)', 620,-260 , width);
-        text(' Track 4 = Flauta ', 620, -240, width);
-        text(' Track 5 = Oboé', 620, -220, width);
-        text(' Track 6 = Fagote', 620, -200, width);
+               //text(' Track 1 = Piano  ', 620, -300, width);
+        text(' Track 2 = Bateria', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        text(' Track 4 = Saxofone', 620, -240, width);
+        text(' Track 5 = Baixo', 620, -220, width);
+        text(' Track 6 = Piano', 620, -200, width);
 
-        text(' Track 7 = Trompa natural (B)', 620, -180, width);
+        /*text(' Track 7 = Bateria', 620, -180, width);
         
         text(' Track 8 = Trompa natural (G)', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
@@ -378,40 +384,66 @@ function textos(){
         text(' Track 13 = Contrabaixo', 620, -60, width);
         //text(' Track 14 = ', 620, -40, width);
         //text(' Track 15 =  ', 620, -20, width);
-        //text(' Track 16 ', 620, 0, width);
+        //text(' Track 16 ', 620, 0, width);     */
+
         
         
 }
 
+function tocarMusica(){
+  createP('');
+  sound.loop();
+  button=createButton("PLAY");     
+  button.mousePressed(mouseClicked, animarcursor);
+  button.size(180,50);
+  button.position(20, 400);
+  button.style("font-family","CaviarDreams");
+  button.style("background-color","#E3E3E3");
+  button.style("font-size", "16px");
+}
+
 function mouseClicked() {
-  if (sound.isPlaying()) {
-    // .isPlaying() returns a boolean
-    sound.stop();
-    //background(255, 0, 0);
-  } else {
-    sound.play();
-    //background(0, 255, 0); 
-  }
+  if(!sound.isPlaying()){
+    
+  sound.play();
+  sound.setVolume(0.3);
+  button.html("STOP");
+}else {
+  sound.pause();
+  button.html("PLAY");
+}
+  button.style("font-family","CaviarDreams");
+  button.style("background-color","#E3E3E3");
+  button.style("font-size", "16px");
+  
+}
+
+function animarcursor() {
+    //translate(width / 2, height / 2);
+    // rotate(PI/-2);
+  
+  var vol=amp.getLevel();
+  var diam=map(vol,0,0.3,10,50);
+      
+    let raio = 340;
+
+    let x = raio * cos(time);
+    let y = raio * sin(time);
+    
+    
+    //stroke(150);
+    fill(vermelho); //(300);
+    ellipse(x,y,diam,diam);
+    
+    time += 0.01;
+
 }
 
 function mouseClickedSave(){
   save('analisemusical.jpg');  
 }
 
-function buttons (){
-  
- ///INCLUIR SOM PARA FACILITAR ANÁLISE///
-  background(0);
-    sound.loop();
-  createP('');
-  button = createButton('PLAY / STOP MUSIC');
-  button.size(180,50);
-  button.position(20, 400);
-  button.mousePressed(mouseClicked);
-  button.style("font-family","CaviarDreams");
-  button.style("background-color","#E3E3E3");
-  button.style("font-size", "16px");
-  
+function SaveAnalise (){
      
   createP('');
   button = createButton('SAVE VISUAL MUSIC');
