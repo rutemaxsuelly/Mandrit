@@ -27,11 +27,11 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/File_tracksname/Takee_a_fiveee2.csv",
+  airData = loadTable("csv_musics/File_tracksname/bateria04.csv",
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas/taketakeOK.mp3');
+     sound = loadSound('ArquivoMusicas/bateria04.mp3');
      amp=new p5.Amplitude();
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -226,7 +226,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 96; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
+    circles = 48; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro
 
@@ -286,10 +286,10 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(marron);         
+         /*fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
-         /*fill(magenta);
+         fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
          fill(roxo);
@@ -368,13 +368,13 @@ function textos(){
         stroke(0);
         textSize(18);
                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Bateria', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        text(' Track 4 = Saxofone', 620, -240, width);
-        text(' Track 5 = Baixo', 620, -220, width);
-        text(' Track 6 = Piano', 620, -200, width);
-
-        /*text(' Track 7 = Bateria', 620, -180, width);
+        text(' Track 2 = Bateria (condução)', 620, -280, width);
+        text(' Track 3 = Bateria (assinatura - Grave)', 620,-260 , width);
+        text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
+        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
+        /*text(' Track 6 = Piano', 620, -200, width);
+        
+        text(' Track 7 = Bateria', 620, -180, width);
         
         text(' Track 8 = Trompa natural (G)', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
