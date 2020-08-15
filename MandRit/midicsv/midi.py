@@ -2,9 +2,9 @@ import py_midicsv
 
 # Load the MIDI file and parse it into CSV format
 folder = "C:\\Users\\rutem\\Documents\\IanniX\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
-filename = "midi_file\\Base_MandRit\\Info_Tracks\\Takee_a_fiveee.mid"
+filename = "midi_file\\Base_MandRit\\Info_Tracks\\bachianinhaNo1_Tipo1.mid"
 csv_string = py_midicsv.midi_to_csv(folder + filename)
-nome_do_csv = folder + "csv\\File_tracksname\\Takee_a_fiveee.csv"
+nome_do_csv = folder + "csv\\File_tracksname\\bachianinhaNo1_Tipo1.csv"
 
 def get_compasso(csv_string):
     for line in csv_string:
@@ -41,9 +41,9 @@ def csv_formater(line, division, numerador, denominador):
         tempo = int(col[1].replace(" "," "))
         sub_divisao_compasso = tempo%clocks_por_compasso
         return track, sub_divisao_compasso, nota
-        #return f" {track}, {sub_divisao_compasso},{nota}\n"
     else:
         return None, None, None
+
 # Save the parsed MIDI file to disk
 def separate_note_por_compasso(csv_string):
     division = get_compasso(csv_string)

@@ -24,7 +24,7 @@ tracknames =[Guitarra, Bateria]
 tracknames = [Piano, Voz,Baixo, Violoncelo,Guitarra, Bateria]
 
 //Dancey Monkey //
-tracknames = [Piccolos , Flauta, Clarinete Bb , Trumpete Bb , Saxofone Alto, Saxofone Tenor, Trombone, Electric Bass, Tuba];
+tracknames = 
 
 //Xote das meninas SAX//
 tracknames = [Flauta, Saxofone (Tenor), Saxofone (Alto), Trombone];
@@ -38,18 +38,33 @@ tracknames = [Piano(A), Piano (B)]
 //Sky Full of Stars// Coldplay
 tracknames = [Piano, Piano, Violino, Violoncello, Bateria]
 ------------
-
-//Piano Mangueira // Chico Buarque
-tracknames = [Violão,Guitarra, Flauta, Clarinete (B-flat), Saxofone (Alto), Saxofone (Tenor)]
-
 //Wave// 
 tracknames = [Violino (2), Viola, Fagote]
+
+//Piano Mangueira // Chico Buarque
+tracknames = [Violão,Guitarra, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
+
+//Asa Branca //
+tracknames = [Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (B-flat), Trombone, Metallophone]
+
+//Lamento sertanejo// Dominguinhos
+tracknames = [Violão, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
+
+//Eu quero um xodo// Dominguinhos
+Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (Bb), Trombone, Metalofone
+
+------------
+//Demons// by Imagine Dragons
+tracknames = [Violin (2), Clarinet (In B-flat), Cello, Contrabass, Piano, Guitar, Marimba, Glockenspiel, Tubular Bells, Drum Group
+
+//Isso aqui tá bom demais//Dominguinhos e Nando Cordel
+tracknames = [Violão, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
 
 //Break My Heart // Dua Lipa
 tracknames = [Vocais, Soprano, Alto, Tenor, Baixo]
 
-//Pra sempre com você//Jorge e Mateus
-tracknames = [Piano, Violino, Trumpet (B-flat)]
+//IDGEF // Dua Lipa
+tracknames = [Saxofone (Alto), Saxofone (Tenor), Piano, Guitarra (2), Baixo, Bateria, Tarola]
 
 //A terceira Lamina//
 tracknames = [voz (4)]
@@ -60,20 +75,11 @@ tracknames = [Flauta Vertical, Grupo de Cordas, Xilofone, Melódica, Guitarra, B
 //Rosa Amarela// Villas Lobos
 tracknames = [Violoncelo (5)]
 
-//Lamento sertanejo// Dominguinhos
-tracknames = [Guitarra, Flauta, Clarinete (B-flat), Saxofone (Alto), Saxofone (Tenor)]
-
-//Asa Branca //
-tracknames = [Flauta, Clarinete (B-flat), Saxophone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trumpete (B-flat), Trombone, Metallophone]
-
-//Isso aqui tá bom demais//
-tracknames = [Guitar, Flauta, Clarinete (In B-flat), Saxofone (Alto), Saxofone (Tenor)]
+//Pra sempre com você//Jorge e Mateus
+tracknames = [Piano, Violino, Trumpet (B-flat)]
 
 //Amo noite e dia//Jorge e Mateus
 tracknames = [Flauta, Clarinete (In B-flat), Saxofone (Alto), Saxofone (Tenor), French Horn, Trumpete (In B-flat), Trombone, Tuba, Bateria]
-
-//IDGEF // Dua Lipa
-tracknames = [Saxofone (Alto), Saxofone (Tenor), Piano, Guitarra (2), Baixo, Bateria, Tarola]
 
 
 --------- LIVRO--------

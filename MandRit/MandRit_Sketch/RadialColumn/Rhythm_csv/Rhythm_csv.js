@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/Takee_a_fiveee.csv",
+  airData = loadTable("csv_plot/File_tracksname/Takee_a_fiveee2.csv",
     "csv",
     "header");
     

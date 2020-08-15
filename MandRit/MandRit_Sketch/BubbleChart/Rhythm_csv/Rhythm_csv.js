@@ -27,7 +27,7 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/File_tracksname/Takee_a_fiveee.csv",
+  airData = loadTable("csv_musics/File_tracksname/Takee_a_fiveee2.csv",
     "csv",
     "header");
     
@@ -432,7 +432,7 @@ function animarcursor() {
     
     
     //stroke(150);
-    fill(vermelho); //(300);
+    fill(0); //(300);
     ellipse(x,y,diam,diam);
     
     time += 0.01;
