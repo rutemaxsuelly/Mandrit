@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/bateria04.csv",
+  airData = loadTable("csv_plot/File_tracksname/danceyMonkey2por2Tipo1.csv",
     "csv",
     "header");
     
@@ -367,14 +367,14 @@ noStroke();
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
-         fill(verde);
+         /*fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
            
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         /*fill(marron);         
+         fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
          fill(magenta);
@@ -461,11 +461,11 @@ function textos(){
         stroke(0);
         textSize(18);
                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Bateria (condução)', 620, -280, width);
-        text(' Track 3 = Bateria (assinatura - Grave)', 620,-260 , width);
-        text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
+        text(' Track 2 = Piano', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        /*text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
         text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        /*text(' Track 6 = Piano', 620, -200, width);
+        text(' Track 6 = Piano', 620, -200, width);
         
         text(' Track 7 = Bateria', 620, -180, width);
         

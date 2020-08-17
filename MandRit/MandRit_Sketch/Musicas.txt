@@ -47,9 +47,6 @@ tracknames = [Violão,Guitarra, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofon
 //Asa Branca //
 tracknames = [Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (B-flat), Trombone, Metallophone]
 
-//Lamento sertanejo// Dominguinhos
-tracknames = [Violão, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
-
 //Eu quero um xodo// Dominguinhos
 Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (Bb), Trombone, Metalofone
 
@@ -63,7 +60,7 @@ tracknames = [Violão, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)
 //Break My Heart // Dua Lipa
 tracknames = [Vocais, Soprano, Alto, Tenor, Baixo]
 
-//IDGEF // Dua Lipa
+//IDGAF // Dua Lipa
 tracknames = [Saxofone (Alto), Saxofone (Tenor), Piano, Guitarra (2), Baixo, Bateria, Tarola]
 
 //A terceira Lamina//
@@ -81,6 +78,27 @@ tracknames = [Piano, Violino, Trumpet (B-flat)]
 //Amo noite e dia//Jorge e Mateus
 tracknames = [Flauta, Clarinete (In B-flat), Saxofone (Alto), Saxofone (Tenor), French Horn, Trumpete (In B-flat), Trombone, Tuba, Bateria]
 
+//Blue rondo a la Turk//
+tracknames = [
+
+//Bicho de 7 cabeças//
+tracknames = [
+
+//Joao e Maria//
+tracknames = [
+
+//Chega de saudade//
+
+//Garota de Impanema//
+
+//Eu não existo longe de você//
+tracknames = [
+
+//Preciso me encontrar// Cartola
+tracknames = [
+
+//Sinfonia No.2 // Sergei Rachmanioff
+tracknames = [
 
 --------- LIVRO--------
 

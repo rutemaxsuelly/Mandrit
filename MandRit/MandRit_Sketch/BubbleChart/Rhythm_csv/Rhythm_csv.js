@@ -25,9 +25,11 @@ let sound;
 var amp;
 let time = 0
 
+var ocorrencia = [];
+
 
 function preload(){
-  airData = loadTable("csv_musics/File_tracksname/bateria04.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas/danceyMonkey2por2Tipo1.csv",
     "csv",
     "header");
     
@@ -149,10 +151,10 @@ verdeEscuro= color(51, 163, 105);
 }
 
 function draw() {
+
   translate(width / 2, height / 2);
   rotate(PI/-2);
   noStroke();
-  animarcursor();
   indiceCor = 0;
   for(let i = 0; i< airData.getRowCount(); i++){
     let tempoAtual = airData.getNum(i,"Y");
@@ -166,13 +168,15 @@ function draw() {
     let tamanho = map(tamanhoAtual, tamanhomax, tamanhomin, tamanhoMaior, tamanhoMenor);
     
     fill(faixa.cor);
-    
+               
+
     drawCircles(divisaoCirculo,raio, posicao, tamanho);
         
         //drawLegenda(faixa);
         
          drawRectLegenda(faixa);
-         
+         animarcursor();
+
 
   }
 }
@@ -244,6 +248,7 @@ function drawCirclefundo(){
     }
 } 
        
+
 //TENTATIVA DE CRIAR LEGENDA AUTOMÁTICA//
 function drawLegenda(faixa){ 
 noStroke();
@@ -279,14 +284,14 @@ noStroke();
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
-         fill(verde);
+         /*fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
            
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         /*fill(marron);         
+         fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
          fill(magenta);
@@ -368,11 +373,11 @@ function textos(){
         stroke(0);
         textSize(18);
                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Bateria (condução)', 620, -280, width);
-        text(' Track 3 = Bateria (assinatura - Grave)', 620,-260 , width);
-        text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
+        text(' Track 2 = Piano', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        /*text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
         text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        /*text(' Track 6 = Piano', 620, -200, width);
+        text(' Track 6 = Piano', 620, -200, width);
         
         text(' Track 7 = Bateria', 620, -180, width);
         
@@ -419,25 +424,39 @@ function mouseClicked() {
 }
 
 function animarcursor() {
-    //translate(width / 2, height / 2);
-    // rotate(PI/-2);
+
+    //circles = 12; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
+    //angleFundo = Math.PI*2 / circles;
+    //rotate(2*PI); //para começar no ponteiro
+
+   // circleRaiofundo = sin(angleFundo/16) * raioFundo;
+    
+  var vol = amp.getLevel();
+  ocorrencia.push(vol);
+   ellipseMode(CENTER);
+  stroke(146);
+  noFill();
   
-  var vol=amp.getLevel();
-  var diam=map(vol,0,0.3,10,50);
-      
-    let raio = 340;
 
-    let x = raio * cos(time);
-    let y = raio * sin(time);
-    
-    
-    //stroke(150);
-    fill(0); //(300);
-    ellipse(x,y,diam,diam);
-    
-    time += 0.01;
-
+  //translate(width / 2, height / 2);
+  beginShape();
+  for (var p = 0; p <  360; p++) {
+    var r =  map(ocorrencia[p], height/2, width/2,50,400);
+    var x = r * cos(p);
+    var y = r * sin(p);
+    ellipseMode(CENTER);
+        strokeWeight(3);
+       point(x, y, 100); //+5, +10  
+  }
+ endShape();
+   
+  if (ocorrencia.length > 360) {
+    ocorrencia.splice(0, 1);
+  }
+     
 }
+
+
 
 function mouseClickedSave(){
   save('analisemusical.jpg');  

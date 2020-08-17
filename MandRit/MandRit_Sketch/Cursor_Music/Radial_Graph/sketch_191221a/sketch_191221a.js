@@ -37,7 +37,7 @@ function draw() {
   translate(width / 2, height / 2);
   beginShape();
   for (var i = 0; i < 360; i++) {
-    var r =  map(volhistory[i], 0, 1, 10, 800);
+    var r =  map(volhistory[i], 0, 1, 10,500);
     var x = r * cos(i);
     var y = r * sin(i);
     vertex(x, y);
