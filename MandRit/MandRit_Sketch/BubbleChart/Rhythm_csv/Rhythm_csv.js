@@ -22,10 +22,6 @@ let indiceCor = 0;
 
 let button;
 let sound;
-var amp;
-let time = 0
-
-var ocorrencia = [];
 
 
 function preload(){
@@ -45,7 +41,7 @@ function setup() {
   maxRadius = min(center.x, center.y) * 0.9;
   noLoop();
   noStroke();
-  //frameRate(30);
+ 
   background(255); 
   ellipseMode(CENTER);
   textFont(font);
@@ -151,10 +147,13 @@ verdeEscuro= color(51, 163, 105);
 }
 
 function draw() {
-
-  translate(width / 2, height / 2);
+  
+ translate(width / 2, height / 2);
   rotate(PI/-2);
   noStroke();
+ 
+
+
   indiceCor = 0;
   for(let i = 0; i< airData.getRowCount(); i++){
     let tempoAtual = airData.getNum(i,"Y");
@@ -175,7 +174,8 @@ function draw() {
         //drawLegenda(faixa);
         
          drawRectLegenda(faixa);
-         animarcursor();
+         animarCursor();
+          
 
 
   }
@@ -399,7 +399,7 @@ function tocarMusica(){
   createP('');
   sound.loop();
   button=createButton("PLAY");     
-  button.mousePressed(mouseClicked, animarcursor);
+  button.mousePressed(mouseClicked, animarCursor);
   button.size(180,50);
   button.position(20, 400);
   button.style("font-family","CaviarDreams");
@@ -423,36 +423,16 @@ function mouseClicked() {
   
 }
 
-function animarcursor() {
+function animarCursor() {
 
-    //circles = 12; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
-    //angleFundo = Math.PI*2 / circles;
-    //rotate(2*PI); //para começar no ponteiro
-
-   // circleRaiofundo = sin(angleFundo/16) * raioFundo;
-    
-  var vol = amp.getLevel();
-  ocorrencia.push(vol);
-   ellipseMode(CENTER);
-  stroke(146);
-  noFill();
-  
-
-  //translate(width / 2, height / 2);
-  beginShape();
-  for (var p = 0; p <  360; p++) {
-    var r =  map(ocorrencia[p], height/2, width/2,50,400);
-    var x = r * cos(p);
-    var y = r * sin(p);
-    ellipseMode(CENTER);
-        strokeWeight(3);
-       point(x, y, 100); //+5, +10  
-  }
- endShape();
-   
-  if (ocorrencia.length > 360) {
-    ocorrencia.splice(0, 1);
-  }
+     if (frameCount % 10 == 0) {
+    push();
+    translate(width / 2, height / 2);
+    rotate(radians(frameCount * 2  % 360));
+    fill(0);
+    circle(0, 80, 100);
+    pop();
+  }    
      
 }
 
