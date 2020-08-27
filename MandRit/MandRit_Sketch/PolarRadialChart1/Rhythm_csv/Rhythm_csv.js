@@ -9,7 +9,7 @@ let raioMenor = 100;
 let raioMaior = 300;
 let tamanhoMenor = .1;
 let tamanhoMaior = .1;
-let apenasEssasFaixas = [];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
+let apenasEssasFaixas = [2,3];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
 let cores = [];
 let faixas = [];
 let edges = [];
@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/danceyMonkey2por2Tipo1.csv",
+  airData = loadTable("csv_plot/File_tracksname/Samba_de_Uma_Nota2por4_STIPO1.csv",
     "csv",
     "header");
     

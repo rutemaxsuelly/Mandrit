@@ -25,7 +25,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/danceyMonkey2por2Tipo1.csv",
+  airData = loadTable("csv_plot/File_tracksname/Samba_de_Uma_Nota2por4_STIPO1.csv",
     "csv",
     "header");
     

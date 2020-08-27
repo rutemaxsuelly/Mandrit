@@ -25,11 +25,11 @@ let sound;
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas/danceyMonkey2por2Tipo1.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas/Samba_de_Uma_Nota2por4_STIPO1.csv",
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas/bateria04.mp3');
+     sound = loadSound('ArquivoMusicas/Samba_de_Uma_Nota_S.mp3');
      amp=new p5.Amplitude();
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -53,8 +53,28 @@ function setup() {
         //Legenda Track//
         stroke(0);
         rect(10, 375, 420, 100);
-        line(1350, 500, 1350, 15);
-        line(1350, 500,1770,500); 
+        rect(1350, 50,500, 600);
+        line(1350, 450,1770,450);
+        //horizontais//
+        line(1430, 520,1470,520);
+        line(1480, 520,1535,520);
+        line(1555, 520,1625,520);
+        line(1645, 520,1740,520);
+        
+        //verticais//
+                line(1740, 500, 1740, 540);
+                line(1645, 500, 1645, 540);
+                line(1625, 500, 1625, 540);
+                line(1555, 500, 1555, 540);
+                line(1535, 500, 1535, 540);
+                line(1480, 500, 1480, 540);
+                line(1470, 500, 1470, 540);
+                line(1430, 500, 1430, 540);
+                
+                textSize(20);
+                text('Quantidade de notas', 1450, 480, width);
+                
+       
 
   translate(width / 2, height / 2);
    textos();
@@ -147,7 +167,6 @@ verdeEscuro= color(51, 163, 105);
 }
 
 function draw() {
-  
  translate(width / 2, height / 2);
   rotate(PI/-2);
   noStroke();
@@ -175,6 +194,7 @@ function draw() {
         
          drawRectLegenda(faixa);
          animarCursor();
+         
           
 
 
@@ -328,7 +348,13 @@ noStroke();
          fill(verdeClaro);
          circle(0, 560, 20, 60);
          rect(-20, 560, 40, 60); 
-         */
+        */
+         
+         fill(vermelho);
+         circle(-150, 560, 20, 60);
+         circle(-150, 620, 30, 80);
+         circle(-150, 700, 40, 100);
+         circle(-150, 800, 50, 110);
   }
 
 function textos(){
@@ -399,7 +425,7 @@ function tocarMusica(){
   createP('');
   sound.loop();
   button=createButton("PLAY");     
-  button.mousePressed(mouseClicked, animarCursor);
+  button.mousePressed(mouseClicked);
   button.size(180,50);
   button.position(20, 400);
   button.style("font-family","CaviarDreams");
@@ -434,6 +460,21 @@ function animarCursor() {
     pop();
   }    
      
+}
+
+function menu(){
+  redraw(); 
+}
+
+function mouseClickedMenu(){
+    createP('');
+  button = createButton('SAVE VISUAL MUSIC');
+  button.size(400, 50);
+  button.position(230, 400);
+  button.mousePressed(menu);
+  button.style("font-family","CaviarDreams");
+  button.style("background-color","#E3E3E3");
+  button.style("font-size", "16px");
 }
 
 

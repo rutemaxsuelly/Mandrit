@@ -1,10 +1,10 @@
 import py_midicsv
 
 # Load the MIDI file and parse it into CSV format
-folder = "C:\\Users\\rutem\\Documents\\IanniX\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
-filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\aquarelas2por4_TIPO1.mid"
+folder = "C:\\Users\\rutem\\Documents\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
+filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\Samba_de_Uma_Nota2por4_STIPO1.mid"
 csv_string = py_midicsv.midi_to_csv(folder + filename)
-nome_do_csv = folder + "csv\\File_tracksname\\aquarelas2por4_TIPO1.csv"
+nome_do_csv = folder + "csv\\File_tracksname\\Samba_de_Uma_Nota2por4_STIPO1.csv"
 
 def get_compasso(csv_string):
     for line in csv_string:
