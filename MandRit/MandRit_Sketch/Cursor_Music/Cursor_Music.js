@@ -59,7 +59,7 @@ function animarBola() {
     /*stroke(181, 31, 184);
     fill(60, 232, 244); */
     stroke(255);
-    fill(vermelho);
+    fill(0);
     ellipse(x,y,diam,diam);
     
     time += 0.01;

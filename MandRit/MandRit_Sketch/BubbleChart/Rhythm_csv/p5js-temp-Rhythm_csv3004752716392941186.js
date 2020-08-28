@@ -258,7 +258,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 48; //12 para 2/2; 24 para 3/4; 48 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 64; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro
 
