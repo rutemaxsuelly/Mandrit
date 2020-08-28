@@ -37,6 +37,15 @@ tracknames = [Piano(A), Piano (B)]
 
 //Sky Full of Stars// Coldplay
 tracknames = [Piano, Piano, Violino, Violoncello, Bateria]
+
+// Nocturne, Op. 9, No. 2//Chopin //
+ Flauta, Piano, Piano
+
+//Clair de Lune//Debussy
+Piano
+
+//Samba de uma nota só
+Melodia, Baixo, Flautas, Piano, Cordas, percussão
 ------------
 //Wave// 
 tracknames = [Violino (2), Viola, Fagote]

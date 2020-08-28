@@ -88,7 +88,7 @@ function setup() {
   tocarMusica();
     // p5.PeakDetect requires a p5.FFT
     fft = new p5.FFT();
-    peakDetect = new p5.PeakDetect(framesPerPeak);
+    peakDetect = new p5.PeakDetect();
     //framesPerPeak = 60/(120/60); framesPerPeak - por padrão é 20 - 
     //Tentativa de calculo de bpm da musica, (90bpm - a cada 2/3s para o proximo beat - acender uma luz)
     //e atualizar em acompanhamento em relação ao valor de circles da referencia do compasso
@@ -178,7 +178,8 @@ function draw() {
  translate(width / 2, height / 2);
  rotate(PI/-2);
   noStroke();
-  drawDados(); 
+  //drawDados(); 
+  drawCursorAcompanhamento();
   
 }
 
@@ -258,7 +259,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 48; //12 para 2/2; 24 para 3/4; 48 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 16; //12 para 2/4; 24 para 3/4; 48 para 4/4; TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro
 
@@ -442,26 +443,31 @@ function tocarMusica(){
 
 function drawCursorAcompanhamento(){
   // Executar em tempo real um cursor para acompanhamento da música//
+  
+  /*if(setBPM  > 0 && counter%int(30*60/setBPM) == 0){
+  }*/
+  
     let x = raioFundo * cos(time);
     let y = raioFundo * sin(time);
     
     
     stroke(0);
-    fill(255);
+    fill(0);
     ellipse(x,y, ellipseWidth, ellipseWidth);
-    fill(255,0,0);
-    ellipse(x,y, ellipseWidth-5, ellipseWidth-5);
+    //fill(255,0,0);
+    //ellipse(x,y, ellipseWidth-5, ellipseWidth-5);
     time += 0.001;
-   
+
+  
   // peakDetect accepts an fft post-analysis
     fft.analyze();
     peakDetect.update(fft);
     
     
   if ( peakDetect.isDetected ) {
-    ellipseWidth = 10;
+    ellipseWidth = 5;
   } else {
-    ellipseWidth *= 0.01;
+    ellipseWidth *= 0.005;
   }
 }
 
