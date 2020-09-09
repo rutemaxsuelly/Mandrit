@@ -27,7 +27,7 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas/Samba_de_Uma_Nota_so2por4TIPO1.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas/SambadeUmanotaso_por4TIPO1Teste.csv",
     "csv",
     "header");
     
@@ -96,10 +96,10 @@ function setup() {
         
  ///RANGE DE CORES///
  //Faixa 1//Condução
-amarelo = color(254,250,104);
+/*amarelo = color(254,250,104);
 cores.push(amarelo);
 amarelo.setAlpha(128 + 128 * sin(millis() / 5000));
-  //Faixa 2//condução 
+*/  //Faixa 2//condução 
   vermelho = color(140,23,23);
  cores.push(vermelho);
 vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
@@ -178,12 +178,12 @@ function draw() {
  translate(width / 2, height / 2);
  rotate(PI/-2);
   noStroke();
-  //drawDados(); 
+  drawDados(); 
   drawCursorAcompanhamento();
-  
 }
 
 
+//Dados musicais extraídos do MIDI//
 function drawDados(){
     noLoop();
     indiceCor = 0;
@@ -203,9 +203,7 @@ function drawDados(){
                
 
     drawCircles(divisaoCirculo,raio, posicao, tamanho);
-        
-        //drawLegenda(faixa);
-        
+    
          drawRectLegenda(faixa);
   }
 }
@@ -269,7 +267,7 @@ function drawCirclefundo(){
         xCircle = cos(angleFundo*i) * raioFundo;
         yCircle = sin(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
-        strokeWeight(5);
+        strokeWeight(8);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
         strokeWeight(1);
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
@@ -307,13 +305,13 @@ noStroke();
          //fill( amarelo);
          //circle(300, 560, 20, 60);
          //rect(300, 560, 20, 60);
-         fill(vermelho);         
-         circle(280, 560, 20, 60);
-         rect(280, 560, 20, 60);
+         //fill(vermelho);         
+         //circle(280, 560, 20, 60);
+         //rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
-         /*fill(verde);
+         fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
            
@@ -323,10 +321,11 @@ noStroke();
          fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
+     
          fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
-         fill(roxo);
+         /*fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
@@ -359,7 +358,8 @@ noStroke();
          rect(-20, 560, 40, 60); 
         */
          
-         fill(vermelho);
+         //Circles Legenda//
+         fill(azul);
          circle(-150, 560, 20, 60);
          circle(-150, 620, 30, 80);
          circle(-150, 700, 40, 100);
@@ -408,15 +408,13 @@ function textos(){
         stroke(0);
         textSize(18);
                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Piano', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        /*text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
-        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        text(' Track 6 = Piano', 620, -200, width);
-        
-        text(' Track 7 = Bateria', 620, -180, width);
-        
-        text(' Track 8 = Trompa natural (G)', 620,-160 , width);
+        //text(' Track 2 = Melodia', 620, -280, width);
+        text(' Track 3 = Baixo', 620,-260 , width);
+        text(' Track 4 = Flautas ', 620, -240, width);
+        text(' Track 5 = Piano', 620, -220, width);
+       text(' Track 6 = Cordas', 620, -200, width);
+         text(' Track 7 =Percussão', 620, -180, width);       
+        /*text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);
         text(' Track 11 = Viola I', 620,-100 , width);

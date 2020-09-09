@@ -9,7 +9,7 @@ let raioMenor = 100;
 let raioMaior = 300;
 let tamanhoMenor = .1;
 let tamanhoMaior = .1;
-let apenasEssasFaixas = [2,3];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
+let apenasEssasFaixas = [];//se for nulo ou vazio mostra todos asFaixas ou apenas os que estiverm no array: Exemplo [2,3];
 let cores = [];
 let faixas = [];
 let edges = [];
@@ -52,8 +52,8 @@ function setup() {
 // amarelo = color(254,250,104);
 // cores.push(amarelo);
   //Faixa 2//condução
-vermelho = color(140,23,23);
-cores.push(vermelho);
+//vermelho = color(140,23,23);
+//cores.push(vermelho);
   //Faixa 3//Graves
  azul = color(0,0,255);
  cores.push(azul);
@@ -325,13 +325,8 @@ function drawCircle(raio,posicao, tamanho, faixa){
 //Maracação do compasso fixo ao fundo div = 16 tempos rítmicos
 function drawCirclefundo(){
    
-
-    stroke(146);
-    circle();
-    noFill();
-    
   
-    circles = 48; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
+    circles = 16; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(PI/-2); //para começar no ponteiro
 
@@ -342,7 +337,7 @@ function drawCirclefundo(){
         yCircle = sin(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
        
-               stroke(235);
+               stroke(210);
         fill(0);
         strokeWeight(8);
         point(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5); //opção2: ellipse strokeWeight(5); noline; 
@@ -361,13 +356,13 @@ noStroke();
          //fill( amarelo);
          //circle(300, 560, 20, 60);
          //rect(300, 560, 20, 60);
-         fill(vermelho);         
-         circle(280, 560, 20, 60);
-         rect(280, 560, 20, 60);
+         //fill(vermelho);         
+         //circle(280, 560, 20, 60);
+         //rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
-         /*fill(verde);
+         fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
            
@@ -377,15 +372,16 @@ noStroke();
          fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
+     
          fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
-         fill(roxo);
+          /*fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
          
-         fill(rosa);         
+        fill(rosa);         
          circle(140, 560, 20, 60);
          rect(140, 560, 20, 60);
          
@@ -461,16 +457,14 @@ function textos(){
         stroke(0);
         textSize(18);
                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Piano', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        /*text(' Track 4 = Bateria (assinatura - Agudo) ', 620, -240, width);
-        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        text(' Track 6 = Piano', 620, -200, width);
-        
-        text(' Track 7 = Bateria', 620, -180, width);
-        
-        text(' Track 8 = Trompa natural (G)', 620,-160 , width);
-        text(' Track 9 = Violino I', 620, -140, width);
+        //text(' Track 2 = Melodia', 620, -280, width);
+        text(' Track 3 = Baixo', 620,-260 , width);
+        text(' Track 4 = Flautas ', 620, -240, width);
+        text(' Track 5 = Piano', 620, -220, width);
+       text(' Track 6 = Cordas', 620, -200, width);
+         text(' Track 7 =Percussão', 620, -180, width);       
+        /*text(' Track 8 = Percussão', 620,-160 , width);
+       /* text(' Track 9 = Violino I', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);
         text(' Track 11 = Viola I', 620,-100 , width);
         text(' Track 12 = Violoncelo', 620, -80, width);
