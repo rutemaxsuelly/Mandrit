@@ -44,9 +44,24 @@ tracknames = [Piano, Piano, Violino, Violoncello, Bateria]
 //Clair de Lune//Debussy
 Piano
 
-//Samba de uma nota só
+2 POR 4
+
+//Samba de uma nota só// Tom Jobim
 Baixo, Flautas, Piano, Cordas, percussão
+
+//Eu não existo longe de você// Tom Jobim e Vinicius de Moraes
+tracknames = [Piano, flauta, Flauta doce]
+
+4 POR 4
+
+//Just friends// Klenner e Lewis
+Vocal, piano, contrabaixo, grupo de bateria
+
+//Everytime//  Boy Pablo
+tracknames =[ voz, Guitarra 1, Guitarra 2, Piano, Piano, Bateria]
 ------------
+AINDA NÃO ESTÃO PLOTADAS
+-----------
 //Wave// 
 tracknames = [Violino (2), Viola, Fagote]
 
@@ -99,9 +114,6 @@ tracknames = [
 //Chega de saudade//
 
 //Garota de Impanema//
-
-//Eu não existo longe de você//
-tracknames = [
 
 //Preciso me encontrar// Cartola
 tracknames = [
