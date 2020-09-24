@@ -3,6 +3,7 @@
 
 let airData;
 let raioFundo = 340;
+let raioFundoComposto = 400;
 let tempo;
 let divisaoCirculo = 50;
 let raioMenor = 100;
@@ -25,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/File_tracksname/Just_friends4por4TIPO1.csv",
+  airData = loadTable("csv_plot/PlotarMusicasRadial/everytime4por4TIPO1TESTE.csv",
     "csv",
     "header");
     
@@ -92,6 +93,7 @@ function setup() {
       
   translate(width / 2, height / 2);
   textos();
+  drawCirclefundoComposto();
   rotate(PI/-2);
   drawCirclefundo();
  
@@ -336,7 +338,7 @@ function drawCirclefundo(){
     angleFundo = Math.PI*2 / circles;
     //rotate(PI/-2); //para começar no ponteiro
 
-    circleRaiofundo = sin(angleFundo/16) * raioFundo;
+    circleRaiofundo = sin(angleFundo/300) * raioFundo;
     
     for(var i = 0; i < circles; i++){
         xCircle = cos(angleFundo*i) * raioFundo;
@@ -353,6 +355,60 @@ function drawCirclefundo(){
 
     }
 }
+
+//Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
+function drawCirclefundoComposto(){
+  
+  //Opção Nogrid:
+        //stroke(0);
+    //fill(0);
+    //circle(0,0,340);
+  
+  
+    ellipseMode(CENTER);
+    stroke(146);
+    noFill();
+    //strokeWeight();
+
+    circles = 8; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    angleFundo = Math.PI*2 / circles;
+    //rotate(2*PI); //para começar no ponteiro 
+
+    circleRaiofundo = sin(angleFundo/96) * raioFundoComposto;
+    
+    for(var i = 0; i < circles; i++){
+     
+        xCircle = cos(angleFundo*i) * raioFundoComposto;
+        yCircle = sin(angleFundo*i) * raioFundoComposto;
+        ellipseMode(CENTER);
+        stroke(0);
+        strokeWeight(5);
+        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        
+        strokeWeight(1);
+        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+    }
+    
+        textSize(20);
+        stroke(0);
+        text('1',-10, -380, width);
+        text('+',125, -325, width);
+        text('2',250, -240, width);
+        text('+',325, -130, width);
+        text('3',350, 5, width);
+        text('+',320, 140, width);
+        text('4',250, 250, width);
+        text('+',120, 335, width);
+        text('1',-10, 390, width);
+        text('+',-150, 330, width);
+        text('2',-260, 265, width);
+        text('+',-340, 140, width);
+        text('3',-370, 0, width);        
+        text('+',-340, -130, width);
+        text('4',-260, -240, width);
+        text('+',-145, -320, width); 
+} 
+
 function drawRectLegenda(faixa){ 
 noStroke();
 
@@ -377,10 +433,10 @@ noStroke();
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
-         /*fill(magenta);
+         fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
-         fill(roxo);
+         /*fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
@@ -458,12 +514,13 @@ function textos(){
         textSize(18);
                 //text(' Track 1 = Piano  ', 620, -300, width);
                 //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Vocal', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        text(' Track 4 = Piano ', 620, -240, width);
-        text(' Track 5 = Contrabaixo', 620, -220, width);
-       text(' Track 6 = Grupo de bateria', 620, -200, width);
-         /*text(' Track 7 =Percussão', 620, -180, width);       
+        text(' Track 2 = Voz', 620, -280, width);
+        text(' Track 3 = Guitarra 1', 620,-260 , width);
+        text(' Track 4 = Guitarra 2', 620, -240, width);
+        text(' Track 5 = Baixo', 620, -220, width);
+       text(' Track 6 = Piano', 620, -200, width);
+        text(' Track 7 = Bateria', 620, -180, width);       
+        /*  
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);

@@ -3,6 +3,7 @@
 
 let airData;
 let raioFundo = 340;
+let raioFundoComposto = 400;
 let tempo;
 let divisaoCirculo = 50; //40 //60
 let raioMenor = 100;
@@ -27,11 +28,11 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas/Just_friends4por4TIPO1.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/ChopinNocturne12por8TIPO1.csv",
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas/Just_Friends.mp3');
+     sound = loadSound('ArquivoMusicas/EverytimeBoy_Pablo.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -80,7 +81,9 @@ function setup() {
 
   translate(width / 2, height / 2);
   textos();
+  drawCirclefundoComposto();
   drawCirclefundo();
+  
    rotate(PI/-2);
    
     //Função SaveAnalise - inclui botão de play em musica para facilitar análise e seu download da visualização. 
@@ -257,7 +260,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 64; //12 para 2/4; 24 para 3/4; 64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 64; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
@@ -269,11 +272,82 @@ function drawCirclefundo(){
         ellipseMode(CENTER);
         strokeWeight(5);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        
         strokeWeight(1);
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
     }
+        textSize(20);
+        stroke(0);
+        text('1',-10, -350, width);
+        text('+',125, -325, width);
+        text('2',250, -240, width);
+        text('+',325, -130, width);
+        text('3',350, 5, width);
+        text('+',320, 140, width);
+        text('4',250, 250, width);
+        text('+',120, 335, width);
+        text('1',-10, 365, width);
+        text('+',-150, 330, width);
+        text('2',-260, 265, width);
+        text('+',-340, 140, width);
+        text('3',-370, 0, width);        
+        text('+',-340, -130, width);
+        text('4',-260, -240, width);
+        text('+',-145, -320, width); 
 } 
-       
+ //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
+function drawCirclefundoComposto(){
+  
+  //Opção Nogrid:
+        //stroke(0);
+    //fill(0);
+    //circle(0,0,340);
+  
+  
+    ellipseMode(CENTER);
+    stroke(146);
+    noFill();
+    //strokeWeight();
+
+    circles = 8; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    angleFundo = Math.PI*2 / circles;
+    //rotate(2*PI); //para começar no ponteiro 
+
+    circleRaiofundo = sin(angleFundo/96) * raioFundoComposto;
+    
+    for(var i = 0; i < circles; i++){
+     
+        xCircle = cos(angleFundo*i) * raioFundoComposto;
+        yCircle = sin(angleFundo*i) * raioFundoComposto;
+        ellipseMode(CENTER);
+        //stroke(0);
+        strokeWeight(5);
+        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        
+        strokeWeight(1);
+        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+    }
+    
+        textSize(20);
+        stroke(0);
+        text('1',-10, -380, width);
+        text('+',125, -325, width);
+        text('2',250, -240, width);
+        text('+',325, -130, width);
+        text('3',350, 5, width);
+        text('+',320, 140, width);
+        text('4',250, 250, width);
+        text('+',120, 335, width);
+        text('5',-10, 390, width);
+        text('+',-150, 330, width);
+        text('2',-260, 265, width);
+        text('+',-340, 140, width);
+        text('3',-370, 0, width);        
+        text('+',-340, -130, width);
+        text('4',-260, -240, width);
+        text('+',-145, -320, width); 
+} 
+
 
 //TENTATIVA DE CRIAR LEGENDA AUTOMÁTICA//
 function drawLegenda(faixa){ 
@@ -313,7 +387,8 @@ noStroke();
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-           
+         
+         /* 
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
@@ -321,10 +396,11 @@ noStroke();
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
-         /*
+         
          fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
+         
          fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
@@ -367,24 +443,6 @@ noStroke();
   }
 
 function textos(){
-    textSize(20);
-        stroke(0);
-        text('1',-10, -350, width);
-        text('+',125, -325, width);
-        text('2',250, -240, width);
-        text('+',325, -130, width);
-        text('3',350, 5, width);
-        text('+',320, 140, width);
-        text('4',250, 250, width);
-        text('+',120, 335, width);
-        text('1',-5, 365, width);
-        text('+',-150, 330, width);
-        text('2',-260, 265, width);
-        text('+',-340, 140, width);
-        text('3',-370, 0, width);        
-        text('+',-340, -130, width);
-        text('4',-260, -240, width);
-        text('+',-145, -320, width); 
         
         //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO//
                 /*text('16 = 0',-20, -350, width);
@@ -408,12 +466,13 @@ function textos(){
         stroke(0);
         textSize(18);
                 //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Vocal', 620, -280, width);
+        text(' Track 2 = Flauta', 620, -280, width);
         text(' Track 3 = Piano', 620,-260 , width);
-        text(' Track 4 = Piano ', 620, -240, width);
-        text(' Track 5 = Contrabaixo', 620, -220, width);
-       text(' Track 6 = Grupo de bateria', 620, -200, width);
-         /*text(' Track 7 =Percussão', 620, -180, width);       
+        text(' Track 4 = Piano', 620, -240, width);
+       /* text(' Track 5 = Baixo', 620, -220, width);
+       text(' Track 6 = Piano', 620, -200, width);
+        text(' Track 7 = Bateria', 620, -180, width);       
+        
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);
@@ -425,7 +484,7 @@ function textos(){
         //text(' Track 16 ', 620, 0, width);     */
 
         
-        
+       //tracknames =[ voz, Guitarra 1, guitarra 2, Baixo, Piano, Bateria]
 }
 
 //Botão tocar música//

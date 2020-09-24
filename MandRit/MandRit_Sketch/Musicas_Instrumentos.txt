@@ -58,7 +58,7 @@ tracknames = [Piano, flauta, Flauta doce]
 Vocal, piano, contrabaixo, grupo de bateria
 
 //Everytime//  Boy Pablo
-tracknames =[ voz, Guitarra 1, Guitarra 2, Piano, Piano, Bateria]
+tracknames =[ voz, Guitarra 1, guitarra 2, Baixo, Piano, Bateria]
 ------------
 AINDA NÃO ESTÃO PLOTADAS
 -----------
