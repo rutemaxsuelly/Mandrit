@@ -26,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasPolar/everytime4por4TIPO1TESTE.csv",
+  airData = loadTable("csv_plot/PlotarMusicasPolar/ChopinNocturne12por8TIPO1.csv",
     "csv",
     "header");
     
@@ -350,7 +350,7 @@ function drawCirclefundo(){
     }
 }
 
-//Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
+ //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
 function drawCirclefundoComposto(){
   
   //Opção Nogrid:
@@ -368,23 +368,23 @@ function drawCirclefundoComposto(){
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
-    circleRaiofundo = sin(angleFundo/300) * raioFundoComposto;
+    circleRaiofundo = sin(angleFundo/96) * raioFundoComposto;
     
     for(var i = 0; i < circles; i++){
      
         xCircle = cos(angleFundo*i) * raioFundoComposto;
         yCircle = sin(angleFundo*i) * raioFundoComposto;
         ellipseMode(CENTER);
-        stroke(0);
-        noFill();
-        ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
-        text('+1', xCircle+5, yCircle+5); 
-        stroke(240);
+        //stroke(0);
+        strokeWeight(5);
+        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        strokeWeight(2);
+         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
+        
         strokeWeight(1);
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
     }
-    
-} 
+}
 
 function drawRectLegenda(faixa){ 
 noStroke();
@@ -466,7 +466,7 @@ function textos(){
         text('+',320, 140, width);
         text('4',250, 250, width);
         text('+',120, 335, width);
-        text('1',-5, 365, width);
+        text('1',-10, 365, width);
         text('+',-150, 330, width);
         text('2',-260, 265, width);
         text('+',-340, 140, width);

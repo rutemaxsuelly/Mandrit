@@ -260,7 +260,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 64; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 96; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
@@ -323,30 +323,13 @@ function drawCirclefundoComposto(){
         //stroke(0);
         strokeWeight(5);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        strokeWeight(2);
+         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
         
         strokeWeight(1);
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
     }
-    
-        textSize(20);
-        stroke(0);
-        text('1',-10, -380, width);
-        text('+',125, -325, width);
-        text('2',250, -240, width);
-        text('+',325, -130, width);
-        text('3',350, 5, width);
-        text('+',320, 140, width);
-        text('4',250, 250, width);
-        text('+',120, 335, width);
-        text('5',-10, 390, width);
-        text('+',-150, 330, width);
-        text('2',-260, 265, width);
-        text('+',-340, 140, width);
-        text('3',-370, 0, width);        
-        text('+',-340, -130, width);
-        text('4',-260, -240, width);
-        text('+',-145, -320, width); 
-} 
+}
 
 
 //TENTATIVA DE CRIAR LEGENDA AUTOMÁTICA//

@@ -26,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasRadial/everytime4por4TIPO1TESTE.csv",
+  airData = loadTable("csv_plot/PlotarMusicasRadial/ChopinNocturne12por8TIPO1.csv",
     "csv",
     "header");
     
@@ -356,7 +356,7 @@ function drawCirclefundo(){
     }
 }
 
-//Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
+ //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
 function drawCirclefundoComposto(){
   
   //Opção Nogrid:
@@ -381,33 +381,16 @@ function drawCirclefundoComposto(){
         xCircle = cos(angleFundo*i) * raioFundoComposto;
         yCircle = sin(angleFundo*i) * raioFundoComposto;
         ellipseMode(CENTER);
-        stroke(0);
+        //stroke(0);
         strokeWeight(5);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        strokeWeight(2);
+         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
         
         strokeWeight(1);
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
     }
-    
-        textSize(20);
-        stroke(0);
-        text('1',-10, -380, width);
-        text('+',125, -325, width);
-        text('2',250, -240, width);
-        text('+',325, -130, width);
-        text('3',350, 5, width);
-        text('+',320, 140, width);
-        text('4',250, 250, width);
-        text('+',120, 335, width);
-        text('1',-10, 390, width);
-        text('+',-150, 330, width);
-        text('2',-260, 265, width);
-        text('+',-340, 140, width);
-        text('3',-370, 0, width);        
-        text('+',-340, -130, width);
-        text('4',-260, -240, width);
-        text('+',-145, -320, width); 
-} 
+}
 
 function drawRectLegenda(faixa){ 
 noStroke();
@@ -425,7 +408,7 @@ noStroke();
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-           
+           /*
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
@@ -436,7 +419,7 @@ noStroke();
          fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
-         /*fill(roxo);
+         fill(roxo);
          circle(160, 560, 20, 60);
          rect(160, 560, 20, 60);
        
@@ -482,7 +465,7 @@ function textos(){
         text('+',320, 140, width);
         text('4',250, 250, width);
         text('+',120, 335, width);
-        text('1',-5, 365, width);
+        text('1',-10, 365, width);
         text('+',-150, 330, width);
         text('2',-260, 265, width);
         text('+',-340, 140, width);
@@ -512,15 +495,13 @@ function textos(){
         strokeWeight(1);
         stroke(0);
         textSize(18);
-                //text(' Track 1 = Piano  ', 620, -300, width);
-                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Voz', 620, -280, width);
-        text(' Track 3 = Guitarra 1', 620,-260 , width);
-        text(' Track 4 = Guitarra 2', 620, -240, width);
-        text(' Track 5 = Baixo', 620, -220, width);
+                  //text(' Track 1 = Piano  ', 620, -300, width);
+        text(' Track 2 = Flauta', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        text(' Track 4 = Piano', 620, -240, width);
+       /* text(' Track 5 = Baixo', 620, -220, width);
        text(' Track 6 = Piano', 620, -200, width);
         text(' Track 7 = Bateria', 620, -180, width);       
-        /*  
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);
