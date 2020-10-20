@@ -28,11 +28,11 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/ChopinNocturne12por8TIPO1.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/bateria04.csv",
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas/EverytimeBoy_Pablo.mp3');
+     sound = loadSound('ArquivoMusicas/bateria04.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -81,7 +81,7 @@ function setup() {
 
   translate(width / 2, height / 2);
   textos();
-  drawCirclefundoComposto();
+  //drawCirclefundoComposto();
   drawCirclefundo();
   
    rotate(PI/-2);
@@ -260,7 +260,7 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
   
-    circles = 96; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 64; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
@@ -367,15 +367,15 @@ noStroke();
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
-         fill(verde);
+          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
          
-         /* 
+        
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(marron);         
+          /*fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
@@ -447,13 +447,13 @@ function textos(){
         
         strokeWeight(1);
         stroke(0);
-        textSize(18);
-                //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Flauta', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        text(' Track 4 = Piano', 620, -240, width);
-       /* text(' Track 5 = Baixo', 620, -220, width);
-       text(' Track 6 = Piano', 620, -200, width);
+        textSize(15); //18
+        //text(' Track 1 =', 620, -300, width);
+        text(' Track 2 = Bateria(condução)', 620, -280, width);
+        text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
+        text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
+        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
+        /*text(' Track 6 = Piano', 620, -200, width);  
         text(' Track 7 = Bateria', 620, -180, width);       
         
         text(' Track 8 = Percussão', 620,-160 , width);

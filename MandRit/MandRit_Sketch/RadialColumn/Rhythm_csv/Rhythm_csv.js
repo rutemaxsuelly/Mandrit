@@ -26,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasRadial/ChopinNocturne12por8TIPO1.csv",
+  airData = loadTable("csv_plot/PlotarMusicasRadial/bateria04.csv",
     "csv",
     "header");
     
@@ -93,7 +93,7 @@ function setup() {
       
   translate(width / 2, height / 2);
   textos();
-  drawCirclefundoComposto();
+ // drawCirclefundoComposto();
   rotate(PI/-2);
   drawCirclefundo();
  
@@ -408,11 +408,11 @@ noStroke();
          fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
-           /*
+          
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(marron);         
+         /*fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
@@ -494,13 +494,13 @@ function textos(){
         
         strokeWeight(1);
         stroke(0);
-        textSize(18);
-                  //text(' Track 1 = Piano  ', 620, -300, width);
-        text(' Track 2 = Flauta', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        text(' Track 4 = Piano', 620, -240, width);
-       /* text(' Track 5 = Baixo', 620, -220, width);
-       text(' Track 6 = Piano', 620, -200, width);
+        textSize(15); //18
+        //text(' Track 1 =', 620, -300, width);
+        text(' Track 2 = Bateria(condução)', 620, -280, width);
+        text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
+        text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
+        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
+        /*text(' Track 6 = Piano', 620, -200, width);  
         text(' Track 7 = Bateria', 620, -180, width);       
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
