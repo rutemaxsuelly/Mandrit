@@ -1,0 +1,23 @@
+function c = wavConsonance(wavFile)
+[buffer, fs, nb] = wavread(wavFile);
+fftBuffer = fft(buffer);
+%buffer[3,2,4,1] --> indexes[]
+
+varSize = length(fftBuffer)/2;
+divisor = mgcd(fftBuffer{1:varSize});
+index = 1;
+for i=1:varSize
+    decomposed = decomposePrimo(varargin{i}/divisor);
+    for j=1:length(decomposed);
+        values{index} = decomposed(j);
+        weigths{index} = varargin{varSize + i};
+        index = index + 1;
+    end
+end
+decSize = index - 1;
+%divisor = mgcd(values{1:decSize});
+for i=1:decSize
+    %reduced{i} = values{i}/divisor;
+    reduced{i} = values{i};
+end
+[c, r] = mlcm(reduced, weigths);

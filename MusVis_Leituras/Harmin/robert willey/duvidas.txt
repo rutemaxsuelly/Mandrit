@@ -1,0 +1,5 @@
+Duvidas
+
+1. Esta ok a classificacao em 5 classes apenas?
+2. O que sao "_"?
+3. Nao pode haver espacos em branco

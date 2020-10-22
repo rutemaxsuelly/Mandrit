@@ -1,0 +1,181 @@
+function t = FFT1_sum(fileName, numRepetitions)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Author: Giordano Cabral
+%% December, 2005
+%% 
+%% @fileName: name of the wave file
+%% @auditoryModel: result of the computation of auditory spectrogram
+%%
+%% 1. It divides the wave input into frames.
+%% 2. It multiplies by the Hanning window
+%% 3. Zero-padding
+%% 4. Each frame is the result of previous steps, and is passed to the
+%% function barkSpectrogram, which computes a vector of intensities for
+%% each bark band
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+global frequencies;
+global fKHz;
+global AdB;
+global barkIndexes;
+treshold = 0.1;
+
+t1 = clock;
+% step size is used to overlap frames
+stepSize = 128;
+% the size of the frame is X times the size of the step
+multiple = 4;
+frameSize = stepSize*multiple;
+% the frame is zero padded into the "window", which is used in subsequent
+% functions
+%windowSize = 2048;
+windowSize = frameSize;
+auditoryModel = zeros(0,24);
+hannWind = hann(frameSize)';
+[b, fr, nb] = wavread(fileName);
+% in the case the wav file has more than 1 channel
+buff = b(:,1);
+
+% in order to get a buffer which length is a multiple of the stepSize
+newLength = ceil(length(buff)/stepSize)*stepSize;
+paddedBuff = zeros(1, newLength);
+paddedBuff(1:length(buff)) = buff;
+
+frequencies = fr/windowSize:fr/windowSize:fr/2;
+fKHz = frequencies/1000;
+AdB = -3.64 * (fKHz).^(-0.8) + 6.5 * exp(-0.6 * (fKHz - 3.3) .^2) - 0.001 * (fKHz.^4);
+%barkIndexes = 13 * atan(0.00076 * frequencies) + 3.5 * atan ((frequencies / 7500) .^2);
+
+loudness = [];
+% the "- multiple" is used to avoid index out of bounds
+numFrames = (newLength/stepSize)-multiple
+for i=1:numFrames      
+    window = zeros(1,windowSize);
+    frame = paddedBuff((i-1)*stepSize+1:(i-1)*stepSize+frameSize).*hannWind;      
+    window(1:frameSize) = frame;
+    frLoudness = 0;
+    % @i0: audibility treshold 
+    i0 = 60;
+    %% 1. Converts fft coefficients into dB scale
+    fftResult = fft(window);    
+    powerSpectrum = abs(fftResult(1:length(window)/2));
+    %A. dbSpectrum = 20 * log10(powerSpectrum/i0);
+    %% 2. Recomputes fft coefficients using transfer function
+    %A. finalSpectrum = AdB + dbSpectrum;
+    %% 3. Clips values below 70 dB
+    %A. for j=1:length(finalSpectrum)
+    %A.    if(finalSpectrum(j) < -70)
+    %A.        finalSpectrum(j) = 0;
+    %A.    end
+    %A.    finalSpectrum(j) = finalSpectrum(j) + 70;
+    %A.    frLoudness = frLoudness + finalSpectrum(j);
+    %A.end   
+    for j=1:length(powerSpectrum)
+        frLoudness = frLoudness + powerSpectrum(j)*powerSpectrum(j);
+    end
+%     subplot(1,1,1);
+%     plot(finalSpectrum);
+%     axis([1 length(finalSpectrum) 1 max(finalSpectrum)]);
+%     pause;
+    loudness = [loudness frLoudness];
+%    if(mod(i,100) == 0)
+%        disp(sprintf('i: %d, loudness: %f', i, frLoudness));
+%    end
+end
+%% temporal masking
+n = floor(0.2*fr/stepSize);
+w = hann(n*2+1);
+h = w(n+1:n*2+1);
+c = conv(loudness, h);
+convLoudness = c(1:length(loudness));
+for i=1:length(loudness)-1
+    loudnessDiff(i) = c(i+1)-c(i);
+end
+%% smooth event detection function
+n2 = floor(0.075*fr/stepSize);
+h2 = hann(n2*2+1);
+loudnessDiff = [loudnessDiff zeros(1, n2)];
+c2 = conv(loudnessDiff, h2);
+sed = c2(n2+1:length(loudnessDiff));
+
+%% get peaks
+maxL = max(sed);
+t = treshold*maxL;
+peaks = getPeaks(sed, t);
+
+%% find before-limit
+begin_cuts = [];
+peaks = [1 peaks];
+for i=2:length(peaks)
+    found = false;
+    curIndex = peaks(i);
+    beginIndex = curIndex;
+    while(~found && curIndex > peaks(i - 1))
+        if (convLoudness(curIndex) < convLoudness(curIndex - 1))
+            found = true;
+        else
+            if (convLoudness(curIndex) > convLoudness(curIndex - 1))
+                beginIndex = curIndex;
+            end
+            curIndex = curIndex - 1;
+        end
+    end
+    begin_cuts = [begin_cuts beginIndex];
+end
+
+% get valeys
+minL = min(sed);
+t = treshold*minL;
+valeys = getValeys(sed, peaks(2:length(peaks)), t);
+
+%% find after-limit
+end_cuts = [];
+valeys = [valeys length(convLoudness)];
+for i=1:length(valeys)-1
+    found = false;
+    curIndex = valeys(i);
+    endIndex = curIndex;
+    while(~found && curIndex < valeys(i + 1))
+        if (convLoudness(curIndex + 1) > convLoudness(curIndex))
+            found = true;
+        else
+            if (convLoudness(curIndex + 1) < convLoudness(curIndex))
+                endIndex = curIndex;
+            end
+            curIndex = curIndex + 1;
+        end
+    end
+    end_cuts = [end_cuts endIndex];
+end
+
+% get zero-crossings
+for i=1:length(begin_cuts)-1
+    found = false;
+    crossed = false;
+    curIndex = begin_cuts(i)*stepSize;
+    while(~crossed && curIndex > 1)
+        if (buff(curIndex) > 0 && buff(curIndex - 1) < 0)
+            crossed = true;
+        else
+            curIndex = curIndex - 1;          
+        end
+    end
+    onsetList(i).begin = curIndex;
+end
+% VERIFICAR!!!!
+for i=1:length(end_cuts)
+    found = false;
+    crossed = false;
+    curIndex = end_cuts(i)*stepSize;
+    while(~crossed && curIndex > 1)
+        if (buff(curIndex) > 0 && buff(curIndex - 1) < 0)
+            crossed = true;
+        else
+            curIndex = curIndex - 1;          
+        end
+    end
+    onsetList(i).end = curIndex;
+end
+
+t = 
+disp(sprintf('%g',etime(clock,t1)));

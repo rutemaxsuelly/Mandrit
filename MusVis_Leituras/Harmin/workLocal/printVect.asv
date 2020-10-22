@@ -1,0 +1,9 @@
+function printVect(chVect, fileName)
+fid = fopen(fileName, 'wt');
+chords = initChords();
+for i=1:73
+    fprintf(fid, '%d\t', tempChrTr(i, j);
+    fprintf(fid, '\n');
+end
+
+fclose(fid);

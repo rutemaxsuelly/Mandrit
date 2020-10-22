@@ -1,9 +1,0 @@
-function pond = mlcm(varargin)
-inCellArray = varargin{1};
-weights = varargin{2};
-rec = 1;
-pond = rec*weights{1};
-for i=1:length(inCellArray)
-    rec = lcm(rec, inCellArray{i});
-    pond += 
-end

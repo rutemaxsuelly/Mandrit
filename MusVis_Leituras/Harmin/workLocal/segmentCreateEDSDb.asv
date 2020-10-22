@@ -1,0 +1,15 @@
+function segmentCreateEDSDb(FileName)
+edsPV = fopen('perceptiveValues.txt','w');
+segSize = 29400;
+[buf, fs, b] = wavread(FileName);
+restSize = segSize - mod(length(buf), segSize);
+buf = [buf; zeros(restSize, 1)];
+[coreFileName, r] = strtok(FileName, '.');
+numEmptyBeats = 8;
+numBeatsPerChord = 4;
+for i=1:length(buf - numEmptyBeats)
+    chordClass = floor(i/numBeatsPerChord);
+    segBuff = buf((i + numEmptyBeats - 1) * segSize + 1 : (i + numEmptyBeats) * segSize);    
+    segFileName = sprintf('%s%0.3d.wav', coreFileName, i);
+    fprintf(edsPV, '%s  %d\n', segFileName, chordClass)
+end
