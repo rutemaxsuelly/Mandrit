@@ -206,7 +206,7 @@ function drawFaixas(){
           }
           faixas[a-1].cor.setAlpha(123);
           stroke(faixas[a-1].cor);
-          //Desenha quantidade de notas
+          //Desenha quantidade de notas (Gerando POLÍGONO)
           strokeWeight(12); //30
           posicaoByQuantidadeNotas(faixaOrigem);
           posicaoByQuantidadeNotas(faixaDestino);
@@ -224,6 +224,8 @@ function drawFaixas(){
       }
     }
 }
+
+//Desenha faixas por QUANTIDADE DE NOTAS em relação ao Raio da Referência do compasso
 
 function posicaoByQuantidadeNotas(faixa){
   let posicao = map(faixa.tempo, tempomin, tempomax, 0, divisaoCirculo-1);
@@ -274,16 +276,7 @@ function criarOuAtualizarFaixa(faixaAtual, tempo, quantidadeNotas){
 }
 ////////CIRCLES do tempo/////////
  //Pegam informações do csv
- 
-function drawCirclesExterno(tempo){
-    let raio = map(tempo.numero, tempomin, tempomax, raioMaior, raioMenor);
-    let posicao = map(faixa.tempo, tempomin, tempomax, 0, divisaoCirculo-1);
-    let tamanho = map(faixa.quantidadeNotas, tamanhomin, tamanhomax, tamanhoMaior, tamanhoMenor);
-    let raioTamanho = map(faixa.quantidadeNotas, tamanhomin, tamanhomax, raioMenor, raioMaior);
-    
-    ellipseMode(CENTER);
-    drawCircleExterno(raio,posicao, tamanho, tempo);
-}
+
  //Coleta de informações do csv para plotar em drawCircle
 function drawCircles(faixa){
     let raio = map(faixa.numero, faixamin, faixamax, raioMaior, raioMenor);
