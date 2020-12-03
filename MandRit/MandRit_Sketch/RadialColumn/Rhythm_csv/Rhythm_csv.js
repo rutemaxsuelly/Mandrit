@@ -68,12 +68,18 @@ function setup() {
         line(450, 500, 450, 15); 
         line(1350, 500, 1350, 15); 
         
+        rect(1350, 0,500, 630);
+       
         //Legenda Track//
         line(450, 500, 450, 15);
         line(1350, 500,1770,500); 
         
         line(0, 500, 450, 500); 
         line(1, 500, 450, 500); 
+        
+                textSize(20);
+                //altera-se de acordo com a música plotada
+                text('Fórmula do compasso: 4/4', 1450, 570, width);
         
         /*//verticais
         line(1770, 830, 0, 830); 

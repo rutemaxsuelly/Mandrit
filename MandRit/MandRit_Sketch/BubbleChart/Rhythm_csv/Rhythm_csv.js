@@ -56,7 +56,8 @@ function setup() {
         //Legenda Track//
         stroke(0);
         rect(10, 375, 420, 100);
-        rect(1350, 50,500, 600);
+        rect(1350, 50,500, 630);
+        rect(1350, 620,500, 60);
         line(1350, 450,1770,450);
         //horizontais//
         line(1435, 520, 1465,520);
@@ -76,6 +77,11 @@ function setup() {
                 
                 textSize(20);
                 text('Quantidade de notas', 1450, 480, width);
+                //altera-se de acordo com a música plotada
+                text('Fórmula do Compasso: 4/4', 1430, 660, width);
+                textSize(30);
+                text('-', 1400, 580, width);
+               text('+', 1750, 580, width);
                 
        
 
