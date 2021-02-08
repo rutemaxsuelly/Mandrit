@@ -2,9 +2,9 @@ import py_midicsv
 
 # Load the MIDI file and parse it into CSV format
 folder = "C:\\Users\\rutem\\Documents\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
-filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\everytime4por4TIPO1TESTE.mid"
+filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\bateria04.mid"
 csv_string = py_midicsv.midi_to_csv(folder + filename)
-nome_do_csv = folder + "csv\\File_tracksname\\everytime4por4TIPO1TESTE.csv"
+nome_do_csv = folder + "csv\\File_tracksname\\bateria04_BUG.csv"
 
 def get_compasso(csv_string):
     for line in csv_string:
@@ -38,8 +38,11 @@ def csv_formater(line, division, numerador, denominador):
         track = int(col[0])
         nota = col[-2]
         clocks_por_compasso = division*4*numerador/2**denominador
+        print(clocks_por_compasso)
         tempo = int(col[1].replace(" "," "))
         sub_divisao_compasso = tempo%clocks_por_compasso
+        if(track == 2):
+            print(track, nota, division, numerador, denominador, clocks_por_compasso, tempo, sub_divisao_compasso)
         return track, sub_divisao_compasso, nota
     else:
         return None, None, None
@@ -50,6 +53,7 @@ def separate_note_por_compasso(csv_string):
     numerador, denominador = get_time_signature(csv_string)
     dic_matrix = {}
     for line in csv_string:
+        print(line)
         track, sub_divisao_compasso, nota = csv_formater(line, division, numerador, denominador)
         if(track == None):
             continue

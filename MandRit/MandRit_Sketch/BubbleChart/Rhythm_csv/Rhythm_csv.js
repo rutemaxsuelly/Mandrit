@@ -2,7 +2,7 @@
 //BUBBLE CHART//
 
 let airData;
-let raioFundo = 340;
+let raioFundo = 380;
 let raioFundoComposto = 400;
 let tempo;
 let divisaoCirculo = 50; //40 //60
@@ -78,7 +78,7 @@ function setup() {
                 textSize(20);
                 text('Quantidade de notas', 1450, 480, width);
                 //altera-se de acordo com a música plotada
-                text('Fórmula do Compasso: 4/4', 1430, 660, width);
+                text('Fórmula do Compasso: 4/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
                 textSize(30);
                 text('-', 1400, 580, width);
                text('+', 1750, 580, width);
@@ -188,7 +188,7 @@ function draw() {
  rotate(PI/-2);
   noStroke();
   drawDados(); 
-  drawCursorAcompanhamento();
+  //drawCursorAcompanhamento();
 }
 
 
@@ -265,12 +265,12 @@ function drawCirclefundo(){
     stroke(146);
     noFill();
     //strokeWeight();
-  
-    circles = 64; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    
+    circles = 4; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4de64) = 80 times 
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
-    circleRaiofundo = sin(angleFundo/16) * raioFundo;
+    circleRaiofundo = sin(angleFundo/16);
     
     for(var i = 0; i < circles; i++){
         xCircle = cos(angleFundo*i) * raioFundo;
@@ -284,22 +284,22 @@ function drawCirclefundo(){
     }
         textSize(20);
         stroke(0);
-        text('1',-10, -350, width);
-        text('+',125, -325, width);
-        text('2',250, -240, width);
-        text('+',325, -130, width);
-        text('3',350, 5, width);
-        text('+',320, 140, width);
-        text('4',250, 250, width);
-        text('+',120, 335, width);
-        text('1',-10, 365, width);
-        text('+',-150, 330, width);
-        text('2',-260, 265, width);
-        text('+',-340, 140, width);
-        text('3',-370, 0, width);        
-        text('+',-340, -130, width);
-        text('4',-260, -240, width);
-        text('+',-145, -320, width); 
+        text('1',-5, -390, width);
+        //text('+',125, -325, width);
+        //text('2',250, -240, width);
+        //text('+',325, -130, width);
+        text('2',380, -10, width);
+        //text('+',320, 140, width);
+        //text('4',250, 250, width);
+        //text('+',120, 335, width);
+        text('3',-10, 410, width);
+        //text('+',-150, 330, width);
+        //text('2',-260, 265, width);
+        //text('+',-340, 140, width);
+        text('4',-390, -10, width);        
+        //text('+',-340, -130, width);
+        //text('4',-260, -240, width);
+        //text('+',-145, -320, width); 
 } 
  //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
 function drawCirclefundoComposto(){
@@ -455,12 +455,12 @@ function textos(){
         stroke(0);
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);
-        text(' Track 2 = Bateria(condução)', 620, -280, width);
+                text(' Track 2 = Bateria(condução)', 620, -280, width);
         text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
         text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
         text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        /*text(' Track 6 = Piano', 620, -200, width);  
-        text(' Track 7 = Bateria', 620, -180, width);       
+        //text(' Track 6 = Piano', 620, -200, width);  
+        /*text(' Track 7 = Bateria', 620, -180, width);       
         
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);

@@ -26,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasRadial/bateria04.csv",
+  airData = loadTable("csv_plot/PlotarMusicasRadial/Takee_a_fiveee5.csv",
     "csv",
     "header");
     
@@ -79,7 +79,7 @@ function setup() {
         
                 textSize(20);
                 //altera-se de acordo com a música plotada
-                text('Fórmula do compasso: 4/4', 1450, 570, width);
+                text('Fórmula do compasso: 5/4', 1450, 570, width);
         
         /*//verticais
         line(1770, 830, 0, 830); 
@@ -340,7 +340,7 @@ function drawCirclefundo(){
     circle();
     noFill();
   
-    circles = 64; //48 para outras músicas //TakeaFive 5/4 = 96 tempos
+    circles = 80; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4) = 80 times 
     angleFundo = Math.PI*2 / circles;
     //rotate(PI/-2); //para começar no ponteiro
 
@@ -376,7 +376,7 @@ function drawCirclefundoComposto(){
     noFill();
     //strokeWeight();
 
-    circles = 8; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 80; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4de64) = 80 times 
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
@@ -418,11 +418,11 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         /*fill(marron);         
+         fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
-         fill(magenta);
+         /*fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
          fill(roxo);
@@ -502,11 +502,12 @@ function textos(){
         stroke(0);
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);
-        text(' Track 2 = Bateria(condução)', 620, -280, width);
-        text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
-        text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
-        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        /*text(' Track 6 = Piano', 620, -200, width);  
+        text(' Track 2 = Bateria', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        text(' Track 4 = Saxofone', 620, -240, width);
+        text(' Track 5 = Baixo', 620, -220, width);
+        text(' Track 6 = Piano', 620, -200, width);  
+        /*
         text(' Track 7 = Bateria', 620, -180, width);       
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);

@@ -28,7 +28,7 @@ function setup() {
         noStroke();
         fill(255);
         textSize(20);
-        let s = 'O Mandrit é uma aplicação web para visualização e análise musical. Projeto desenvolvido, no período de 2019-2020 em estudo da pesquisa de mestrado por Rute Maxsuelly, com orientação e suporte de Giordano Cabral. Complementada pela olaboração de membros do Grupo de pesquisa MUSTIC, do CIn - Universidade Federal de Pernambuco, são eles Horhanna Almeida, Felipe Calegário, Jader Abreu, Delando Jr. e Flaviano Dias.';
+        let s = 'O Mandrit é uma aplicação web para visualização e análise musical. Projeto em desenvolvimento da pesquisa de mestrado por Rute Maxsuelly, com orientação de Giordano Cabral. Complementada pela colaboração de membros do Grupo de pesquisa MUSTIC (CIn - UFPE), são eles: Horhanna Almeida, Felipe Calegário, Jader Abreu, Delando Jr. e Flaviano Dias.';
         //(s, x, y, caixa_texto_x, caixa_textoy)
         text(s, 1000, 450, 600,600);
   
