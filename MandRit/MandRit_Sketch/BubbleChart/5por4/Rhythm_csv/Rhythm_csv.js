@@ -3,7 +3,7 @@
 
 let airData;
 let raioFundo = 380;
-let raioFundoComposto = 400;
+let raioFundoComposto = 380;
 let tempo;
 let divisaoCirculo = 50; //40 //60
 let raioMenor = 100;
@@ -87,7 +87,7 @@ function setup() {
 
   translate(width / 2, height / 2);
   textos();
-  //drawCirclefundoComposto();
+  drawCirclefundoComposto();
   drawCirclefundo();
   
    rotate(PI/-2);
@@ -322,7 +322,7 @@ function drawCirclefundoComposto(){
     noFill();
     //strokeWeight();
 
-    circles = 8; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 20; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
@@ -340,8 +340,8 @@ function drawCirclefundoComposto(){
         strokeWeight(2);
          ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
         
-        strokeWeight(1);
-        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;   
+        //strokeWeight(1);
+        //line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;   
         
         
     }
