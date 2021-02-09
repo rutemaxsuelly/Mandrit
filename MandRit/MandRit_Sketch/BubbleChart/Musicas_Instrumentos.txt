@@ -1,0 +1,161 @@
+
+2 POR 4
+
+//Samba de uma nota só// Tom Jobim
+Baixo, Flautas, Piano, Cordas, percussão
+
+//Eu não existo longe de você// Tom Jobim e Vinicius de Moraes
+tracknames = [Piano, flauta, Flauta doce]
+
+4 POR 4
+
+
+//Bateria 04// MIDI bateria produção Giordano Cabral 
+Drum(condução), Drum(assinatura - Grave), Drum (assinatura - Agudo) Drum(Floreio)
+
+//Maracatu Atômico// Nação Zumbi
+tracknames = [Agogô'  Xequerê Caixa' Alfaia Vocal', Guitarra'] 
+
+//Frevo Mulher// Zé Ramalho
+tracknames = [Oboé, Clarinete, Saxofone (Alto), Saxofone (Tenor)] 
+
+//Baião//
+tracknames = [Glockenspiel, Xilofone, Vibrafone] - Baião só mudar nome
+
+//Aquarelas do Brasil// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Yesterday//
+tracknames = [Piano,Piano,Piano,Piano]
+
+//Machine Gun//
+tracknames =[Guitarra, Bateria]
+
+//Senorita//
+tracknames = [Piano, Voz,Baixo, Violoncelo,Guitarra, Bateria]
+
+//Dancey Monkey //
+tracknames = 
+
+//Xote das meninas SAX//
+tracknames = [Flauta, Saxofone (Tenor), Saxofone (Alto), Trombone];
+
+//Roda Viva// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Aí já era// Jorge e Mateus
+tracknames = [Piano(A), Piano (B)]
+
+//Sky Full of Stars// Coldplay
+tracknames = [Piano, Piano, Violino, Violoncello, Bateria]
+
+// Nocturne, Op. 9, No. 2//Chopin //
+ Flauta, Piano, Piano
+
+//Clair de Lune//Debussy
+Piano
+
+
+//Just friends// Klenner e Lewis
+Vocal, piano, contrabaixo, grupo de bateria
+
+//Everytime//  Boy Pablo
+tracknames =[ voz, Guitarra 1, guitarra 2, Baixo, Piano, Bateria]
+
+5/4
+
+//Take five//  Dave Brubeck
+tracknames =[ bateria, piano, saxofone, baixo, piano]
+------------
+AINDA NÃO ESTÃO PLOTADAS
+-----------
+//Wave// 
+tracknames = [Violino (2), Viola, Fagote]
+
+//Piano Mangueira // Chico Buarque
+tracknames = [Violão,Guitarra, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
+
+//Asa Branca //
+tracknames = [Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (B-flat), Trombone, Metallophone]
+
+//Eu quero um xodo// Dominguinhos
+Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (Bb), Trombone, Metalofone
+
+------------
+//Demons// by Imagine Dragons
+tracknames = [Violin (2), Clarinet (In B-flat), Cello, Contrabass, Piano, Guitar, Marimba, Glockenspiel, Tubular Bells, Drum Group
+
+//Isso aqui tá bom demais//Dominguinhos e Nando Cordel
+tracknames = [Violão, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
+
+//Break My Heart // Dua Lipa
+tracknames = [Vocais, Soprano, Alto, Tenor, Baixo]
+
+//IDGAF // Dua Lipa
+tracknames = [Saxofone (Alto), Saxofone (Tenor), Piano, Guitarra (2), Baixo, Bateria, Tarola]
+
+//A terceira Lamina//
+tracknames = [voz (4)]
+
+// Trenzinho do Caipira // Villas Lobos
+tracknames = [Flauta Vertical, Grupo de Cordas, Xilofone, Melódica, Guitarra, Baixo (2)]
+
+//Rosa Amarela// Villas Lobos
+tracknames = [Violoncelo (5)]
+
+//Pra sempre com você//Jorge e Mateus
+tracknames = [Piano, Violino, Trumpet (B-flat)]
+
+//Amo noite e dia//Jorge e Mateus
+tracknames = [Flauta, Clarinete (In B-flat), Saxofone (Alto), Saxofone (Tenor), French Horn, Trumpete (In B-flat), Trombone, Tuba, Bateria]
+
+//Blue rondo a la Turk//
+tracknames = [
+
+//Bicho de 7 cabeças//
+tracknames = [
+
+//Joao e Maria//
+tracknames = [
+
+//Chega de saudade//
+
+//Garota de Impanema//
+
+//Preciso me encontrar// Cartola
+tracknames = [
+
+//Sinfonia No.2 // Sergei Rachmanioff
+tracknames = [
+
+--------- LIVRO--------
+
+
+//Bach Air// No. 3
+tracknames = [Flute, Violin (2), Viola da Gamba]
+
+//MENDELSSOHN Andante con moto tranquillo
+from Piano Trio No. 1 in D minor, op. 49// (op.25)//
+tracknames 14 = [Flauta, Oboé, Clarinete (Bb),  Fagote, Trompa,  Timbales, Piano, Piano, Violino I,  Violino II,
+ Viola I, Viola II, Violoncelo, Contrabaixo.
+
+//Schubert - Nacht und Träume//
+tracknames = [Flauta, Violão]
+
+//Molto Allegro//Mozart Symphony No 40 in G Minor
+tracknames 13=  Oboé, Clarinete (Bb), Flauta, Oboé, Fagote, Trompa natural (B), Trompa natural (G), Violino I, Violino II,
+ Viola, Violoncelo, Contrabaixo.
+
+//Symphony No.3, Op.55// Beethoven, Ludwig van
+tracknames 13 =Flauta,Clarinete (B), Oboé, Fagote, Trompa (C I II), Trompa(Es III), Timbales (C-G), Berimbau de Boca (C)
+Violino II, Violino I, Viola, Violoncelo, Contrabaixo.
+
+//Brahms Piano Ballade Opus 118 No. 3 Orchestrated for Classical Orchestra 
+tracknames 13= Flauta, Oboé, Clarinete (Bb),  Fagote, Trompa, Trompete (Bb), Timbales, Violino I, Violino II,
+ Viola I ,  Viola II , Violoncelo, Contrabaixo.
+
+//Haydn Symphony No. 94 "Surprise" Mov. 3// VERSÃO 2
+tracknames 10= [Flauta, Oboé, Fagote, Trompa natural(G) , Trompete (C), Timbales , Violino I, Violino II, Viola, Violoncelo e Contrabaixo]
+
+
+

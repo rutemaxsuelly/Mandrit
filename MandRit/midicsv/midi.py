@@ -39,8 +39,10 @@ def csv_formater(line, division, numerador, denominador):
         nota = col[-2]
         clocks_por_compasso = division*4*numerador/2**denominador
         print(clocks_por_compasso)
+        
         tempo = int(col[1].replace(" "," "))
         sub_divisao_compasso = tempo%clocks_por_compasso
+        print(tempo)
         if(track == 2):
             print(track, nota, division, numerador, denominador, clocks_por_compasso, tempo, sub_divisao_compasso)
         return track, sub_divisao_compasso, nota

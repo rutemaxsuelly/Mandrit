@@ -1,5 +1,5 @@
 //MANDRIT -  Quantidade de notas em função do tempo cíclico
-//BUBBLE CHART//
+//BUBBLE CHART// COMPASSO 3/4
 
 let airData;
 let raioFundo = 380;
@@ -28,11 +28,11 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/bateria04.csv",
+  airData = loadTable("Plotar_Musicas3por4/RodaViva_3por4.csv",
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas/bateria04.mp3');
+     sound = loadSound('ArquivoMusicas3por4/RODA_VIVAChico.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -78,7 +78,7 @@ function setup() {
                 textSize(20);
                 text('Quantidade de notas', 1450, 480, width);
                 //altera-se de acordo com a música plotada
-                text('Fórmula do Compasso: 4/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
+                text('Fórmula do Compasso: 3/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
                 textSize(30);
                 text('-', 1400, 580, width);
                text('+', 1750, 580, width);
@@ -252,6 +252,7 @@ function drawCircles(circles, radius, i, tamanho){
     drawCircle(angle, i, radius,circleRadius);
 }
 
+
  //Maracação do compasso fixo ao fundo div = 16/32/64/128 tempos rítmicos
 function drawCirclefundo(){
   
@@ -266,41 +267,43 @@ function drawCirclefundo(){
     noFill();
     //strokeWeight();
     
-    circles = 4; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4de64) = 80 times 
+    circles = 3; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4de64) = 80 times 
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
     circleRaiofundo = sin(angleFundo/16);
     
     for(var i = 0; i < circles; i++){
-        xCircle = cos(angleFundo*i) * raioFundo;
-        yCircle = sin(angleFundo*i) * raioFundo;
+        xCircle = -sin(angleFundo*i) * raioFundo;
+        yCircle = -cos(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
-        strokeWeight(5);
+        strokeWeight(10);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
         
+        strokeWeight(0.5);
+        circle(0,0, 380);
+               //circle(xCircle,yCircle , 380);
         strokeWeight(1);
-        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10; 
+        
     }
+
         textSize(20);
         stroke(0);
         text('1',-5, -390, width);
         //text('+',125, -325, width);
         //text('2',250, -240, width);
         //text('+',325, -130, width);
-        text('2',380, -10, width);
+        text('2',350, 200, width);
         //text('+',320, 140, width);
         //text('4',250, 250, width);
         //text('+',120, 335, width);
-        text('3',-10, 410, width);
-        //text('+',-150, 330, width);
-        //text('2',-260, 265, width);
-        //text('+',-340, 140, width);
-        text('4',-390, -10, width);        
+        text('3',-360, 200, width);        
         //text('+',-340, -130, width);
         //text('4',-260, -240, width);
         //text('+',-145, -320, width); 
 } 
+
  //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
 function drawCirclefundoComposto(){
   
