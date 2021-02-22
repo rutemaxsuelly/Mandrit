@@ -1,9 +1,9 @@
-//MANDRIT -  Quantidade de notas em função do tempo cíclico
+//MANDRIT -  Quantidade de notas em funcao do tempo cíclico
 //BUBBLE CHART// COMPASSO 4/4
 
 let airData;
 let raioFundo = 380;
-let raioFundoComposto = 400;
+let raioFundoComposto = 380;
 let tempo;
 let divisaoCirculo = 50; //40 //60 //100
 let raioMenor = 100;
@@ -22,13 +22,12 @@ let tamanhomax;
 let indiceCor = 0;
 
 let button;
-var cnv, sound, fft, peakDetect;
 var ellipseWidth = 10;
 let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/bateriTEMPO_segundos.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/bateria04.csv",
     "csv",
     "header");
     
@@ -77,7 +76,7 @@ function setup() {
                 
                 textSize(20);
                 text('Quantidade de notas', 1450, 480, width);
-                //altera-se de acordo com a música plotada
+                //alterada de acordo com a musica plotada
                 text('Fórmula do Compasso: 4/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
                 textSize(30);
                 text('-', 1400, 580, width);
@@ -87,28 +86,26 @@ function setup() {
 
   translate(width / 2, height / 2);
   textos();
-  //drawCirclefundoComposto();
   drawCirclefundo();
+    //drawCirclefundoComposto();
   
    rotate(PI/-2);
    
-    //Função SaveAnalise - inclui botão de play em musica para facilitar análise e seu download da visualização. 
+    //Funcao SaveAnalise - inclui botao de play em musica para facilitar análise e seu download da visualizacao. 
   SaveAnalise();
   tocarMusica();
-    // p5.PeakDetect requires a p5.FFT
-    fft = new p5.FFT();
-    peakDetect = new p5.PeakDetect();
-    //framesPerPeak = 60/(120/60); framesPerPeak - por padrão é 20 - 
+
+    //framesPerPeak = 60/(120/60); framesPerPeak - por padrao é 24 - 
     //Tentativa de calculo de bpm da musica, (90bpm - a cada 2/3s para o proximo beat - acender uma luz)
-    //e atualizar em acompanhamento em relação ao valor de circles da referencia do compasso
+    // atualizar acompanhamento em relacao ao valor de circles da referencia do compasso
 
         
  ///RANGE DE CORES///
- //Faixa 1//Condução
+ //Faixa 1//Conducao
 amarelo = color(254,250,104);
 cores.push(amarelo);
 amarelo.setAlpha(128 + 128 * sin(millis() / 5000));
-//Faixa 2//condução 
+//Faixa 2//conducao 
   vermelho = color(140,23,23);
  cores.push(vermelho);
 vermelho.setAlpha(128 + 128 * sin(millis() / 5000));
@@ -179,8 +176,6 @@ verdeEscuro= color(51, 163, 105);
  tamanhomin = min(tamanho);
  tamanhomax = max(tamanho);
  
- 
-
 }
 
 function draw() {
@@ -191,7 +186,7 @@ function draw() {
 }
 
 
-//Dados musicais extraídos do MIDI//
+//Dados musicais extraidos do MIDI associados a representacao//
 function drawDados(){
     noLoop();
     indiceCor = 0;
@@ -208,14 +203,12 @@ function drawDados(){
     let tamanho = map(tamanhoAtual, tamanhomax, tamanhomin, tamanhoMaior, tamanhoMenor);
     
     fill(faixa.cor);
-               
-
+    //Funcoes que trazem as propriedades das formas geometricas           
     drawCircles(divisaoCirculo,raio, posicao, tamanho);
-    
-         drawRectLegenda(faixa);
+    drawRectLegenda(faixa);
   }
 }
-
+//Indica a quantidade de Faixas no csv para realizar a projecao de acordo com suas cores
 function criarOuAtualizarFaixa(faixaAtual){
   for(i = 0; i< faixas.length;i++){
     if(faixas[i] && faixas[i].numero == faixaAtual){
@@ -233,7 +226,7 @@ function criarOuAtualizarFaixa(faixaAtual){
   return faixas.length-1;
   
 }
-////////CIRCLES SEQUÊNCIA ÂNGULAR (EM FUNÇÃO DO CICLO TEMPORAL POLAR)/////////
+//INCLUI CIRCULOS NA SEQUENCIA ÂNGULAR (EM FUNCAO DO CICLO TEMPORAL POLAR)
 function drawCircle(angle, i, radius,circleRadius){
   xCircle = cos(angle*i) * radius;
   yCircle = sin(angle*i) * radius;
@@ -241,21 +234,21 @@ function drawCircle(angle, i, radius,circleRadius){
         ellipse(xCircle, yCircle, circleRadius*2, circleRadius*2);
 }
 
-////////CIRCLES EM FUNÇÃO DA QUANTIDADE/////////
+//ASSOCIA CIRCULOS EM FUNCAO DA QUANTIDADE
 function drawCircles(circles, radius, i, tamanho){
     angle = Math.PI*2 / circles;
     circleRadius = sin(angle/2) * radius *tamanho;
     ellipseMode(CENTER);
     
-    //Reitera o draw também em função do tempo//
+    //Reitera o draw tambem em funcao do tempo//
     drawCircle(angle, i, radius,circleRadius);
 }
 
- //Maracação do compasso fixo ao fundo div = 16/32/64/128 tempos rítmicos
+ //Referencia do compasso ao fundo de acordo com a formula do compasso
 function drawCirclefundo(){
   
-  //Opção Nogrid:
-        //stroke(0);
+  //Opcao Nogrid:
+    //stroke(0);
     //fill(0);
     //circle(0,0,340);
   
@@ -263,11 +256,9 @@ function drawCirclefundo(){
     ellipseMode(CENTER);
     stroke(146);
     noFill();
-    //strokeWeight();
     
-    circles = 4; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4de64) = 80 times 
+    circles = 4; ////2 para musicas 2/4; 3 para 3/4;  4 para 4/4; 5 para 5/4;
     angleFundo = Math.PI*2 / circles;
-    //rotate(2*PI); //para começar no ponteiro 
 
     circleRaiofundo = sin(angleFundo/16);
     
@@ -285,47 +276,19 @@ function drawCirclefundo(){
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10; 
         
     }
-
-        textSize(20);
-        stroke(0);
-        text('1',-5, -390, width);
-        //text('+',125, -325, width);
-        //text('2',250, -240, width);
-        //text('+',325, -130, width);
-        text('2',390, 0, width);
-        //text('+',320, 140, width);
-        //text('4',250, 250, width);
-        //text('+',120, 335, width);
-        text('3',-10, 410, width);
-        //text('+',-150, 330, width);
-        //text('2',-260, 265, width);
-        //text('+',-340, 140, width);
-        text('4',-400, 0, width);        
-        //text('+',-340, -130, width);
-        //text('4',-260, -240, width);
-        //text('+',-145, -320, width); 
+      
 } 
 
  //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
 function drawCirclefundoComposto(){
   
-  //Opção Nogrid:
-        //stroke(0);
-    //fill(0);
-    //circle(0,0,340);
-  
-  
     ellipseMode(CENTER);
     stroke(146);
     noFill();
-    //strokeWeight();
-
-    circles = 8; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 20; //20 para 5/4 
     angleFundo = Math.PI*2 / circles;
-    //rotate(2*PI); //para começar no ponteiro 
 
     circleRaiofundo = sin(angleFundo/96) * raioFundoComposto;
-    
     for(var i = 0; i < circles; i++){
      
         xCircle = cos(angleFundo*i) * raioFundoComposto;
@@ -335,37 +298,10 @@ function drawCirclefundoComposto(){
         strokeWeight(5);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
         strokeWeight(2);
-         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
-        
-        strokeWeight(1);
-        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10  
     }
 }
 
-
-//TENTATIVA DE CRIAR LEGENDA AUTOMÁTICA//
-function drawLegenda(faixa){ 
-noStroke();
-
-  for(i = 0; i< faixas.length;i++){
-    if(faixas[i] && faixas[i].cor == faixaAtualLegenda){
-      faixas[i].cor++;
-      console.log(faixas[i]);
-      console.log(i);
-      return i;
-    }
-    indiceCor++;
-  if(indiceCor >= cores.length){
-    indiceCor = 0;
-    }
-  }
-  faixas.push(new Faixa(faixaAtualLegenda, cores[indiceCor]));
-  return faixas.length-1;
-  
-  drawRectLegenda(faixaLegenda);
-}
-  
- 
   function drawRectLegenda(faixaLegenda){
   
          //fill(faixa.cor)
@@ -437,25 +373,33 @@ noStroke();
   }
 
 function textos(){
+  strokeWeight(1);  
+  textSize(20);
+        stroke(0);
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 4/4
+        text('1',-5, -390, width);
+        text('2',390, 0, width);
+        text('3',-10, 410, width);
+        text('4',-400, 0, width);  
         
-        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO//
-                /*text('16 = 0',-20, -350, width);
-        text('2',250, -240, width);
-        text('1',125, -325, width);
-        text('3',325, -130, width);
-        text('4',350, 5, width);
-        text('5',320, 140, width);
-        text('6',250, 250, width);
-        text('7',120, 335, width);
-        text('8',-5, 365, width);
-        text('9',-150, 330, width);
-        text('10',-260, 265, width);
-        text('11',-350, 130, width);
-        text('12',-370, 0, width);        
-        text('13',-340, -130, width);
-        text('14',-270, -240, width);
-        text('15',-160, -320, width); */ 
+
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 5/4
+        /*text('1',-10, -350, width);
+        text('2',340, -110, width);
+        text('3',220, 300, width);
+        text('4',-240, 300, width);
+        text('5',-360, -110, width); */
         
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 2/4
+        /*text('1',-10, -350, width);
+        text('2',-10, 365, width);*/
+        
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 3/4
+        /*text('1',-10, -350, width);
+        text('2',320, 190, width);
+        text('3',-340, 190, width);*/      
+
+        //DEPENDENDO DA MÚSICA QUE FOR PLOTAR COMENTAR QUAIS TRACKS ESTÃO OU NÃO NA LEGENDA     
         strokeWeight(1);
         stroke(0);
         textSize(15); //18
@@ -467,7 +411,7 @@ function textos(){
         //text(' Track 6 = Piano', 620, -200, width);  
         /*text(' Track 7 = Bateria', 620, -180, width);       
         
-        text(' Track 8 = Percussão', 620,-160 , width);
+        text(' Track 8 = Percussao', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);
         text(' Track 11 = Viola I', 620,-100 , width);
@@ -476,12 +420,9 @@ function textos(){
         //text(' Track 14 = ', 620, -40, width);
         //text(' Track 15 =  ', 620, -20, width);
         //text(' Track 16 ', 620, 0, width);     */
-
-        
-       //tracknames =[ voz, Guitarra 1, guitarra 2, Baixo, Piano, Bateria]
 }
 
-//Botão tocar música//
+//Botao tocar musica//
 function tocarMusica(){
   createP('');
   button=createButton("PLAY");     
@@ -509,7 +450,6 @@ function mouseClicked() {
  }
  
 }
-
 
 function menu(){
   redraw(); 

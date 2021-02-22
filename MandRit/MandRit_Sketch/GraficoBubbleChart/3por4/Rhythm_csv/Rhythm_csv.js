@@ -290,18 +290,11 @@ function drawCirclefundo(){
 
         textSize(20);
         stroke(0);
+        //Para 3/4
         text('1',-5, -390, width);
-        //text('+',125, -325, width);
-        //text('2',250, -240, width);
-        //text('+',325, -130, width);
         text('2',350, 200, width);
-        //text('+',320, 140, width);
-        //text('4',250, 250, width);
-        //text('+',120, 335, width);
         text('3',-360, 200, width);        
-        //text('+',-340, -130, width);
-        //text('4',-260, -240, width);
-        //text('+',-145, -320, width); 
+
 } 
 
  //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
@@ -435,24 +428,6 @@ noStroke();
   }
 
 function textos(){
-        
-        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO//
-                /*text('16 = 0',-20, -350, width);
-        text('2',250, -240, width);
-        text('1',125, -325, width);
-        text('3',325, -130, width);
-        text('4',350, 5, width);
-        text('5',320, 140, width);
-        text('6',250, 250, width);
-        text('7',120, 335, width);
-        text('8',-5, 365, width);
-        text('9',-150, 330, width);
-        text('10',-260, 265, width);
-        text('11',-350, 130, width);
-        text('12',-370, 0, width);        
-        text('13',-340, -130, width);
-        text('14',-270, -240, width);
-        text('15',-160, -320, width); */ 
         
         strokeWeight(1);
         stroke(0);
