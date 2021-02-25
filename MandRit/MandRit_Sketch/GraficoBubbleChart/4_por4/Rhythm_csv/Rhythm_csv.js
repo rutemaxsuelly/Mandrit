@@ -5,10 +5,10 @@ let airData;
 let raioFundo = 380;
 let raioFundoComposto = 380;
 let tempo;
-let divisaoCirculo = 50; //40 //60 //100
-let raioMenor = 100;
+let comprimentoCirculo = 64; //40 //60 //100 //
+let raioMenor = 100; // espaçamento entre circulos circunscritos
 let raioMaior = 300;
-let tamanhoMenor = 1;//1//1//0.5/0.1
+let tamanhoMenor = 1;//1//1//0.5/0.1 - PROPORCAO
 let tamanhoMaior = 3;//3//5
 let cores = [];
 let faixas = [];
@@ -27,7 +27,7 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/bateria04.csv",
+  airData = loadTable("csv_musics/Plotar_Musicas_Bubble/Finais/MachineGun_4por4_64.csv",
     "csv",
     "header");
     
@@ -172,6 +172,7 @@ verdeEscuro= color(51, 163, 105);
  faixa = airData.getColumn("X");
  faixamin = min(faixa);
  faixamax = max(faixa);
+ legenda = airData.getColumn("X");
  tamanho = airData.getColumn("Total_de_notas");
  tamanhomin = min(tamanho);
  tamanhomax = max(tamanho);
@@ -193,9 +194,9 @@ function drawDados(){
 
   for(let i = 0; i< airData.getRowCount(); i++){
     let tempoAtual = airData.getNum(i,"Y");
-    let posicao = map(tempoAtual, tempomin, tempomax, 0, divisaoCirculo-1);
+    let posicao = map(tempoAtual, tempomin, tempomax, 0, comprimentoCirculo-1);
     let faixaAtual = airData.getNum(i,"X");
-    let faixaAtualLegenda = airData.getNum(i,"X");
+    let faixaLegenda = airData.getNum(i,"X");
     let indice = criarOuAtualizarFaixa(faixaAtual);
     let faixa = faixas[indice];
     let raio = map(faixaAtual, faixamin, faixamax, raioMaior, raioMenor);
@@ -204,8 +205,8 @@ function drawDados(){
     
     fill(faixa.cor);
     //Funcoes que trazem as propriedades das formas geometricas           
-    drawCircles(divisaoCirculo,raio, posicao, tamanho);
-    drawRectLegenda(faixa);
+    drawCircles(comprimentoCirculo,raio, posicao, tamanho);
+    drawLegenda(faixaLegenda);
   }
 }
 //Indica a quantidade de Faixas no csv para realizar a projecao de acordo com suas cores
@@ -231,7 +232,7 @@ function drawCircle(angle, i, radius,circleRadius){
   xCircle = cos(angle*i) * radius;
   yCircle = sin(angle*i) * radius;
 
-        ellipse(xCircle, yCircle, circleRadius*2, circleRadius*2);
+   ellipse(xCircle, yCircle, circleRadius*2, circleRadius*2);
 }
 
 //ASSOCIA CIRCULOS EM FUNCAO DA QUANTIDADE
@@ -302,15 +303,15 @@ function drawCirclefundoComposto(){
     }
 }
 
-  function drawRectLegenda(faixaLegenda){
+  function drawLegenda(faixaLegenda){
   
          //fill(faixa.cor)
          //fill( amarelo);
          //circle(300, 560, 20, 60);
          //rect(300, 560, 20, 60);
-         fill(vermelho);         
-         circle(280, 560, 20, 60);
-         rect(280, 560, 20, 60);
+         //fill(vermelho);         
+         //circle(280, 560, 20, 60);
+         //rect(280, 560, 20, 60);
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
@@ -319,10 +320,10 @@ function drawCirclefundoComposto(){
          rect(240, 560, 20, 60);
          
         
-         fill(laranja);
+         /*fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-          /*fill(marron);         
+          fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
@@ -404,12 +405,12 @@ function textos(){
         stroke(0);
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);
-                text(' Track 2 = Bateria(condução)', 620, -280, width);
-        text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
-        text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
-        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
-        //text(' Track 6 = Piano', 620, -200, width);  
-        /*text(' Track 7 = Bateria', 620, -180, width);       
+               //text(' Track 2 = Bateria(condução)', 620, -280, width);
+        text(' Track 3 = Guitarra', 620,-260 , width);
+        text(' Track 4 = Bateria', 620, -240, width);
+        /*text(' Track 5 = Bateria (Floreio)', 620, -220, width);
+        text(' Track 6 = Piano', 620, -200, width);  
+        text(' Track 7 = Bateria', 620, -180, width);       
         
         text(' Track 8 = Percussao', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);

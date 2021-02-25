@@ -7,6 +7,11 @@ Baixo, Flautas, Piano, Cordas, percussão
 //Eu não existo longe de você// Tom Jobim e Vinicius de Moraes
 tracknames = [Piano, flauta, Flauta doce]
 
+
+//Joao e Maria//FINAL
+tracknames = [Acordeon Fr, Piano]
+
+
 4 POR 4
 
 
@@ -14,16 +19,10 @@ tracknames = [Piano, flauta, Flauta doce]
 Drum(condução), Drum(assinatura - Grave), Drum (assinatura - Agudo) Drum(Floreio)
 
 //Maracatu Atômico// Nação Zumbi
-tracknames = [Agogô'  Xequerê Caixa' Alfaia Vocal', Guitarra'] 
+tracknames = [Agogô', Xequerê, Caixa, Alfaia, Vocal', Guitarra'] 
 
 //Frevo Mulher// Zé Ramalho
 tracknames = [Oboé, Clarinete, Saxofone (Alto), Saxofone (Tenor)] 
-
-//Baião//
-tracknames = [Glockenspiel, Xilofone, Vibrafone] - Baião só mudar nome
-
-//Aquarelas do Brasil// Chico Buarque
-Soprano, Alto, Tenor, Baixo
 
 //Yesterday//
 tracknames = [Piano,Piano,Piano,Piano]
@@ -40,9 +39,6 @@ tracknames =
 //Xote das meninas SAX//
 tracknames = [Flauta, Saxofone (Tenor), Saxofone (Alto), Trombone];
 
-//Roda Viva// Chico Buarque
-Soprano, Alto, Tenor, Baixo
-
 //Aí já era// Jorge e Mateus
 tracknames = [Piano(A), Piano (B)]
 
@@ -55,6 +51,20 @@ tracknames = [Piano, Piano, Violino, Violoncello, Bateria]
 //Clair de Lune//Debussy
 Piano
 
+//Chega de saudade//
+Track 6	Guitar
+Track 7	Piano
+Track 8	Melody 1
+Track 9	Melody 2
+Track 10	Bass
+Track 11	Drums
+
+//Garota de Impanema// 
+Track 5	bass
+Track 6	flute
+Track 7	drums
+Track 8	nylon
+Track 9	canto
 
 //Just friends// Klenner e Lewis
 Vocal, piano, contrabaixo, grupo de bateria
@@ -62,21 +72,50 @@ Vocal, piano, contrabaixo, grupo de bateria
 //Everytime//  Boy Pablo
 tracknames =[ voz, Guitarra 1, guitarra 2, Baixo, Piano, Bateria]
 
+//Asa Branca //
+tracknames = [Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (B-flat), Trombone, Metallophone]
+
+2/4
+
+//Roda Viva// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Baião//
+tracknames = [Glockenspiel, Xilofone, Vibrafone] - Baião só mudar nome
+
+//Aquarelas do Brasil// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Rosa Amarela// Villas Lobos
+tracknames = [Violoncelo (5)]
+
+//Wave// 
+tracknames = [Violino (2), Viola, Fagote]
+
+//Eu nao Existo sem voce// Jobim e Vinicius de Morais
+tracknames = [Piano, Flauta, Flauta Doce]
+
+3/4
+
+//Joao e Maria// 
+tracknames = [
+Track 3	Accordion Fr
+Track 4	Bass
+Track 5	Piano 1
+Track 6	Drums
+
 5/4
 
 //Take five//  Dave Brubeck
 tracknames =[ bateria, piano, saxofone, baixo, piano]
+
+
 ------------
 AINDA NÃO ESTÃO PLOTADAS
 -----------
-//Wave// 
-tracknames = [Violino (2), Viola, Fagote]
 
 //Piano Mangueira // Chico Buarque
 tracknames = [Violão,Guitarra, Flauta, Clarinete (Bb), Saxofone (Alto), Saxofone (Tenor)]
-
-//Asa Branca //
-tracknames = [Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (B-flat), Trombone, Metallophone]
 
 //Eu quero um xodo// Dominguinhos
 Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (Bb), Trombone, Metalofone
@@ -100,8 +139,6 @@ tracknames = [voz (4)]
 // Trenzinho do Caipira // Villas Lobos
 tracknames = [Flauta Vertical, Grupo de Cordas, Xilofone, Melódica, Guitarra, Baixo (2)]
 
-//Rosa Amarela// Villas Lobos
-tracknames = [Violoncelo (5)]
 
 //Pra sempre com você//Jorge e Mateus
 tracknames = [Piano, Violino, Trumpet (B-flat)]
@@ -114,13 +151,6 @@ tracknames = [
 
 //Bicho de 7 cabeças//
 tracknames = [
-
-//Joao e Maria//
-tracknames = [
-
-//Chega de saudade//
-
-//Garota de Impanema//
 
 //Preciso me encontrar// Cartola
 tracknames = [

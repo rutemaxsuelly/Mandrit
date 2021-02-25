@@ -3,9 +3,9 @@
 
 let airData;
 let raioFundo = 380;
-let raioFundoComposto = 400;
+let raioFundoComposto = 380;
 let tempo;
-let divisaoCirculo = 50; //40 //60
+let comprimentoCirculo = 64; //40 //60
 let raioMenor = 100;
 let raioMaior = 300;
 let tamanhoMenor = 1;//1//1//0.5
@@ -22,13 +22,12 @@ let tamanhomax;
 let indiceCor = 0;
 
 let button;
-var cnv, sound, fft, peakDetect;
 var ellipseWidth = 10;
 let time = 0
 
 
 function preload(){
-  airData = loadTable("Plotar_Musicas3por4/RODA_VIVA_ChicoBuarque4.csv",
+  airData = loadTable("Plotar_Musicas3por4/joaoMariaChico3por4_64.csv",
     "csv",
     "header");
     
@@ -87,7 +86,7 @@ function setup() {
 
   translate(width / 2, height / 2);
   textos();
-  //drawCirclefundoComposto();
+  drawCirclefundoComposto();
   drawCirclefundo();
   
    rotate(PI/-2);
@@ -199,7 +198,7 @@ function drawDados(){
 
   for(let i = 0; i< airData.getRowCount(); i++){
     let tempoAtual = airData.getNum(i,"Y");
-    let posicao = map(tempoAtual, tempomin, tempomax, 0, divisaoCirculo-1);
+    let posicao = map(tempoAtual, tempomin, tempomax, 0, comprimentoCirculo-1);
     let faixaAtual = airData.getNum(i,"X");
     let faixaAtualLegenda = airData.getNum(i,"X");
     let indice = criarOuAtualizarFaixa(faixaAtual);
@@ -211,7 +210,7 @@ function drawDados(){
     fill(faixa.cor);
                
 
-    drawCircles(divisaoCirculo,raio, posicao, tamanho);
+    drawCircles(comprimentoCirculo,raio, posicao, tamanho);
     
          drawRectLegenda(faixa);
   }
@@ -311,7 +310,7 @@ function drawCirclefundoComposto(){
     noFill();
     //strokeWeight();
 
-    circles = 8; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
+    circles = 12; //16 para 2/4; 32 para 3/4;  64 para 4/4; TakeaFive 5/4 = 96 tempos
     angleFundo = Math.PI*2 / circles;
     //rotate(2*PI); //para começar no ponteiro 
 
@@ -329,7 +328,7 @@ function drawCirclefundoComposto(){
          ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
         
         strokeWeight(1);
-        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+        //line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
     }
 }
 
@@ -369,7 +368,7 @@ noStroke();
          fill(azul);
          circle(260, 560, 20, 60);
          rect(260, 560, 20, 60);
-          fill(verde);
+         /* fill(verde);
          circle(240, 560, 20, 60);
          rect(240, 560, 20, 60);
          
@@ -377,7 +376,7 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-          /*fill(marron);         
+          fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
@@ -433,12 +432,12 @@ function textos(){
         stroke(0);
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);
-                text(' Track 2 = Soprano', 620, -280, width);
-        text(' Track 3 = Alto', 620,-260 , width);
-        text(' Track 4 = Tenor', 620, -240, width);
+                text(' Track 2 = Acordeon Fr', 620, -280, width);
+        text(' Track 3 = Piano', 620,-260 , width);
+        /*text(' Track 4 = Tenor', 620, -240, width);
         text(' Track 5 = Baixo', 620, -220, width);
         //text(' Track 6 = Piano', 620, -200, width);  
-        /*text(' Track 7 = Bateria', 620, -180, width);       
+        text(' Track 7 = Bateria', 620, -180, width);       
         
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);

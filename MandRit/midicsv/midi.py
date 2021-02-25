@@ -4,9 +4,9 @@ import py_midicsv
 
 #Carrega o arquivo MIDI e transforma em CSV
 folder = "C:\\Users\\rutem\\Documents\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
-filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\bateri.mid"
+filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\SambadeUmanotaso_2por4.mid"
 csv_string = py_midicsv.midi_to_csv(folder + filename)
-nome_do_csv = folder + "csv\\File_tracksname\\bateriTEMPO_Granularidade64.csv"
+nome_do_csv = folder + "csv\\File_tracksname\\SambadeUmanotaso_2por4_64.csv"
 
 #Funcao que pega informacoes do cabecalho do MIDI
 def get_compasso(csv_string):
@@ -44,7 +44,7 @@ def csv_formater(line, ticksPerBeat, numerador, denominador):
         #TicksPerBeat e a unidade de tempo no MIDI, entao o Clocks realiza o calculo a cada ticksPerBeat pelo de seu compasso (beatsPorCompasso);
         clocks_por_compasso = ticksPerBeat* beatsPorCompasso
         #Parametro para o usuario verificar a regularidade da música pela "Janela de analise" pode ser determinada em valores diversos (4/ 5/ 6/ 2/ 0.5);
-        tamanhoAnalise = 4
+        tamanhoAnalise = 2
         janelaAnalise = tamanhoAnalise*clocks_por_compasso
         #tempo = deltatime(em tiques na sequência MIDI);
         tempo = int(col[1].replace(" "," "))
@@ -54,11 +54,9 @@ def csv_formater(line, ticksPerBeat, numerador, denominador):
         #Parametro para usuario verificar a regularidade e em quantas partes quer dividir o compasso (64, 32, 8);
         granularidade = 64
 
-        print("ticksPerbeat",ticksPerBeat)
-        print("clocks por compasso", clocks_por_compasso)
-        print("janelaAnalise", janelaAnalise)
-        print("subdivisao compasso", sub_divisao_compasso)
-        print("granularidade", granularidade)
+        #print("clocks por compasso", clocks_por_compasso)
+        #print("janelaAnalise", janelaAnalise)
+        #print("subdivisao compasso", sub_divisao_compasso)
         #O metodo "Round" realiza arredondamento dos valores(em tiques) da subdivisao do compasso para aglutinar as informacões com valores muito proximos.
         return track, int(round(sub_divisao_compasso /janelaAnalise*granularidade))%granularidade, nota
     else:
