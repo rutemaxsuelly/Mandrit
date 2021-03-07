@@ -7,9 +7,26 @@ Baixo, Flautas, Piano, Cordas, percussão
 //Eu não existo longe de você// Tom Jobim e Vinicius de Moraes
 tracknames = [Piano, flauta, Flauta doce]
 
-
 //Joao e Maria//FINAL
 tracknames = [Acordeon Fr, Piano]
+
+2/4
+
+//Roda Viva// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Baião//
+tracknames = [Glockenspiel, Xilofone, Vibrafone] - Baião só mudar nome
+
+//Aquarelas do Brasil// Chico Buarque
+Soprano, Alto, Tenor, Baixo
+
+//Rosa Amarela// Villas Lobos
+tracknames = [Violoncelo (5)]
+
+//Wave// 
+tracknames = [Violino (2), Viola, Fagote]
+
 
 
 4 POR 4
@@ -59,41 +76,18 @@ Track 9	Melody 2
 Track 10	Bass
 Track 11	Drums
 
-//Garota de Impanema// 
-Track 5	bass
-Track 6	flute
-Track 7	drums
-Track 8	nylon
-Track 9	canto
+//Garota de Impanema//
+Clarinete , Alto Saxofone, Tenor Saxofone, Piano 1, Piano 2, Baixo, Bateria 1, Bateria 2.
 
 //Just friends// Klenner e Lewis
 Vocal, piano, contrabaixo, grupo de bateria
+Trombone, Saxophone (Alto), Trumpet (In B-flat), Bass, Drum Group
 
 //Everytime//  Boy Pablo
 tracknames =[ voz, Guitarra 1, guitarra 2, Baixo, Piano, Bateria]
 
 //Asa Branca //
 tracknames = [Flauta, Clarinete (Bb), Saxofone (Soprano), Saxofone (Alto), Saxofone (Tenor), Trompete (B-flat), Trombone, Metallophone]
-
-2/4
-
-//Roda Viva// Chico Buarque
-Soprano, Alto, Tenor, Baixo
-
-//Baião//
-tracknames = [Glockenspiel, Xilofone, Vibrafone] - Baião só mudar nome
-
-//Aquarelas do Brasil// Chico Buarque
-Soprano, Alto, Tenor, Baixo
-
-//Rosa Amarela// Villas Lobos
-tracknames = [Violoncelo (5)]
-
-//Wave// 
-tracknames = [Violino (2), Viola, Fagote]
-
-//Eu nao Existo sem voce// Jobim e Vinicius de Morais
-tracknames = [Piano, Flauta, Flauta Doce]
 
 3/4
 

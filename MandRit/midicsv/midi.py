@@ -4,9 +4,9 @@ import py_midicsv
 
 #Carrega o arquivo MIDI e transforma em CSV
 folder = "C:\\Users\\rutem\\Documents\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
-filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\SambadeUmanotaso_2por4.mid"
+filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\joaoMariaChico3por4.mid"
 csv_string = py_midicsv.midi_to_csv(folder + filename)
-nome_do_csv = folder + "csv\\File_tracksname\\SambadeUmanotaso_2por4_64.csv"
+nome_do_csv = folder + "csv\\File_tracksname\\joaoMariaChico3por4_64.csv"
 
 #Funcao que pega informacoes do cabecalho do MIDI
 def get_compasso(csv_string):
@@ -44,7 +44,7 @@ def csv_formater(line, ticksPerBeat, numerador, denominador):
         #TicksPerBeat e a unidade de tempo no MIDI, entao o Clocks realiza o calculo a cada ticksPerBeat pelo de seu compasso (beatsPorCompasso);
         clocks_por_compasso = ticksPerBeat* beatsPorCompasso
         #Parametro para o usuario verificar a regularidade da música pela "Janela de analise" pode ser determinada em valores diversos (4/ 5/ 6/ 2/ 0.5);
-        tamanhoAnalise = 2
+        tamanhoAnalise = 3
         janelaAnalise = tamanhoAnalise*clocks_por_compasso
         #tempo = deltatime(em tiques na sequência MIDI);
         tempo = int(col[1].replace(" "," "))

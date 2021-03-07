@@ -3,7 +3,7 @@
 
 let airData;
 let raioFundo = 340;
-let raioFundoComposto = 400;
+let raioFundoComposto = 340;
 let tempo;
 let divisaoCirculo = 50;
 let raioMenor = 100;
@@ -26,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasRadial/Takee_a_fiveee5.csv",
+  airData = loadTable("csv_plot/PlotarMusicasRadial/Finais/bateriTEMPO_Granularidade64.csv",
     "csv",
     "header");
     
@@ -79,7 +79,7 @@ function setup() {
         
                 textSize(20);
                 //altera-se de acordo com a música plotada
-                text('Fórmula do compasso: 5/4', 1450, 570, width);
+                text('Fórmula do compasso: 4/4', 1450, 570, width); 
         
         /*//verticais
         line(1770, 830, 0, 830); 
@@ -99,9 +99,9 @@ function setup() {
       
   translate(width / 2, height / 2);
   textos();
- // drawCirclefundoComposto();
-  rotate(PI/-2);
-  drawCirclefundo();
+    drawCirclefundo();
+ drawCirclefundoComposto();
+  rotate(PI/-2); //alinhar no ponteiro
  
  ///RANGE DE CORES///
  //Faixa 01//
@@ -329,44 +329,11 @@ function drawCircle(raio,posicao, tamanho, faixa){
         }
 }
 
-//Maracação do compasso fixo ao fundo div = 16 tempos rítmicos
+ //Referencia do compasso ao fundo de acordo com a formula do compasso
 function drawCirclefundo(){
   
-    //stroke(200);
-    //fill(0);
-    //circle(0,0,340);
-
-    stroke(200);
-    circle();
-    noFill();
-  
-    circles = 80; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4) = 80 times 
-    angleFundo = Math.PI*2 / circles;
-    //rotate(PI/-2); //para começar no ponteiro
-
-    circleRaiofundo = sin(angleFundo/300) * raioFundo;
-    
-    for(var i = 0; i < circles; i++){
-        xCircle = cos(angleFundo*i) * raioFundo;
-        yCircle = sin(angleFundo*i) * raioFundo;
-        ellipseMode(CENTER);
-        
-        stroke(240);
-        fill(0);
-        strokeWeight(8);
-        point(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+5); //opção2: ellipse strokeWeight(5); noline; 
-        strokeWeight(1);
-        line(xCircle, yCircle, circleRaiofundo, circleRaiofundo);
-       
-
-    }
-}
-
- //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
-function drawCirclefundoComposto(){
-  
-  //Opção Nogrid:
-        //stroke(0);
+  //Opcao Nogrid:
+    //stroke(0);
     //fill(0);
     //circle(0,0,340);
   
@@ -374,14 +341,38 @@ function drawCirclefundoComposto(){
     ellipseMode(CENTER);
     stroke(146);
     noFill();
-    //strokeWeight();
-
-    circles = 80; ////16 para músicas 2/4; 32 para 3/4;  64 para 4/4; //TakeaFive 5/4(4/4 + 1/4de64) = 80 times 
+    
+    circles = 4; ////2 para musicas 2/4; 3 para 3/4;  4 para 4/4; 5 para 5/4;
     angleFundo = Math.PI*2 / circles;
-    //rotate(2*PI); //para começar no ponteiro 
+
+    circleRaiofundo = sin(angleFundo/16);
+    
+    for(var i = 0; i < circles; i++){
+        xCircle = -sin(angleFundo*i) * raioFundo;
+        yCircle = -cos(angleFundo*i) * raioFundo;
+        ellipseMode(CENTER);
+        strokeWeight(10);
+        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        
+        strokeWeight(0.5);
+        circle(0,0,340);
+               //circle(xCircle,yCircle , 380);
+        strokeWeight(1);
+        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10; 
+        
+    } 
+} 
+
+ //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
+function drawCirclefundoComposto(){
+  
+    ellipseMode(CENTER);
+    stroke(146);
+    noFill();
+    circles = 16; //20 para 5/4 16 para 4/4
+    angleFundo = Math.PI*2 / circles;
 
     circleRaiofundo = sin(angleFundo/96) * raioFundoComposto;
-    
     for(var i = 0; i < circles; i++){
      
         xCircle = cos(angleFundo*i) * raioFundoComposto;
@@ -391,10 +382,7 @@ function drawCirclefundoComposto(){
         strokeWeight(5);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
         strokeWeight(2);
-         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10
-        
-        strokeWeight(1);
-        line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10;       
+         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10  
     }
 }
 
@@ -418,11 +406,11 @@ noStroke();
          fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
-         fill(marron);         
+         /*fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
      
-         /*fill(magenta);
+         fill(magenta);
          circle(180, 560, 20, 60);
          rect(180, 560, 20, 60);
          fill(roxo);
@@ -461,53 +449,43 @@ noStroke();
 }
 
 function textos(){
-    textSize(20);
+  strokeWeight(1);  
+  textSize(20);
         stroke(0);
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 4/4
         text('1',-10, -350, width);
-        text('+',125, -325, width);
-        text('2',250, -240, width);
-        text('+',325, -130, width);
-        text('3',350, 5, width);
-        text('+',320, 140, width);
-        text('4',250, 250, width);
-        text('+',120, 335, width);
-        text('1',-10, 365, width);
-        text('+',-150, 330, width);
-        text('2',-260, 265, width);
-        text('+',-340, 140, width);
-        text('3',-370, 0, width);        
-        text('+',-340, -130, width);
-        text('4',-260, -240, width);
-        text('+',-145, -320, width);  
+        text('2',350, 5, width);
+        text('3',-10, 365, width);
+        text('4',-370, 0, width);
         
-        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO//
-                /*text('16 = 0',-20, -350, width);
-        text('2',250, -240, width);
-        text('1',125, -325, width);
-        text('3',325, -130, width);
-        text('4',350, 5, width);
-        text('5',320, 140, width);
-        text('6',250, 250, width);
-        text('7',120, 335, width);
-        text('8',-5, 365, width);
-        text('9',-150, 330, width);
-        text('10',-260, 265, width);
-        text('11',-350, 130, width);
-        text('12',-370, 0, width);        
-        text('13',-340, -130, width);
-        text('14',-270, -240, width);
-        text('15',-160, -320, width); */ 
+
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 5/4
+       /* text('1',-10, -350, width);
+        text('2',340, -110, width);
+        text('3',220, 300, width);
+        text('4',-240, 300, width);
+        text('5',-360, -110, width);
         
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 2/4
+        /*text('1',-10, -350, width);
+        text('2',-10, 365, width);*/
+        
+        //OPÇÃO DE MARCAÇÃO DE REFERÊNCIA DE SUBDIVISÕES DO COMPASSO 3/4
+        /*text('1',-10, -350, width);
+        text('2',320, 190, width);
+        text('3',-340, 190, width);*/      
+
+        //DEPENDENDO DA MÚSICA QUE FOR PLOTAR COMENTAR QUAIS TRACKS ESTÃO OU NÃO NA LEGENDA 
         strokeWeight(1);
         stroke(0);
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);
-        text(' Track 2 = Bateria', 620, -280, width);
-        text(' Track 3 = Piano', 620,-260 , width);
-        text(' Track 4 = Saxofone', 620, -240, width);
-        text(' Track 5 = Baixo', 620, -220, width);
-        text(' Track 6 = Piano', 620, -200, width);  
-        /*
+                text(' Track 2 = Bateria(condução)', 620, -280, width);
+        text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
+        text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
+        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
+        /*text(' Track 6 = Piano', 620, -200, width);  
+        
         text(' Track 7 = Bateria', 620, -180, width);       
         text(' Track 8 = Percussão', 620,-160 , width);
         text(' Track 9 = Violino I', 620, -140, width);

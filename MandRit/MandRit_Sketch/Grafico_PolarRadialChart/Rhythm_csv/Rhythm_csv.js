@@ -3,8 +3,9 @@
 
 let airData;
 let raioFundo = 340;
+let raioFundoComposto = 340;
 let tempo;
-let divisaoCirculo = 60;
+let comprimentoCirculo = 64;
 let raioMenor = 100;
 let raioMaior = 300;
 let tamanhoMenor = .1;
@@ -25,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasPolar/bateriTEMPO_Granularidade64.csv",
+  airData = loadTable("csv_plot/PlotarMusicasPolar/Finais/bateriTEMPO_Granularidade64.csv",
     "csv",
     "header");
     
@@ -148,7 +149,8 @@ verdeEscuro= color(51, 163, 105);
       
   translate(width / 2, height / 2);
   textos();
-  rotate(PI/-2);
+  drawCirclefundoComposto()
+  rotate(PI/-2); // alinha no ponteiro
   drawCirclefundo();
  
  
@@ -231,10 +233,10 @@ function drawFaixas(){
 //Desenha faixas por QUANTIDADE DE NOTAS em relação ao Raio da Referência do compasso
 
 function posicaoByQuantidadeNotas(faixa){
-  let posicao = map(faixa.tempo, tempomin, tempomax, 0, divisaoCirculo-1);
+  let posicao = map(faixa.tempo, tempomin, tempomax, 0, comprimentoCirculo-1);
   let tamanho = map(faixa.quantidadeNotas, tamanhomin, tamanhomax, tamanhoMaior, tamanhoMenor);
   let raioTamanho = map(faixa.quantidadeNotas, tamanhomin, tamanhomax, raioMenor, raioMaior);
-  angle = Math.PI*2 / divisaoCirculo;
+  angle = Math.PI*2 / comprimentoCirculo;
   circleRadius = sin(angle/2) * raioTamanho *tamanho;
   xCircle = cos(angle*posicao) * raioTamanho;
   yCircle = sin(angle*posicao) * raioTamanho;
@@ -283,7 +285,7 @@ function criarOuAtualizarFaixa(faixaAtual, tempo, quantidadeNotas){
  //Coleta de informações do csv para plotar em drawCircle
 function drawCircles(faixa){
     let raio = map(faixa.numero, faixamin, faixamax, raioMaior, raioMenor);
-    let posicao = map(faixa.tempo, tempomin, tempomax, 0, divisaoCirculo-1);
+    let posicao = map(faixa.tempo, tempomin, tempomax, 0, comprimentoCirculo-1);
     let tamanho = map(faixa.quantidadeNotas, tamanhomin, tamanhomax, tamanhoMaior, tamanhoMenor);
     let raioTamanho = map(faixa.quantidadeNotas, tamanhomin, tamanhomax, raioMenor, raioMaior);
     
@@ -293,7 +295,7 @@ function drawCircles(faixa){
 }
  //Descritor dos Paramêtros e informações dos Circulos
 function drawCircle(raio,posicao, tamanho, faixa){
-        angle = Math.PI*2 / divisaoCirculo;
+        angle = Math.PI*2 / comprimentoCirculo;
         circleRadius = sin(angle/2) * raio * tamanho;
         xCircle = cos(angle*posicao) * raio;
         yCircle = sin(angle*posicao) * raio;
@@ -320,11 +322,11 @@ function drawCircle(raio,posicao, tamanho, faixa){
         }
 }
 
- //Maracação do compasso fixo ao fundo div = 16/32/64/128 tempos rítmicos
+ //Referencia do compasso ao fundo de acordo com a formula do compasso
 function drawCirclefundo(){
   
-  //Opção Nogrid:
-        //stroke(0);
+  //Opcao Nogrid:
+    //stroke(0);
     //fill(0);
     //circle(0,0,340);
   
@@ -332,18 +334,15 @@ function drawCirclefundo(){
     ellipseMode(CENTER);
     stroke(146);
     noFill();
-    //strokeWeight();
     
-    //Divisoes do relógio ao fundo em //4/5/3/2
-    circles = 4; 
+    circles = 4; ////2 para musicas 2/4; 3 para 3/4;  4 para 4/4; 5 para 5/4;
     angleFundo = Math.PI*2 / circles;
-    //rotate(2*PI); //para começar no ponteiro 
 
     circleRaiofundo = sin(angleFundo/16);
     
     for(var i = 0; i < circles; i++){
-        xCircle = cos(angleFundo*i) * raioFundo;
-        yCircle = sin(angleFundo*i) * raioFundo;
+        xCircle = -sin(angleFundo*i) * raioFundo;
+        yCircle = -cos(angleFundo*i) * raioFundo;
         ellipseMode(CENTER);
         strokeWeight(10);
         point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
@@ -353,6 +352,30 @@ function drawCirclefundo(){
                //circle(xCircle,yCircle , 380);
         strokeWeight(1);
         line(xCircle,yCircle , circleRaiofundo, circleRaiofundo)+10; 
+        
+    } 
+} 
+
+ //Maracação fixa ao fundo para compassos compostos Ex: 12/8 9/8 
+function drawCirclefundoComposto(){
+  
+    ellipseMode(CENTER);
+    stroke(146);
+    noFill();
+    circles = 16; //20 para 5/4 16 para 4/4
+    angleFundo = Math.PI*2 / circles;
+
+    circleRaiofundo = sin(angleFundo/96) * raioFundoComposto;
+    for(var i = 0; i < circles; i++){
+     
+        xCircle = cos(angleFundo*i) * raioFundoComposto;
+        yCircle = sin(angleFundo*i) * raioFundoComposto;
+        ellipseMode(CENTER);
+        //stroke(0);
+        strokeWeight(5);
+        point(xCircle, yCircle, circleRaiofundo, circleRaiofundo); //+5, +10
+        strokeWeight(2);
+         ellipse(xCircle, yCircle, circleRaiofundo+10, circleRaiofundo+10); //+5, +10  
     }
 }
 

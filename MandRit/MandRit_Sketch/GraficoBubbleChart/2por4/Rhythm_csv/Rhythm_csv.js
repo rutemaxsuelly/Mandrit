@@ -27,11 +27,11 @@ let time = 0
 
 
 function preload(){
-  airData = loadTable("Plotar_Musicas2por4/Finais/Baiao2por4_64.csv",
+  airData = loadTable("Plotar_Musicas2por4/Finais/AquareladoBrasil2por4_64.csv",
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas2por4/BaiaoLuizGonzaga.mp3');
+     sound = loadSound('ArquivoMusicas2por4/aquarela_do_brasil.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -365,9 +365,10 @@ noStroke();
          rect(240, 560, 20, 60);
          
         
-         /*fill(laranja);
+         fill(laranja);
          circle(220, 560, 20, 60);
          rect(220, 560, 20, 60);
+          /*
           fill(marron);         
          circle(200, 560, 20, 60);
          rect(200, 560, 20, 60);
@@ -442,12 +443,13 @@ function textos(){
         stroke(0);
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);Baixo, Flautas, Piano, Cordas, percussão
-               text(' Track 2 = Glockenspiel', 620, -280, width);
-        text(' Track 3 = Xilofone', 620,-260 , width);
-        text(' Track 4 = Vibrafone', 620, -240, width);
-        /*text(' Track 5 = Saxofone (Alto)', 620, -220, width);
-        text(' Track 6 = Saxofone (Tenor)', 620, -200, width);  
-        text(' Track 7 = Trompete (B-flat)', 620, -180, width);  
+        text(' Track 2 = Soprano', 620, -280, width);
+        text(' Track 3 = Alto', 620,-260 , width);
+        text(' Track 4 = Tenor', 620, -240, width);
+       text(' Track 5 = Baixo', 620, -220, width);
+/*
+        text(' Track 7 = Bateria', 620, -180, width);  
+        
         text(' Track 8 = Trombone', 620,-160 , width);
         text(' Track 9 = Metallophone', 620, -140, width);
         text(' Track 10 = Violino II ', 620, -120, width);

@@ -9,7 +9,7 @@ let comprimentoCirculo = 64; //40 //60
 let raioMenor = 100;
 let raioMaior = 300;
 let tamanhoMenor = 1;//1//1//0.5
-let tamanhoMaior = 3;//5//3//5
+let tamanhoMaior = 5;//5//3//5
 let cores = [];
 let faixas = [];
 let tempomin;
@@ -31,7 +31,7 @@ function preload(){
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas3por4/RODA_VIVAChico.mp3');
+     sound = loadSound('ArquivoMusicas3por4/JoaoeMariaChico_Buarque.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
