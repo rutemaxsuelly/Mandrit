@@ -21,6 +21,15 @@ let tamanhomin;
 let tamanhomax;
 let indiceCor = 0;
 
+//CURSOR
+let cx, cy;
+let raioSegundos;
+let x = 0.0; // Current x-coordinate
+let y = 0.0; // Current y-coordinate
+let batida = 0.05; // Size of each batida along the path
+let caminhoBatida = 0.0; // Percentage traveled (0.0 to 1.0)
+var xCursor = 60 ;
+
 let button;
 var ellipseWidth = 10;
 let time = 0
@@ -42,65 +51,16 @@ function setup() {
   center = createVector(width/2, height/2);
   maxRadius = min(center.x, center.y) * 0.9;
   noStroke();
-  //noLoop();
 
   background(255); 
   ellipseMode(CENTER);
-  textFont(font);
-   strokeWeight(1);
-        stroke(0);
-        textSize(50);
-        text('M A N D R I T', 1200, 800, width);
-            
-        //Legenda Track//
-        stroke(0);
-        rect(10, 375, 420, 100);
-        rect(1350, 50,500, 630);
-        rect(1350, 620,500, 60);
-        line(1350, 450,1770,450);
-        //horizontais//
-        line(1435, 520, 1465,520);
-        line(1490, 520,1530,520);
-        line(1555, 520,1625,520);
-        line(1645, 520,1740,520);
-        
-        //verticais//
-                line(1740, 500, 1740, 540);
-                line(1645, 500, 1645, 540);
-                line(1625, 500, 1625, 540);
-                line(1555, 500, 1555, 540);
-                line(1530, 500, 1530, 540);
-                line(1490, 500, 1490, 540);
-                line(1465, 500, 1465, 540);
-                line(1435, 500, 1435, 540);
-                
-                textSize(20);
-                text('Quantidade de notas', 1450, 480, width);
-                //altera-se de acordo com a música plotada
-                text('Fórmula do Compasso: 5/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
-                textSize(30);
-                text('-', 1400, 580, width);
-               text('+', 1750, 580, width);
-                
+  textFont(font);                
        
-
-  translate(width / 2, height / 2);
-  textos();
-  drawCirclefundoComposto();
-  drawCirclefundo();
-  
-   rotate(PI/-2);
-   
+ 
     //Função SaveAnalise - inclui botão de play em musica para facilitar análise e seu download da visualização. 
   SaveAnalise();
   tocarMusica();
-    // p5.PeakDetect requires a p5.FFT
-    fft = new p5.FFT();
-    peakDetect = new p5.PeakDetect();
-    //framesPerPeak = 60/(120/60); framesPerPeak - por padrão é 20 - 
-    //Tentativa de calculo de bpm da musica, (90bpm - a cada 2/3s para o proximo beat - acender uma luz)
-    //e atualizar em acompanhamento em relação ao valor de circles da referencia do compasso
-
+     rotate(PI/-2);
         
  ///RANGE DE CORES///
  //Faixa 1//Condução
@@ -183,17 +143,56 @@ verdeEscuro= color(51, 163, 105);
 }
 
 function draw() {
+       cursorAnimado();
+        strokeWeight(1);
+        stroke(0);
+        textSize(50);
+        text('M A N D R I T', 1200, 800, width);
+            
+        //Legenda Track//
+        stroke(0);
+        noFill();
+        rect(10, 375, 420, 100);
+        rect(1350, 50,500, 630);
+        rect(1350, 620,500, 60);
+        line(1350, 450,1770,450);
+        //horizontais//
+        line(1435, 520, 1465,520);
+        line(1490, 520,1530,520);
+        line(1555, 520,1625,520);
+        line(1645, 520,1740,520);
+        
+        //verticais//
+                line(1740, 500, 1740, 540);
+                line(1645, 500, 1645, 540);
+                line(1625, 500, 1625, 540);
+                line(1555, 500, 1555, 540);
+                line(1530, 500, 1530, 540);
+                line(1490, 500, 1490, 540);
+                line(1465, 500, 1465, 540);
+                line(1435, 500, 1435, 540);
+                
+                textSize(20);
+                text('Quantidade de notas', 1450, 480, width);
+                //alterada de acordo com a musica plotada
+                text('Fórmula do Compasso: 4/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
+                textSize(30);
+                text('-', 1400, 580, width);
+               text('+', 1750, 580, width);
+                
+                
  translate(width / 2, height / 2);
+   textos();
+  drawCirclefundo();
+   drawCirclefundoComposto();
  rotate(PI/-2);
   noStroke();
   drawDados(); 
-  //drawCursorAcompanhamento();
 }
 
 
 //Dados musicais extraídos do MIDI//
 function drawDados(){
-    noLoop();
     indiceCor = 0;
 
   for(let i = 0; i< airData.getRowCount(); i++){
@@ -503,6 +502,7 @@ function mouseClicked() {
   sound.stop();
   sound.setVolume(0.3);
   button.html("STOP");
+    cursorAnimado();
 }else {
   sound.play();
  
@@ -547,4 +547,33 @@ function SaveAnalise (){
   button.style("background-color","#E3E3E3");
   button.style("font-size", "16px");
   
+}
+
+function cursorAnimado(){
+  background(255);
+ //CURSOR
+ raioSegundos = raioFundo;      
+ cx = width / 2;
+ cy = height / 2;
+  // Draw the clock background
+  // Angles for sin() and cos() start at 3 o'clock;
+  // subtrai HALF_PI para começar o ponteiro no topo
+  //map (valor, start1, stop1, start2, stop2, [withinBounds])
+  //let s = map(second(), 0, 60, 0.5, TWO_PI, [120]) - HALF_PI;
+  bpm = 120 // 150 = 0.4 //120 = 0.5 // 90 = 0.6
+  batidaConstante= (xCursor / bpm)*PI/10; //razão para bpm ficar constante em segundos
+  batida = 0.5;//batida em segundos
+  //HALF_PI = 1/4 de um circulo //TWO_PI circulo completo
+  let s = map(second(), 0, batida,0,batidaConstante)-HALF_PI;
+  ellipseMode(CENTER);
+          noFill();
+          stroke(146);
+          strokeWeight(1);
+        circle(cx,cy, 380);
+  // Draw the hands of the clock
+  fill(0);
+  strokeWeight(8);
+  stroke(0);
+  //line(cx, cy, cx + cos(s) * raioSegundos, cy + sin(s) * raioSegundos);
+  ellipse(cx + cos(s) * raioSegundos, cy + sin(s) * raioSegundos, 10);
 }

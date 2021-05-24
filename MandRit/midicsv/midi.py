@@ -4,9 +4,9 @@ import py_midicsv
 
 #Carrega o arquivo MIDI e transforma em CSV
 folder = "C:\\Users\\rutem\\Documents\\GitHub\\Music_Visual\\MandRit\\midicsv\\"
-filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\joaoMariaChico3por4.mid"
+filename = "midi_file\\Base_MandRit\\_Plotar_Midis\\bateria150.mid"
 csv_string = py_midicsv.midi_to_csv(folder + filename)
-nome_do_csv = folder + "csv\\File_tracksname\\joaoMariaChico3por4_64.csv"
+nome_do_csv = folder + "csv\\File_tracksname\\bateria1504por4_32.csv"
 
 #Funcao que pega informacoes do cabecalho do MIDI
 def get_compasso(csv_string):
@@ -44,15 +44,16 @@ def csv_formater(line, ticksPerBeat, numerador, denominador):
         #TicksPerBeat e a unidade de tempo no MIDI, entao o Clocks realiza o calculo a cada ticksPerBeat pelo de seu compasso (beatsPorCompasso);
         clocks_por_compasso = ticksPerBeat* beatsPorCompasso
         #Parametro para o usuario verificar a regularidade da música pela "Janela de analise" pode ser determinada em valores diversos (4/ 5/ 6/ 2/ 0.5);
-        tamanhoAnalise = 3
+        tamanhoAnalise = 4
         janelaAnalise = tamanhoAnalise*clocks_por_compasso
         #tempo = deltatime(em tiques na sequência MIDI);
         tempo = int(col[1].replace(" "," "))
         #Faz o modulo das divisões do compasso (garante que o resto da divisao entre - sub_divisao_compasso / janelaAnalise- serao sempre entre 0 e 1);
         sub_divisao_compasso= tempo%janelaAnalise
+        print("tempoTick", tempo)
 
         #Parametro para usuario verificar a regularidade e em quantas partes quer dividir o compasso (64, 32, 8);
-        granularidade = 64
+        granularidade = 32
 
         #print("clocks por compasso", clocks_por_compasso)
         #print("janelaAnalise", janelaAnalise)
@@ -70,7 +71,7 @@ def separate_note_por_compasso(csv_string):
     for line in csv_string:
         print(line)
         track, sub_divisao_compasso, nota = csv_formater(line, ticksPerBeat, numerador, denominador)
-        print("Subdivisao pos conversao", sub_divisao_compasso)
+        #print("Subdivisao pos conversao", sub_divisao_compasso)
         if(track == None):
             continue
         if ((track, sub_divisao_compasso) in dic_matrix.keys()):

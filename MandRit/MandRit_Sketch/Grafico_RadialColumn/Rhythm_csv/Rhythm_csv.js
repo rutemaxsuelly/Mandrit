@@ -26,7 +26,7 @@ let TC = new TempConversion();
 
 
 function preload(){
-  airData = loadTable("csv_plot/PlotarMusicasRadial/Finais/bateriTEMPO_Granularidade64.csv",
+  airData = loadTable("csv_plot/PlotarMusicasRadial/Finais/bateriTEMPO_Granularidade32.csv",
     "csv",
     "header");
     

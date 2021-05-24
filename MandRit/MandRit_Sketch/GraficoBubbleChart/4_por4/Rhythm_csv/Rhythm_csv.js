@@ -28,7 +28,7 @@ let x = 0.0; // Current x-coordinate
 let y = 0.0; // Current y-coordinate
 let batida = 0.05; // Size of each batida along the path
 let caminhoBatida = 0.0; // Percentage traveled (0.0 to 1.0)
-var xCursor = 60 ;
+var xConversor= 60 ;
 
 let button;
 var ellipseWidth = 10;
@@ -40,7 +40,7 @@ function preload(){
     "csv",
     "header");
     
-     sound = loadSound('ArquivoMusicas/bateria04.mp3');
+     sound = loadSound('ArquivoMusicas/bateria04_Oficial150.mp3');
     
   
     font = loadFont('assets/CaviarDreams.ttf');
@@ -60,13 +60,7 @@ function setup() {
     //Funcao SaveAnalise - inclui botao de play em musica para facilitar análise e seu download da visualizacao. 
   SaveAnalise();
   tocarMusica();
-
-
    rotate(PI/-2);
-   
-    //framesPerPeak = 60/(120/60); framesPerPeak - por padrao é 24 - 
-    //Tentativa de calculo de bpm da musica, (90bpm - a cada 2/3s para o proximo beat - acender uma luz)
-    // atualizar acompanhamento em relacao ao valor de circles da referencia do compasso
 
         
  ///RANGE DE CORES///
@@ -495,20 +489,18 @@ function SaveAnalise (){
 
 function cursorAnimado(){
   background(255);
- //CURSOR
  raioSegundos = raioFundo;      
  cx = width / 2;
  cy = height / 2;
-  // Draw the clock background
-  // Angles for sin() and cos() start at 3 o'clock;
+  // ANIMA CURSOR AO FUNDO
   // subtrai HALF_PI para começar o ponteiro no topo
-  //map (valor, start1, stop1, start2, stop2, [withinBounds])
-  //let s = map(second(), 0, 60, 0.5, TWO_PI, [120]) - HALF_PI;
-  bpm = 120 // 150
-  valorSegundos= xCursor / bpm*PI/2;
-  batida = 0.5;//tamanhoMusica 
+
+  bpm = 120 // 150 = 0.4 //120 = 0.5 // 90 = 0.6
+  batida= (xConversor/ bpm); //razão para bpm ficar constante em segundos
+   //tamanhoMusica = 5; //em segundos
   //HALF_PI = 1/4 de um circulo //TWO_PI circulo completo
-  let s = map(second(), 0, batida,0,valorSegundos)-HALF_PI;
+  //map (objetoConversão, menorValorAtual, maiorValorAtual, menorValorintervalo,maiorValorintervalo, [withinBounds])
+  let s = map(second(), 0,batida, 0, batida*PI/2)-HALF_PI;
   ellipseMode(CENTER);
           noFill();
           stroke(146);
@@ -519,5 +511,5 @@ function cursorAnimado(){
   strokeWeight(5);
   stroke(0);
   //line(cx, cy, cx + cos(s) * raioSegundos, cy + sin(s) * raioSegundos);
-  ellipse(cx + cos(s) * raioSegundos, cy + sin(s) * raioSegundos, 10);
+  ellipse(cx + cos(s) * raioSegundos, cy + sin(s) * raioSegundos,10);
 }
