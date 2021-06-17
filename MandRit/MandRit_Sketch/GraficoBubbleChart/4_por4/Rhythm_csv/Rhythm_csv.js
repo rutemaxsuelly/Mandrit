@@ -173,9 +173,9 @@ function draw() {
                 line(1435, 500, 1435, 540);
                 
                 textSize(20);
-                text('Quantidade de notas', 1450, 480, width);
+                text('Amount of notes', 1450, 480, width);
                 //alterada de acordo com a musica plotada
-                text('Fórmula do Compasso: 4/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
+                text('Time Signature: 4/4', 1430, 660, width); //5/4 ou 2/4 ou 3/4...
                 textSize(30);
                 text('-', 1400, 580, width);
                text('+', 1750, 580, width);
@@ -406,10 +406,10 @@ function textos(){
         textSize(15); //18
         //text(' Track 1 =', 620, -300, width);
                //text(' Track 2 = Bateria(condução)', 620, -280, width);
-        text(' Track 2 = Bateria(condução)', 620, -280, width);
-        text(' Track 3 = Bateria(Assinatura - Grave)', 620,-260 , width);
-        text(' Track 4 = Bateria(Assinatura - Agudo)', 620, -240, width);
-        text(' Track 5 = Bateria (Floreio)', 620, -220, width);
+        text(' Track 2 = Drums(conducting pattern)', 620, -280, width);
+        text(' Track 3 = Drums(Signature - Lowest)', 620,-260 , width);
+        text(' Track 4 = Drums(Signature - Highest)', 620, -240, width);
+        text(' Track 5 = Drums(Flourish)', 620, -220, width);
 /*
         //text(' Track 6 = Piano', 620, -200, width);
         text(' Track 7 = Baixo', 620, -180, width);      
