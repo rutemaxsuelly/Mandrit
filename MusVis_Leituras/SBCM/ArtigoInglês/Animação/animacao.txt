@@ -1,0 +1,50 @@
+HUYNH, V.; COMBERG, D. MusicVis a web application for visualizing sound. 2017. Disponível em: https://tvanhuynh.github.io/musicvis/. Acesso em: maio de 2021..***SITE
+IDEO: Design Thinking. Disponivel em: https://designthinking.ideo.com/. Acesso em: maio de 2021. ****SITE
+
+LOCKWOOD, T. Design thinking: Integrating innovation, customer experience, and brand value (3rd Ed.). New York, NY: Allworth Press. CONFIRMAR SE É OU NÃO
+https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1948-7169.2009.00007.x 
+
+
+BRANDÃO, Monique. O Círculo de Quintas: O que é e como usá-lo em suas composições. LANDR, Cidade, 28, junho. 2018.
+Disponível em: https://blog.landr.com/pt-br/o-circulo-de-quintas-o-que-e-e-como-usa-lo-em-suas-composicoes/. Acesso em: outubro de 2020. *******SITE
+
+NELMES, J., 2011. Introduction to Film Studies. 5th ed. London: Routledge.PDF
+
+
+JÁ FOI:
+
+
+SOARES, L. MusicVis : interactive visualization tool for exploring music rankings. 2017. 68 f. Dissertação - Programa de Pós-Graduação em Computação, Universidade Federal do Rio Grande do Sul, Porto Alegre
+FERNANDES, M. Aplicações da Prototipagem Rápida em Projetos de Pesquisa. 2008. 128 f. Dissertação - Universidade Estadual de Campinas, São Paulo. PDF
+
+WELLS, P. The Fundamentals of Animation. ‎ 2. ed. Bloomsbury Visual Arts, 2017. 249 p.LIVRO
+
+BARISIC, R. Cross-curricular education using interactive visualizations. Procedia - Social and Behavioral Sciences, vol. 47, 2157–2161p. 2012.
+
+BAUDISCH, P.; TAN, D.; COLLOMB, M.; ROBBINS, D.; HINCKLEY, K.; AGRAWALA, M.; ZHAO, S.; RAMOS, G. Phosphor: Explaining Transitions in the User Interface Using Afterglow Effects. In Proc. ACM UIST 2006, Montreux, Switzerland, Oct 2006.
+
+BERGSTROM, T.; KARAHALIOS, K.; HART, J. Isochords: visualizing structure in music . Em Proceedings of Graphics Interface ( 2007 ), ACM, New York, USA , pp. 297 - 304 . 
+
+CANCIGLIERI, J;. SELHORST, A. Método de decisão dos processos de prototipagem rápida na concepção de novos produtos. 2015. Disponível em:
+https://doi.org/10.1590/0104-530X633-13. Acesso em: maio 2021.
+
+CHEN, H.; ZHOU, H.; CHEN, X. E-Embed: A time series visualization framework based on earth mover’s distance.  Journal of Visual Languages & Computing, vol. 48, pp. 110–122, oct 2018. 
+
+CIUHA,P.; KLEMENC, B.; SOLINA, F. Visualization of concurrent tones in music with colours. In Proceedings of the 18th ACM International Conference on Multimedia (2010), ACM, pp. 1677–1680.
+COOKE, Deryck. The Language of Music. 1. ed. EUA: Oxford University Press, 1989.
+
+HEER, J.; ROBERTSON, G. Animated Transitions in Statistical Data Graphics. IEEE Transactions on Visualization and Computer Graphics, vol. 13, no. 6, pp. 1240-1247, Nov/Dec, 2007. 
+
+MALINOWSKI, S.; TURETSKY, L . Music Animation Machine, (2011). Disponível em: https://musanim.com/. Acesso em: outubro de 2020.
+
+LASSETER, J. (1987) Principles of Traditional Animation Applied to 3D Computer Animation. ACM SIGGRAPH Computer Graphics, 21, 35-44.
+
+TSCHANG, F. T. Production and Political Economy in the Animation Industry: Why Insourcing and Outsourcing Occur. In: DRUID SUMMER CONFERENCE, 2004. Alemanha. Anais. Elsinore: DRUID, 2004. 1-21 p. Disponível em: https://ink.library.smu.edu.sg/lkcsb_research/2853.  Acesso em: maio de 2021.
+
+TVERSKY, B.; MORRISON, J.; BETRANCOURT, M. Animation: Can It Facilitate? Int. J. Human-Computer Studies, 57:247-262, 2002.
+
+ROBERTSON, G.; FERNANDEZ, R.; FISHER, D.; LEE, B.; STASKO, J. Effectiveness of Animation in Trend Visualization. IEEE Transactions on Visualization and Computer Graphics, vol. 14, 2008.
+
+THALMANN, N.; THALMANN, D. Computer-generated Images. Springer, Berlin,1985. 209-229 p.
+
+HALL, F . Sheet Music Visualization (2013). Disponível em: https://www.behance.net/gallery/6529923/Sheet-Music-Visualization. Acesso em: maio de 2020. ***SITE
