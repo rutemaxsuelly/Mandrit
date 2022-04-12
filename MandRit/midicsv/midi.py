@@ -1,5 +1,5 @@
-#API MANDRIT Versao (0.1) Extracao de dados musicais do Ritmo de arquivos MIDI e conversao em CSV
-#Por: Rute Maxsuelly, Giordano Cabral e Delando Junior. (MUSTIC - 2020)
+#API MANDRIT Version (0.1) Extracting music data from Rhythm MIDI files and converting to CSV
+#by: Rute Maxsuelly, Giordano Cabral e Delando Junior. (MUSTIC - 2021)
 import py_midicsv
 
 #Carrega o arquivo MIDI e transforma em CSV
